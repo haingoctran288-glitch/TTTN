@@ -137,3 +137,4 @@
 - 2026-04-05T15:00:00: Khoi tao project spring boot
 - 2026-04-05T23:00:00: Cau hinh pom.xml va thu vien
 - 2026-04-06T11:00:00: Thiet ke database mysql
+- 2026-04-06T23:00:00: Tao file sql init
