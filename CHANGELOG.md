@@ -136,3 +136,4 @@
 - 2026-05-18T07:00:00: Update hinh anh len README
 - 2026-04-05T15:00:00: Khoi tao project spring boot
 - 2026-04-05T23:00:00: Cau hinh pom.xml va thu vien
+- 2026-04-06T11:00:00: Thiet ke database mysql
