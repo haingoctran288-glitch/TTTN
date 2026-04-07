@@ -140,3 +140,4 @@
 - 2026-04-06T23:00:00: Tao file sql init
 - 2026-04-07T06:00:00: Cau hinh application.properties
 - 2026-04-07T20:00:00: Tao entity User, Role
+- 2026-04-08T01:00:00: Tao entity Product, Category
