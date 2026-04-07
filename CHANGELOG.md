@@ -139,3 +139,4 @@
 - 2026-04-06T11:00:00: Thiet ke database mysql
 - 2026-04-06T23:00:00: Tao file sql init
 - 2026-04-07T06:00:00: Cau hinh application.properties
+- 2026-04-07T20:00:00: Tao entity User, Role
