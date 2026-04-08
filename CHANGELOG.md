@@ -143,3 +143,4 @@
 - 2026-04-08T01:00:00: Tao entity Product, Category
 - 2026-04-08T12:00:00: Tao entity Order, OrderDetail
 - 2026-04-08T18:00:00: Tao entity Booking, Barber
+- 2026-04-09T03:00:00: Tao entity Service, Voucher
