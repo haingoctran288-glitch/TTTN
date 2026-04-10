@@ -147,3 +147,4 @@
 - 2026-04-09T17:00:00: Cau hinh Spring Security
 - 2026-04-10T04:00:00: Cai dat JWT filter
 - 2026-04-10T10:00:00: Viet ham tao token JWT
+- 2026-04-10T22:00:00: Xu ly login logic backend
