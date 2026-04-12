@@ -151,3 +151,4 @@
 - 2026-04-11T09:00:00: Xu ly register logic backend
 - 2026-04-11T21:00:00: Phan quyen admin vs user
 - 2026-04-12T09:00:00: Khoi tao vite react cho frontend
+- 2026-04-12T18:00:00: Cai dat tailwindcss
