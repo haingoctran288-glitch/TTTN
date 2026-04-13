@@ -154,3 +154,4 @@
 - 2026-04-12T18:00:00: Cai dat tailwindcss
 - 2026-04-13T09:00:00: Cau hinh react router dom
 - 2026-04-13T19:00:00: Tao thu muc components, pages
+- 2026-04-14T04:00:00: Them font google, icon
