@@ -152,3 +152,4 @@
 - 2026-04-11T21:00:00: Phan quyen admin vs user
 - 2026-04-12T09:00:00: Khoi tao vite react cho frontend
 - 2026-04-12T18:00:00: Cai dat tailwindcss
+- 2026-04-13T09:00:00: Cau hinh react router dom
