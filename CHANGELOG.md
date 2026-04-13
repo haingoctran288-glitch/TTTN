@@ -153,3 +153,4 @@
 - 2026-04-12T09:00:00: Khoi tao vite react cho frontend
 - 2026-04-12T18:00:00: Cai dat tailwindcss
 - 2026-04-13T09:00:00: Cau hinh react router dom
+- 2026-04-13T19:00:00: Tao thu muc components, pages
