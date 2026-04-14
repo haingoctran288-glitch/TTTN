@@ -156,3 +156,4 @@
 - 2026-04-13T19:00:00: Tao thu muc components, pages
 - 2026-04-14T04:00:00: Them font google, icon
 - 2026-04-14T19:00:00: Lam Navbar, tao logo
+- 2026-04-15T04:00:00: Lien ket Navbar voi trang chu
