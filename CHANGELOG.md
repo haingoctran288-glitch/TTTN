@@ -157,3 +157,4 @@
 - 2026-04-14T04:00:00: Them font google, icon
 - 2026-04-14T19:00:00: Lam Navbar, tao logo
 - 2026-04-15T04:00:00: Lien ket Navbar voi trang chu
+- 2026-04-15T10:00:00: Lam Footer
