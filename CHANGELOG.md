@@ -159,3 +159,4 @@
 - 2026-04-15T04:00:00: Lien ket Navbar voi trang chu
 - 2026-04-15T10:00:00: Lam Footer
 - 2026-04-15T21:00:00: Tao component Button dung chung
+- 2026-04-16T08:00:00: Tao component Input
