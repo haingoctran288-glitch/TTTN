@@ -164,3 +164,4 @@
 - 2026-04-17T13:00:00: Lam Sidebar cho admin
 - 2026-04-18T02:00:00: Lam Header admin
 - 2026-04-18T15:00:00: Chuyen doi theme dark light
+- 2026-04-19T02:00:00: Viet API get tat ca san pham
