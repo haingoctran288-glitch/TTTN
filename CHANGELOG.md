@@ -169,3 +169,4 @@
 - 2026-04-19T19:00:00: Viet API sua san pham
 - 2026-04-20T03:00:00: Viet API xoa san pham
 - 2026-04-20T15:00:00: Upload anh san pham len thu muc uploads
+- 2026-04-21T05:00:00: Cau hinh phan quyen folder upload
