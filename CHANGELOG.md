@@ -178,3 +178,4 @@
 - 2026-04-23T19:00:00: CSS lai hinh anh cho chuan
 - 2026-04-24T04:00:00: Tao context Cart quan ly state
 - 2026-04-24T13:00:00: Them item vao gio hang
+- 2026-04-24T21:00:00: Xu ly tang giam so luong gio hang
