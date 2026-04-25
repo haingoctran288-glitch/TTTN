@@ -180,3 +180,4 @@
 - 2026-04-24T13:00:00: Them item vao gio hang
 - 2026-04-24T21:00:00: Xu ly tang giam so luong gio hang
 - 2026-04-25T08:00:00: Xoa san pham khoi gio
+- 2026-04-25T18:00:00: Tinh tong tien don hang
