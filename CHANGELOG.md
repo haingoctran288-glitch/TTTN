@@ -179,3 +179,4 @@
 - 2026-04-24T04:00:00: Tao context Cart quan ly state
 - 2026-04-24T13:00:00: Them item vao gio hang
 - 2026-04-24T21:00:00: Xu ly tang giam so luong gio hang
+- 2026-04-25T08:00:00: Xoa san pham khoi gio
