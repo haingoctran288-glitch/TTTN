@@ -184,3 +184,4 @@
 - 2026-04-26T03:00:00: Luu gio hang vao localstorage
 - 2026-04-26T12:00:00: Giao dien trang thanh toan
 - 2026-04-27T03:00:00: Viet form dien thong tin mua hang
+- 2026-04-27T11:00:00: Call API tao don hang
