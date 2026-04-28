@@ -186,3 +186,4 @@
 - 2026-04-27T03:00:00: Viet form dien thong tin mua hang
 - 2026-04-27T11:00:00: Call API tao don hang
 - 2026-04-28T02:00:00: Nghien cuu document VNPay
+- 2026-04-28T13:00:00: Tich hop API tao url VNPay
