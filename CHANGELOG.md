@@ -191,3 +191,4 @@
 - 2026-04-29T02:00:00: Luu trang thai thanh toan vao DB
 - 2026-04-29T10:00:00: Tich hop API Momo
 - 2026-04-30T01:00:00: Xu ly callback Momo
+- 2026-04-30T12:00:00: API lay danh sach tho cat toc
