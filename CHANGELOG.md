@@ -194,3 +194,4 @@
 - 2026-04-30T12:00:00: API lay danh sach tho cat toc
 - 2026-05-01T01:00:00: API lay danh sach dich vu
 - 2026-05-01T12:00:00: API tao lich hen backend
+- 2026-05-01T18:00:00: Check dieu kien trung lich hen
