@@ -198,3 +198,4 @@
 - 2026-05-02T05:00:00: Giao dien chon tho cat toc
 - 2026-05-02T19:00:00: Giao dien chon gio booking
 - 2026-05-03T07:00:00: Hien thi cac slot gio trong
+- 2026-05-03T16:00:00: Submit form dat lich va confirm
