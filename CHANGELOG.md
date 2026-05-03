@@ -197,3 +197,4 @@
 - 2026-05-01T18:00:00: Check dieu kien trung lich hen
 - 2026-05-02T05:00:00: Giao dien chon tho cat toc
 - 2026-05-02T19:00:00: Giao dien chon gio booking
+- 2026-05-03T07:00:00: Hien thi cac slot gio trong
