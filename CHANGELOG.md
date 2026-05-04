@@ -201,3 +201,4 @@
 - 2026-05-03T16:00:00: Submit form dat lich va confirm
 - 2026-05-04T07:00:00: Tao layout dashboard admin
 - 2026-05-04T17:00:00: Ve bieu do doanh thu thang (Recharts)
+- 2026-05-04T22:00:00: Ve bieu do tron tinh trang don hang
