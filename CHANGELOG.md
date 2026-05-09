@@ -211,3 +211,4 @@
 - 2026-05-08T10:00:00: Table quan ly lich dat cua khach
 - 2026-05-08T17:00:00: Chuc nang duyet lich hoac huy lich
 - 2026-05-09T03:00:00: Tao entity Voucher giam gia
+- 2026-05-09T18:00:00: API apply voucher
