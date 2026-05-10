@@ -213,3 +213,4 @@
 - 2026-05-09T03:00:00: Tao entity Voucher giam gia
 - 2026-05-09T18:00:00: API apply voucher
 - 2026-05-10T02:00:00: UI nhap ma giam gia
+- 2026-05-10T07:00:00: Tinh lai gia tien trong cart
