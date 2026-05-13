@@ -222,3 +222,4 @@
 - 2026-05-12T16:00:00: Hien thi danh gia o chi tiet san pham
 - 2026-05-13T00:00:00: Trang thong tin ca nhan user
 - 2026-05-13T09:00:00: Lich su don hang cua user
+- 2026-05-13T17:00:00: Lich su cat toc cua user
