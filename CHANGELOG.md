@@ -227,3 +227,4 @@
 - 2026-05-14T18:00:00: Goi API Gemini tu Spring boot
 - 2026-05-15T01:00:00: Lam nut chat o goc man hinh
 - 2026-05-15T12:00:00: UI khung chat tin nhan
+- 2026-05-16T01:00:00: Xu ly loading tin nhan
