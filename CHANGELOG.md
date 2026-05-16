@@ -229,3 +229,4 @@
 - 2026-05-15T12:00:00: UI khung chat tin nhan
 - 2026-05-16T01:00:00: Xu ly loading tin nhan
 - 2026-05-16T15:00:00: Fix loi CORS khi fetch API
+- 2026-05-16T20:00:00: Sua loi hien thi tren mobile responsive
