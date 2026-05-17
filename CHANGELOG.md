@@ -232,3 +232,4 @@
 - 2026-05-16T20:00:00: Sua loi hien thi tren mobile responsive
 - 2026-05-17T06:00:00: Fix bug antd table khong update
 - 2026-05-17T11:00:00: Toi uu query JPA toc do nhanh hon
+- 2026-05-17T19:00:00: Doi mau chu de website sang trong hon
