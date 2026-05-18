@@ -234,3 +234,4 @@
 - 2026-05-17T11:00:00: Toi uu query JPA toc do nhanh hon
 - 2026-05-17T19:00:00: Doi mau chu de website sang trong hon
 - 2026-05-18T03:00:00: Sua bug khong load duoc anh local
+- 2026-05-18T17:00:00: Fix loi gio hang reset khi reload
