@@ -237,3 +237,4 @@
 - 2026-05-18T17:00:00: Fix loi gio hang reset khi reload
 - 2026-05-19T05:00:00: Refactor code controller
 - 2026-05-19T17:00:00: Don dep cac import thua
+- 2026-05-20T03:00:00: Chinh lai font chu cho dong nhat
