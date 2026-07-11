@@ -101,13 +101,23 @@ const Dashboard = () => {
     return { ...p, name };
   });
 
-  // Parse revenue chart to fix decimals if needed
-  const formattedRevenueChart = revenueChart.map(item => ({
-    ...item,
-    service: Number(item.service || 0),
-    product: Number(item.product || 0),
-    total: Number(item.total || 0)
-  }));
+  // Parse revenue chart to fix decimals if needed and format dates
+  const formattedRevenueChart = revenueChart.map(item => {
+    let formattedName = item.name;
+    // Check if name is YYYY-MM-DD format using a simple regex
+    if (/^\d{4}-\d{2}-\d{2}$/.test(formattedName)) {
+      const [year, month, day] = formattedName.split('-');
+      formattedName = `${day}/${month}/${year}`;
+    }
+    
+    return {
+      ...item,
+      name: formattedName,
+      service: Number(item.service || 0),
+      product: Number(item.product || 0),
+      total: Number(item.total || 0)
+    };
+  });
 
   const revTypeData = [
     { name: 'Dịch vụ', value: Number(revenue.service || 0) },

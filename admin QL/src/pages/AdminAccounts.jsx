@@ -9,6 +9,7 @@ const AdminAccounts = () => {
   const [accounts, setAccounts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
+  const [resetModalVisible, setResetModalVisible] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [form] = Form.useForm();
   const [staffList, setStaffList] = useState([]);
@@ -181,6 +182,7 @@ const AdminAccounts = () => {
         description: 'Toàn bộ dữ liệu khách hàng, lịch đặt, đơn hàng và voucher đã phát đã được làm sạch.',
       });
       fetchAccounts();
+      setResetModalVisible(false);
     } catch (err) {
       notification.error({
         message: 'Reset Thất Bại',
@@ -191,6 +193,8 @@ const AdminAccounts = () => {
     }
   };
 
+
+
   return (
     <div style={{ padding: '24px', maxWidth: 1000, margin: '0 auto' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 24, alignItems: 'center' }}>
@@ -199,21 +203,14 @@ const AdminAccounts = () => {
           <Text type="secondary">Quản lý tài khoản truy cập Admin Panel</Text>
         </div>
         <div style={{ display: 'flex', gap: 12 }}>
-          <Popconfirm
-            title="CẢNH BÁO: Hành động này sẽ xóa sạch dữ liệu Khách hàng, Đặt lịch, Đơn hàng & Voucher đã phát. Bạn có chắc chắn không?"
-            onConfirm={handleResetSystemData}
-            okText="Xóa sạch dữ liệu"
-            cancelText="Hủy"
-            okButtonProps={{ danger: true, size: 'large' }}
+          <Button 
+            danger
+            type="primary"
+            style={{ fontWeight: 'bold', backgroundColor: '#a61d24', borderColor: '#a61d24' }}
+            onClick={() => setResetModalVisible(true)}
           >
-            <Button 
-              danger
-              type="primary"
-              style={{ fontWeight: 'bold' }}
-            >
-              Reset Dữ Liệu Hệ Thống
-            </Button>
-          </Popconfirm>
+            Reset Dữ Liệu Hệ Thống
+          </Button>
           <Button 
             type="primary" 
             icon={<PlusCircle size={20} />} 
@@ -264,7 +261,7 @@ const AdminAccounts = () => {
         dataSource={filteredAccounts} 
         rowKey="id" 
         loading={loading}
-        pagination={false}
+        pagination={{ pageSize: 10, showSizeChanger: false, showTotal: (total) => `Tổng ${total} tài khoản` }}
       />
 
       <Modal
@@ -364,6 +361,72 @@ const AdminAccounts = () => {
           </Button>
         </Form>
       </Modal>
+
+      {/* CUSTOM RESET WARNING MODAL */}
+      <Modal
+        open={resetModalVisible}
+        onCancel={() => setResetModalVisible(false)}
+        footer={null}
+        width={550}
+        centered
+        closeIcon={<span style={{ color: '#888', fontSize: '18px' }}>×</span>}
+        className="premium-modal"
+        styles={{ 
+          content: { 
+            backgroundColor: '#111', 
+            border: '1px solid #ff4d4f', 
+            boxShadow: '0 0 30px rgba(255, 77, 79, 0.2)',
+            padding: 0,
+            overflow: 'hidden'
+          } 
+        }}
+      >
+        <div style={{ backgroundColor: '#2b1216', padding: '24px', borderBottom: '1px solid #ff4d4f40' }}>
+          <Title level={4} style={{ color: '#ff4d4f', margin: 0, fontWeight: 900, display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span style={{ fontSize: '24px' }}>⚠️</span> CẢNH BÁO MẤT DỮ LIỆU NGHIÊM TRỌNG
+          </Title>
+        </div>
+        
+        <div style={{ padding: '24px' }}>
+          <Text style={{ color: '#fff', fontSize: '15px', fontWeight: 'bold', display: 'block', marginBottom: '16px' }}>
+            Hành động này sẽ <span style={{ color: '#ff4d4f', textDecoration: 'underline' }}>XÓA VĨNH VIỄN</span> các dữ liệu vận hành sau:
+          </Text>
+          
+          <ul style={{ paddingLeft: '24px', marginBottom: '24px', color: '#ff7875', lineHeight: '2', fontSize: '14px' }}>
+            <li>Toàn bộ hồ sơ <strong style={{ color: '#fff' }}>Khách Hàng</strong> và lịch sử giao dịch.</li>
+            <li>Toàn bộ <strong style={{ color: '#fff' }}>Lịch Đặt (Bookings)</strong> của tất cả chi nhánh.</li>
+            <li>Toàn bộ <strong style={{ color: '#fff' }}>Đơn Hàng (Orders)</strong> & Doanh thu tương ứng.</li>
+            <li>Toàn bộ <strong style={{ color: '#fff' }}>Voucher</strong> đã được phát hoặc sử dụng.</li>
+          </ul>
+          
+          <div style={{ backgroundColor: '#1f0d10', padding: '16px', borderRadius: '8px', border: '1px dashed #ff4d4f', textAlign: 'center', marginBottom: '32px' }}>
+            <Text style={{ margin: 0, fontWeight: 'bold', color: '#ff4d4f', fontSize: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+              Dữ liệu đã xóa sẽ KHÔNG THỂ KHÔI PHỤC!
+            </Text>
+          </div>
+
+          <div style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
+            <Button 
+              size="large"
+              style={{ backgroundColor: '#222', borderColor: '#444', color: '#a0a0a0', fontWeight: 'bold', width: '160px' }}
+              onClick={() => setResetModalVisible(false)}
+            >
+              HỦY BỎ AN TOÀN
+            </Button>
+            <Button 
+              size="large"
+              type="primary" 
+              danger
+              loading={loading}
+              onClick={handleResetSystemData}
+              style={{ fontWeight: 'bold', backgroundColor: '#d9363e', borderColor: '#d9363e', width: '200px' }}
+            >
+              XÁC NHẬN XÓA SẠCH
+            </Button>
+          </div>
+        </div>
+      </Modal>
+
     </div>
   );
 };

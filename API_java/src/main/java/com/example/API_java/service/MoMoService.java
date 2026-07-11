@@ -20,13 +20,13 @@ public class MoMoService {
     @Autowired
     private MoMoConfig moMoConfig;
 
-    public Map<String, Object> createPayment(Order order) {
+    public Map<String, Object> createPayment(Order order, String dynamicReturnUrl) {
         String partnerCode = moMoConfig.getPartnerCode();
         String accessKey = moMoConfig.getAccessKey();
         String secretKey = moMoConfig.getSecretKey();
         
         String orderInfo = "Thanh toan don hang " + order.getId();
-        String redirectUrl = moMoConfig.getRedirectUrl();
+        String redirectUrl = (dynamicReturnUrl != null && !dynamicReturnUrl.isEmpty()) ? dynamicReturnUrl : moMoConfig.getRedirectUrl();
         String ipnUrl = moMoConfig.getIpnUrl();
         long amount = Math.round(order.getTotalPrice());
         String amountStr = String.valueOf(amount);
@@ -76,9 +76,12 @@ public class MoMoService {
         try {
             ResponseEntity<Map> response = restTemplate.postForEntity(moMoConfig.getApiUrl(), entity, Map.class);
             return response.getBody();
+        } catch (org.springframework.web.client.HttpStatusCodeException e) {
+            System.err.println("MoMo Error Response: " + e.getResponseBodyAsString());
+            throw new RuntimeException("Lỗi từ MoMo: " + e.getResponseBodyAsString());
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            throw new RuntimeException("Lỗi kết nối MoMo: " + e.getMessage());
         }
     }
 

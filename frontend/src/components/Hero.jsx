@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -34,12 +35,12 @@ const Hero = () => {
             Đỉnh cao phong cách dành cho phái mạnh
           </p>
           
-          <a 
-            href="#booking"
+          <Link 
+            to="/booking"
             className="inline-block w-full sm:w-auto text-center px-8 py-4 border-2 border-accent text-accent hover:bg-accent hover:text-primary transition-all duration-300 font-medium uppercase tracking-widest text-sm"
           >
             Đặt lịch ngay
-          </a>
+          </Link>
         </div>
       </div>
     </section>

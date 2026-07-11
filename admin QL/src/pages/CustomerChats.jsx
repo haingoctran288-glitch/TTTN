@@ -277,9 +277,13 @@ const CustomerChats = () => {
               {/* Customer bubble - LEFT */}
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '80%' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', marginLeft: '4px' }}>
-                  <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#1f2937', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: '800', color: '#9ca3af' }}>
-                    {selectedChat.customerName?.charAt(0)?.toUpperCase()}
-                  </div>
+                  {selectedChat.user?.avatar ? (
+                    <img src={imgSrc(selectedChat.user.avatar)} style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover' }} alt="avatar" />
+                  ) : (
+                    <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#1f2937', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: '800', color: '#9ca3af' }}>
+                      {selectedChat.customerName?.charAt(0)?.toUpperCase()}
+                    </div>
+                  )}
                   <span style={{ fontSize: '13px', fontWeight: '700', color: '#e5e7eb' }}>{selectedChat.customerName}</span>
                   <span style={{ fontSize: '10px', fontWeight: '700', color: '#6b7280', background: '#1f2937', padding: '2px 8px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Khách hàng</span>
                 </div>
@@ -306,9 +310,13 @@ const CustomerChats = () => {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', marginRight: '4px' }}>
                     <span style={{ fontSize: '10px', fontWeight: '700', color: '#d4af37', background: 'rgba(212,175,55,0.1)', padding: '2px 8px', borderRadius: '20px', textTransform: 'uppercase', letterSpacing: '0.05em', border: '1px solid rgba(212,175,55,0.25)' }}>Thợ phản hồi</span>
                     <span style={{ fontSize: '13px', fontWeight: '700', color: '#d4af37' }}>{selectedChat.barber?.name}</span>
-                    <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(212,175,55,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: '800', color: '#d4af37', border: '1px solid rgba(212,175,55,0.3)' }}>
-                      {selectedChat.barber?.name?.charAt(0)?.toUpperCase()}
-                    </div>
+                    {selectedChat.barber?.avatar ? (
+                      <img src={imgSrc(selectedChat.barber.avatar)} style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(212,175,55,0.3)' }} alt="avatar" />
+                    ) : (
+                      <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(212,175,55,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: '800', color: '#d4af37', border: '1px solid rgba(212,175,55,0.3)' }}>
+                        {selectedChat.barber?.name?.charAt(0)?.toUpperCase()}
+                      </div>
+                    )}
                   </div>
                   <div style={{ background: 'linear-gradient(135deg, #d4af37, #b38e21)', borderRadius: '16px', borderTopRightRadius: '4px', padding: '14px 16px', boxShadow: '0 4px 20px rgba(212,175,55,0.2)' }}>
                     <p style={{ margin: 0, color: '#000', fontSize: '14px', lineHeight: '1.6', fontWeight: '600', whiteSpace: 'pre-wrap' }}>{selectedChat.reply}</p>

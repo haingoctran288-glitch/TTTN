@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 11, 2026 lúc 07:36 AM
+-- Thời gian đã tạo: Th7 11, 2026 lúc 03:42 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -156,7 +156,8 @@ INSERT INTO `bookings` (`id`, `user_id`, `service_id`, `booking_date`, `booking_
 (62, 25, 19, '2026-07-06', '20:15:00', 'CANCELLED', '2026-07-06 13:04:25', 'timtim2835@gmail.com', 'btrhai', '0907654321', '', 'MOMO', 20000.00, '4773268579', 11, 15, '20:30:00.000000', 'STAFF_ON_LEAVE', '2026-07-06 20:06:27.000000', 'SYSTEM', 'REFUNDED', NULL, 'STAFF_ON_LEAVE', b'1', '2026-07-06 20:06:26.000000', '2026-07-06 20:06:27.000000'),
 (63, 25, 19, '2026-07-06', '20:30:00', 'CANCELLED', '2026-07-06 13:15:23', 'timtim2835@gmail.com', 'btrhai', '0907654321', '', 'MOMO', 20000.00, '4773268741', 12, 15, '20:45:00.000000', 'STAFF_ON_LEAVE', '2026-07-06 20:17:22.000000', 'SYSTEM', 'REFUNDED', NULL, 'STAFF_ON_LEAVE', b'1', '2026-07-06 20:17:22.000000', '2026-07-06 20:17:22.000000'),
 (64, 25, 19, '2026-07-07', '08:00:00', 'CANCELLED', '2026-07-06 13:55:47', 'timtim2835@gmail.com', 'btrhai', '0907654321', 'okee nè', 'MOMO', 20000.00, '4773271356', 6, 15, '08:15:00.000000', 'STAFF_ON_LEAVE', '2026-07-06 20:59:57.000000', 'SYSTEM', 'REFUNDED', NULL, 'STAFF_ON_LEAVE', b'1', '2026-07-06 20:59:57.000000', '2026-07-06 20:59:57.000000'),
-(65, 25, 1, '2026-07-12', '08:00:00', 'PAID', '2026-07-10 10:03:07', 'btrhai@gmail.com', 'btrhai', '0907654321', 'fade thấp', 'MOMO', 70000.00, '4775572076', 2, 30, '08:30:00.000000', NULL, NULL, NULL, NULL, NULL, NULL, b'0', NULL, NULL);
+(65, 25, 1, '2026-07-12', '08:00:00', 'COMPLETED', '2026-07-10 10:03:07', 'btrhai@gmail.com', 'btrhai', '0907654321', 'fade thấp', 'MOMO', 70000.00, '4775572076', 2, 30, '08:30:00.000000', NULL, NULL, NULL, NULL, NULL, NULL, b'0', NULL, NULL),
+(66, 25, 4, '2026-07-12', '08:00:00', 'COMPLETED', '2026-07-11 11:41:35', 'btrhai@gmail.com', 'btrhai', '0907654321', '', 'VNPAY', 40000.00, '15617354', 6, 15, '08:15:00.000000', NULL, NULL, NULL, NULL, NULL, NULL, b'0', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -237,7 +238,8 @@ INSERT INTO `booking_services` (`booking_id`, `service_id`) VALUES
 (62, 19),
 (63, 19),
 (64, 19),
-(65, 1);
+(65, 1),
+(66, 4);
 
 -- --------------------------------------------------------
 
@@ -333,7 +335,7 @@ INSERT INTO `customer_vouchers` (`id`, `booking_id`, `claimed_at`, `code`, `note
 (61, NULL, '2026-06-28 14:35:49.000000', 'TEST123', NULL, 19, 'EXPIRED', '2026-06-28 15:39:36.000000', 25, 28, '2026-06-30 00:00:00.000000', '2026-06-28 00:00:00.000000', 1),
 (62, NULL, '2026-06-28 14:52:05.000000', 'TEST111', NULL, NULL, 'EXPIRED', NULL, 25, 29, '2026-06-30 00:00:00.000000', '2026-06-28 00:00:00.000000', 0),
 (63, 46, '2026-06-28 15:03:05.000000', 'TEST222', NULL, NULL, 'EXPIRED', '2026-06-28 15:05:38.000000', 25, 30, '2026-06-30 00:00:00.000000', '2026-06-28 00:00:00.000000', 1),
-(64, 54, '2026-07-05 14:55:26.000000', 'TESTWWW', 'Chúc mừng thành viên hạng Người Của Công Chúng nhận được ưu đãi riêng!', NULL, 'UNUSED', '2026-07-05 15:19:18.000000', 25, 31, '2026-07-30 00:00:00.000000', '2026-07-05 00:00:00.000000', 2);
+(64, 66, '2026-07-05 14:55:26.000000', 'TESTWWW', 'Chúc mừng thành viên hạng Người Của Công Chúng nhận được ưu đãi riêng!', NULL, 'USED', '2026-07-11 18:41:36.000000', 25, 31, '2026-07-30 00:00:00.000000', '2026-07-05 00:00:00.000000', 3);
 
 -- --------------------------------------------------------
 
@@ -389,7 +391,7 @@ CREATE TABLE `knowledge_articles` (
 --
 
 INSERT INTO `knowledge_articles` (`id`, `category`, `content`, `created_at`, `created_by`, `short_description`, `slug`, `status`, `thumbnail_image`, `title`, `updated_at`, `view_count`) VALUES
-(1, 'Dịch vụ Nam', '<p><span class=\"text-big\"><i><mark class=\"marker-yellow\"><strong>1. Khái niệm kiểu tóc Mullet</strong></mark></i></span></p><p>Kiểu tóc Mullet (hay còn gọi là tóc cá đối) có đặc điểm là phần tóc hai bên mai được cắt ngắn hoặc cạo sát, phần mái có độ dài trung bình và phần tóc gáy được nuôi dài hẳn về phía sau. Đây là kiểu tóc mang phong cách cá tính, nổi bật và có phần nổi loạn.</p><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:600/606;\" src=\"http://localhost:8080/uploads/knowledge/b9a775d2-e85f-4f3b-ae79-751a604a796f.jpg\" width=\"600\" height=\"606\"></figure><p>&nbsp;</p><p><span class=\"text-big\"><i><mark class=\"marker-yellow\"><strong>2. Sự phù hợp với các dáng khuôn mặt</strong></mark></i></span></p><ul><li data-list-item-id=\"eecde272ccb0b85d500e6fa5184017882\"><strong>Mặt trái xoan và mặt dài: </strong>Đây là những dáng mặt phù hợp nhất với Mullet, giúp tôn lên các đường nét cân đối.</li><li data-list-item-id=\"e61cc6c38be3eafd1eba34868f108515b\"><strong>Mặt tròn và mặt vuông: </strong>Vẫn có thể để được kiểu tóc này nếu thợ cắt biến tấu bằng cách cạo sát hai bên mai (Fade/Undercut) và tạo độ phồng cho phần mái để kéo dài khuôn mặt.<br>&nbsp;</li></ul><figure class=\"image\"><img style=\"aspect-ratio:800/600;\" src=\"http://localhost:8080/uploads/knowledge/f3309856-944d-454d-8e1d-ea2614598eee.jpg\" width=\"800\" height=\"600\"></figure><p>&nbsp;</p><p><span class=\"text-big\"><i><mark class=\"marker-yellow\"><strong>3. Các biến tấu phổ biến hiện nay</strong></mark></i></span></p><ul><li data-list-item-id=\"ea1c6358283c2a695e584a6716b98cc78\"><strong>Modern Mullet:</strong><i><strong> </strong></i>Phần gáy được tiết chế lại, cắt ngắn vừa phải và không quá dài so với bản truyền thống, phù hợp cho môi trường học tập và làm việc.</li><li data-list-item-id=\"e9e0c4f14ce6259920f1c35d5d0e749c7\"><strong>Mullet Layer:</strong> Kết hợp kỹ thuật tỉa tầng xếp lớp, tạo hiệu ứng bồng bềnh và chuyển tiếp tự nhiên giữa các phần tóc.</li><li data-list-item-id=\"ea9f776e156b3e484ec162ebed8d88d64\"><strong>Mullet Undercut:</strong> Phần hai bên mai được cạo sát hoàn toàn, làm nổi bật đường nét nam tính và phần gáy dài phía sau.</li><li data-list-item-id=\"e804546c8d7de57c7070dbe63618d3b38\"><strong>Mullet uốn:</strong> Phần mái và gáy được uốn xoăn nhẹ hoặc uốn phồng để tạo độ lãng tử và giúp tóc dễ vào nếp hơn.<br>&nbsp;</li></ul><figure class=\"image\"><img style=\"aspect-ratio:800/994;\" src=\"http://localhost:8080/uploads/knowledge/961e2cee-a179-45e7-a371-58a6371e1e5a.jpg\" width=\"800\" height=\"994\"></figure><p>&nbsp;</p><p><span class=\"text-big\"><i><mark class=\"marker-yellow\"><strong>4. Những lưu ý trước khi cắt</strong></mark></i></span></p><ul><li data-list-item-id=\"e0284310d5e352a6b6a64bf044c5dd3a7\"><strong>Độ dài của tóc:</strong> Cần nuôi tóc gáy đạt độ dài tối thiểu chạm đến cổ và tóc mái dài qua mắt trước khi ra tiệm.</li><li data-list-item-id=\"e67c2776fb8922a9c2a9bece16dae0710\"><strong>Đặc điểm chất tóc:</strong> Tóc rễ tre hoặc tóc cứng thường dễ bị chỉa ở phần mai và vểnh ở phần gáy, cần cân nhắc việc ép side (downperm) hoặc uốn. Tóc mỏng cần tỉa layer để tạo độ dày dặn.</li><li data-list-item-id=\"e235a95f93c047c1a48cb2bc2d535482d\"><strong>Lựa chọn thợ cắt:</strong> Kiểu tóc này phụ thuộc nhiều vào kỹ năng xử lý độ dốc và liên kết giữa phần mai, mái và gáy của người thợ.</li></ul>', '2026-07-06 19:00:45.000000', 'adminql', '1. Khái niệm kiểu tóc MulletKiểu tóc Mullet (hay còn gọi là tóc cá đối) có đặc điểm là phần tóc hai bên mai được cắt ngắn hoặc cạo sát, phần mái có độ dài trung bình và phần tóc gáy được nuôi dài hẳn về phía sau. Đây là kiểu tóc mang phong cách cá tí...', 'kien-thuc-toan-dien-ve-kieu-toc-mullet-cho-nam', 'Hiển thị', '/uploads/knowledge/12e5308f-1f35-477b-8206-c537ce91dd77.jpg', 'Kiến Thức Toàn Diện Về Kiểu Tóc Mullet Cho Nam', '2026-07-10 18:38:58.000000', 5);
+(1, 'Dịch vụ Nam', '<p><span class=\"text-big\"><i><mark class=\"marker-yellow\"><strong>1. Khái niệm kiểu tóc Mullet</strong></mark></i></span></p><p>Kiểu tóc Mullet (hay còn gọi là tóc cá đối) có đặc điểm là phần tóc hai bên mai được cắt ngắn hoặc cạo sát, phần mái có độ dài trung bình và phần tóc gáy được nuôi dài hẳn về phía sau. Đây là kiểu tóc mang phong cách cá tính, nổi bật và có phần nổi loạn.</p><p>&nbsp;</p><figure class=\"image\"><img style=\"aspect-ratio:600/606;\" src=\"http://localhost:8080/uploads/knowledge/b9a775d2-e85f-4f3b-ae79-751a604a796f.jpg\" width=\"600\" height=\"606\"></figure><p>&nbsp;</p><p><span class=\"text-big\"><i><mark class=\"marker-yellow\"><strong>2. Sự phù hợp với các dáng khuôn mặt</strong></mark></i></span></p><ul><li data-list-item-id=\"eecde272ccb0b85d500e6fa5184017882\"><strong>Mặt trái xoan và mặt dài: </strong>Đây là những dáng mặt phù hợp nhất với Mullet, giúp tôn lên các đường nét cân đối.</li><li data-list-item-id=\"e61cc6c38be3eafd1eba34868f108515b\"><strong>Mặt tròn và mặt vuông: </strong>Vẫn có thể để được kiểu tóc này nếu thợ cắt biến tấu bằng cách cạo sát hai bên mai (Fade/Undercut) và tạo độ phồng cho phần mái để kéo dài khuôn mặt.<br>&nbsp;</li></ul><figure class=\"image\"><img style=\"aspect-ratio:800/600;\" src=\"http://localhost:8080/uploads/knowledge/f3309856-944d-454d-8e1d-ea2614598eee.jpg\" width=\"800\" height=\"600\"></figure><p>&nbsp;</p><p><span class=\"text-big\"><i><mark class=\"marker-yellow\"><strong>3. Các biến tấu phổ biến hiện nay</strong></mark></i></span></p><ul><li data-list-item-id=\"ea1c6358283c2a695e584a6716b98cc78\"><strong>Modern Mullet:</strong><i><strong> </strong></i>Phần gáy được tiết chế lại, cắt ngắn vừa phải và không quá dài so với bản truyền thống, phù hợp cho môi trường học tập và làm việc.</li><li data-list-item-id=\"e9e0c4f14ce6259920f1c35d5d0e749c7\"><strong>Mullet Layer:</strong> Kết hợp kỹ thuật tỉa tầng xếp lớp, tạo hiệu ứng bồng bềnh và chuyển tiếp tự nhiên giữa các phần tóc.</li><li data-list-item-id=\"ea9f776e156b3e484ec162ebed8d88d64\"><strong>Mullet Undercut:</strong> Phần hai bên mai được cạo sát hoàn toàn, làm nổi bật đường nét nam tính và phần gáy dài phía sau.</li><li data-list-item-id=\"e804546c8d7de57c7070dbe63618d3b38\"><strong>Mullet uốn:</strong> Phần mái và gáy được uốn xoăn nhẹ hoặc uốn phồng để tạo độ lãng tử và giúp tóc dễ vào nếp hơn.<br>&nbsp;</li></ul><figure class=\"image\"><img style=\"aspect-ratio:800/994;\" src=\"http://localhost:8080/uploads/knowledge/961e2cee-a179-45e7-a371-58a6371e1e5a.jpg\" width=\"800\" height=\"994\"></figure><p>&nbsp;</p><p><span class=\"text-big\"><i><mark class=\"marker-yellow\"><strong>4. Những lưu ý trước khi cắt</strong></mark></i></span></p><ul><li data-list-item-id=\"e0284310d5e352a6b6a64bf044c5dd3a7\"><strong>Độ dài của tóc:</strong> Cần nuôi tóc gáy đạt độ dài tối thiểu chạm đến cổ và tóc mái dài qua mắt trước khi ra tiệm.</li><li data-list-item-id=\"e67c2776fb8922a9c2a9bece16dae0710\"><strong>Đặc điểm chất tóc:</strong> Tóc rễ tre hoặc tóc cứng thường dễ bị chỉa ở phần mai và vểnh ở phần gáy, cần cân nhắc việc ép side (downperm) hoặc uốn. Tóc mỏng cần tỉa layer để tạo độ dày dặn.</li><li data-list-item-id=\"e235a95f93c047c1a48cb2bc2d535482d\"><strong>Lựa chọn thợ cắt:</strong> Kiểu tóc này phụ thuộc nhiều vào kỹ năng xử lý độ dốc và liên kết giữa phần mai, mái và gáy của người thợ.</li></ul>', '2026-07-06 19:00:45.000000', 'adminql', '1. Khái niệm kiểu tóc MulletKiểu tóc Mullet (hay còn gọi là tóc cá đối) có đặc điểm là phần tóc hai bên mai được cắt ngắn hoặc cạo sát, phần mái có độ dài trung bình và phần tóc gáy được nuôi dài hẳn về phía sau. Đây là kiểu tóc mang phong cách cá tí...', 'kien-thuc-toan-dien-ve-kieu-toc-mullet-cho-nam', 'Hiển thị', '/uploads/knowledge/12e5308f-1f35-477b-8206-c537ce91dd77.jpg', 'Kiến Thức Toàn Diện Về Kiểu Tóc Mullet Cho Nam', '2026-07-11 14:57:26.000000', 6);
 
 -- --------------------------------------------------------
 
@@ -524,7 +526,40 @@ INSERT INTO `notifications` (`id`, `created_at`, `data_json`, `is_read`, `messag
 (138, '2026-07-10 17:39:04.000000', NULL, b'1', 'Ban quản lý vừa trả lời tin nhắn của bạn. Vui lòng kiểm tra mục Liên hệ chủ tiệm.', 'Phản hồi từ Ban Quản Lý', 'chat', 25),
 (139, '2026-07-10 18:07:45.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
 (140, '2026-07-10 18:08:05.000000', '{\"total_price\":3130000.0,\"order_id\":21}', b'1', 'Đơn hàng mã số #21 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #21 đã được duyệt', 'approve', 25),
-(141, '2026-07-10 18:08:16.000000', '{\"total_price\":3130000.0,\"order_id\":21}', b'1', 'Đơn hàng mã số #21 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #21 đã giao thành công', 'approve', 25);
+(141, '2026-07-10 18:08:16.000000', '{\"total_price\":3130000.0,\"order_id\":21}', b'1', 'Đơn hàng mã số #21 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #21 đã giao thành công', 'approve', 25),
+(142, '2026-07-11 13:49:39.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(143, '2026-07-11 13:49:54.000000', '{\"total_price\":1.5E7,\"order_id\":22}', b'1', 'Đơn hàng mã số #22 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #22 đã được duyệt', 'approve', 25),
+(144, '2026-07-11 13:49:59.000000', '{\"total_price\":1.5E7,\"order_id\":22}', b'1', 'Đơn hàng mã số #22 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #22 đã giao thành công', 'approve', 25),
+(145, '2026-07-11 18:41:36.000000', NULL, b'1', 'Khách hàng btrhai vừa đặt lịch mới.', 'Đơn đặt lịch mới', 'booking', 6),
+(146, '2026-07-11 18:43:13.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(147, '2026-07-11 18:43:36.000000', '{\"total_price\":9330000.0,\"order_id\":23}', b'1', 'Đơn hàng mã số #23 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #23 đã được duyệt', 'approve', 25),
+(148, '2026-07-11 18:43:38.000000', '{\"total_price\":9330000.0,\"order_id\":23}', b'1', 'Đơn hàng mã số #23 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #23 đã giao thành công', 'approve', 25),
+(149, '2026-07-11 18:48:01.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(150, '2026-07-11 18:49:43.000000', '{\"total_price\":1890000.0,\"order_id\":24}', b'1', 'Đơn hàng mã số #24 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #24 đã được duyệt', 'approve', 25),
+(151, '2026-07-11 18:49:46.000000', '{\"total_price\":1890000.0,\"order_id\":24}', b'1', 'Đơn hàng mã số #24 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #24 đã giao thành công', 'approve', 25),
+(152, '2026-07-11 18:50:14.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(153, '2026-07-11 18:56:03.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(154, '2026-07-11 18:56:08.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(155, '2026-07-11 18:58:39.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(156, '2026-07-11 19:05:26.000000', '{\"total_price\":3.193E7,\"order_id\":28}', b'1', 'Đơn hàng mã số #28 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #28 đã được duyệt', 'approve', 25),
+(157, '2026-07-11 19:05:32.000000', '{\"total_price\":3.193E7,\"order_id\":28}', b'1', 'Đơn hàng mã số #28 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #28 đã giao thành công', 'approve', 25),
+(158, '2026-07-11 19:06:11.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(159, '2026-07-11 19:06:24.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(160, '2026-07-11 19:09:00.000000', NULL, b'1', 'Khách hàng mot mot vừa đặt 1 sản phẩm.', 'Đơn đặt hàng mới', 'order', 6),
+(161, '2026-07-11 19:10:10.000000', '{\"total_price\":774000.0,\"order_id\":31}', b'1', 'Đơn hàng mã số #31 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #31 đã được duyệt', 'approve', 25),
+(162, '2026-07-11 19:10:16.000000', '{\"total_price\":774000.0,\"order_id\":31}', b'1', 'Đơn hàng mã số #31 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #31 đã giao thành công', 'approve', 25),
+(163, '2026-07-11 19:13:59.000000', '{\"total_price\":9600000.0,\"order_id\":30}', b'1', 'Đơn hàng mã số #30 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #30 đã được duyệt', 'approve', 25),
+(164, '2026-07-11 19:14:01.000000', '{\"total_price\":9600000.0,\"order_id\":30}', b'1', 'Đơn hàng mã số #30 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #30 đã giao thành công', 'approve', 25),
+(165, '2026-07-11 19:14:04.000000', '{\"total_price\":9600000.0,\"order_id\":29}', b'1', 'Đơn hàng mã số #29 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #29 đã được duyệt', 'approve', 25),
+(166, '2026-07-11 19:14:05.000000', '{\"total_price\":9600000.0,\"order_id\":29}', b'1', 'Đơn hàng mã số #29 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #29 đã giao thành công', 'approve', 25),
+(167, '2026-07-11 19:14:08.000000', '{\"total_price\":6.383E7,\"order_id\":27}', b'1', 'Đơn hàng mã số #27 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #27 đã được duyệt', 'approve', 25),
+(168, '2026-07-11 19:14:10.000000', '{\"total_price\":6.383E7,\"order_id\":27}', b'1', 'Đơn hàng mã số #27 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #27 đã giao thành công', 'approve', 25),
+(169, '2026-07-11 19:14:12.000000', '{\"total_price\":6.383E7,\"order_id\":26}', b'1', 'Đơn hàng mã số #26 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #26 đã được duyệt', 'approve', 25),
+(170, '2026-07-11 19:14:14.000000', '{\"total_price\":6.383E7,\"order_id\":26}', b'1', 'Đơn hàng mã số #26 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #26 đã giao thành công', 'approve', 25),
+(171, '2026-07-11 19:14:17.000000', '{\"total_price\":1.513078E7,\"order_id\":25}', b'1', 'Đơn hàng mã số #25 của bạn đã được duyệt thành công. Cảm ơn quý khách đã tin tưởng và mua sắm sản phẩm tại Hornet Royale!', '✅ Đơn hàng #25 đã được duyệt', 'approve', 25),
+(172, '2026-07-11 19:14:19.000000', '{\"total_price\":1.513078E7,\"order_id\":25}', b'1', 'Đơn hàng mã số #25 của bạn đã được giao đến tay bạn. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!', '📦 Đơn hàng #25 đã giao thành công', 'approve', 25),
+(173, '2026-07-11 19:29:41.000000', NULL, b'1', 'Khách hàng btrhai vừa đánh giá 5.0 sao cho sản phẩm Tông đơ Wahl 5 Star Vanish Shaver.', 'Đánh giá sản phẩm mới ⭐', 'system', 6),
+(174, '2026-07-11 19:30:29.000000', NULL, b'1', 'Quản trị viên Trần Ngọc Hải đã trả lời đánh giá của bạn: ok', 'Phản hồi đánh giá 💬', 'system', 25);
 
 -- --------------------------------------------------------
 
@@ -576,7 +611,17 @@ INSERT INTO `orders` (`id`, `address`, `created_at`, `name`, `payment_method`, `
 (18, 'dfsdfs', '2026-06-17 20:58:31.000000', 'eoiioroewr', 'COD', '0333333333', 30000, 'cancelled', 15000000, 8, 'Hủy bởi Admin', '2026-06-28 15:43:11.000000', NULL, NULL, NULL, 'ed2', 'CN 2'),
 (19, '123hcm', '2026-06-28 15:39:36.000000', 'mot mot', 'MOMO', '0907654321', 30000, 'delivered', 4016000, 25, NULL, NULL, '2026-06-28 15:40:09.000000', 'PAID', '4769220797', NULL, NULL),
 (20, 'ẻererere', '2026-07-05 16:11:36.000000', 'ed1', 'COD', '1231231231', 30000, 'delivered', 5020000, 7, NULL, NULL, NULL, NULL, NULL, 'ed1', 'Quận 1'),
-(21, '123hcm', '2026-07-10 18:07:45.000000', 'mot mot', 'COD', '0907654321', 30000, 'delivered', 3130000, 25, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(21, '123hcm', '2026-07-10 18:07:45.000000', 'mot mot', 'COD', '0907654321', 30000, 'delivered', 3130000, 25, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(22, '123hcm', '2026-07-11 13:49:39.000000', 'mot mot', 'COD', '0907654321', 30000, 'delivered', 15000000, 25, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, '123hcm', '2026-07-11 18:43:13.000000', 'mot mot', 'COD', '0907654321', 30000, 'delivered', 9330000, 25, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(24, '123hcm', '2026-07-11 18:48:01.000000', 'mot mot', 'VNPAY', '0907654321', 30000, 'delivered', 1890000, 25, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, '123hcm', '2026-07-11 18:50:14.000000', 'mot mot', 'MOMO', '0907654321', 30000, 'delivered', 15130780, 25, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, '123hcm', '2026-07-11 18:56:03.000000', 'mot mot', 'MOMO', '0907654321', 30000, 'delivered', 63830000, 25, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(27, '123hcm', '2026-07-11 18:56:08.000000', 'mot mot', 'MOMO', '0907654321', 30000, 'delivered', 63830000, 25, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(28, '123hcm', '2026-07-11 18:58:39.000000', 'mot mot', 'MOMO', '0907654321', 30000, 'delivered', 31930000, 25, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(29, '123hcm', '2026-07-11 19:06:11.000000', 'mot mot', 'MOMO', '0907654321', 30000, 'delivered', 9600000, 25, NULL, NULL, NULL, 'FAILED', NULL, NULL, NULL),
+(30, '123hcm', '2026-07-11 19:06:24.000000', 'mot mot', 'MOMO', '0907654321', 30000, 'delivered', 9600000, 25, NULL, NULL, NULL, 'FAILED', NULL, NULL, NULL),
+(31, '123hcm', '2026-07-11 19:09:00.000000', 'mot mot', 'MOMO', '0907654321', 30000, 'delivered', 774000, 25, NULL, NULL, '2026-07-11 19:09:43.000000', 'PAID', '4776659678', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -619,7 +664,17 @@ INSERT INTO `order_items` (`id`, `price`, `product_id`, `product_image`, `produc
 (19, 4990000, 60, '/images/products/tong-do/tongdowahl1.webp', 'Tông đơ WAHL VAPOR LIMITED', 3, 18),
 (20, 4990000, 1, '/images/products/tong-do/tongdowahl1.webp', 'Tông đơ WAHL VAPOR LIMITED', 1, 19),
 (21, 4990000, 29, '/images/products/tong-do/tongdowahl1.webp', 'Tông đơ WAHL VAPOR LIMITED', 1, 20),
-(22, 3100000, 2, '/images/products/tong-do/tongdowahl4.webp', 'Tông đơ Wahl 5 Star Legend Cordless Clipper', 1, 21);
+(22, 3100000, 2, '/images/products/tong-do/tongdowahl4.webp', 'Tông đơ Wahl 5 Star Legend Cordless Clipper', 1, 21),
+(23, 4990000, 1, '/images/products/tong-do/tongdowahl1.webp', 'Tông đơ WAHL VAPOR LIMITED', 3, 22),
+(24, 3100000, 2, '/images/products/tong-do/tongdowahl4.webp', 'Tông đơ Wahl 5 Star Legend Cordless Clipper', 3, 23),
+(25, 186000, 5, '/images/products/keo-cat/keo JASON1.webp', 'Kéo cắt & tỉa JASON-JS02', 10, 24),
+(26, 3020156, 4, '/images/products/tong-do/tongdoWahl Align Cordless Trimmer1.webp', 'Tông đơ Wahl Align Cordless Trimmer', 5, 25),
+(27, 3190000, 3, '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver1.webp', 'Tông đơ Wahl 5 Star Vanish Shaver', 20, 26),
+(28, 3190000, 3, '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver1.webp', 'Tông đơ Wahl 5 Star Vanish Shaver', 20, 27),
+(29, 3190000, 3, '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver1.webp', 'Tông đơ Wahl 5 Star Vanish Shaver', 10, 28),
+(30, 3190000, 3, '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver1.webp', 'Tông đơ Wahl 5 Star Vanish Shaver', 3, 29),
+(31, 3190000, 3, '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver1.webp', 'Tông đơ Wahl 5 Star Vanish Shaver', 3, 30),
+(32, 186000, 5, '/images/products/keo-cat/keo JASON1.webp', 'Kéo cắt & tỉa JASON-JS02', 4, 31);
 
 -- --------------------------------------------------------
 
@@ -775,11 +830,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `old_price`, `description`, `category`, `thumbnail`, `image1`, `image2`, `image3`, `is_new`, `is_sale`, `is_best_seller`, `category_id`, `created_at`, `stock`, `branch`, `sort_order`, `rating`) VALUES
-(1, 'Tông đơ WAHL VAPOR LIMITED', 4990000, NULL, '1. Thông tin sản phẩm tông đơ Wahl Vapor Limited\r\nMàu sắc: Galaxy\r\nTrọng lượng : 280g\r\nChiều dài sản phẩm: 17.1cm\r\nLoại pin : lithium\r\nThời gian sạc : 60 phút\r\nThời gian sử dụng : 150 phút\r\nNguồn điện : 100v - 220v\r\nLoại động cơ: Motor không chổi than\r\nXuất xứ: Mỹ\r\n\r\n2. Lưỡi tông đơ\r\nKiểu lưỡi : F32 FADEOUT\r\nF32 FADEOUT : đây là 1 thiết kế lưỡi kiểu mới, gồm có 32 răng thẳng được bo tròn tạo sự mịn màng khi đi trên da đầu, giảm thiểu các vết xước \r\nRăng được thiết kế nhiều hơn 50% và lưỡi nhẹ hơn 6g so với tiêu chuẩn mà vẫn nhanh hơn và mượt hơn khi cắt. \r\nLưỡi điều chỉnh được đến mức số 0\r\nĐộ dài của lưỡi : 0.5mm - 1.2mm\r\nLưỡi cắt được làm từ thép cacbon công nghệ cao với lớp phủ mạ crom PVD và DLC màu đen, có độ bền bỉ chắc chắn, chống gỉ và duy trì độ sắc bén lâu hơn gấp 4 lần.\r\n\r\n3. Thiết kế\r\nThiết kế màu Galaxy Nhám, không mẫu nào giống nhau về họa tiết\r\nCần gạt và vỏ bọc được thiết kế kiểu mới, giúp phù hợp hơn với vị trí đặt tay, mang lại sự thoải mái khi dùng.\r\nTay cầm được bọc 1 lớp cao su chống trơn trượt tăng thêm khả năng kiểm soát và dễ dàng xử lý.\r\n\r\n4. Động cơ\r\nĐộng cơ : 8000 RPM/ 1phút\r\nCông suất ổn định: Động cơ không chổi than tốc độ cao với tính năng kiểm soát tốc độ cung cấp công suất ổn định của 8000 vòng xoay/1 phút cho mọi kiểu tóc và cấu trúc của tóc', 'tong-do', '/images/products/tong-do/tongdowahl1.webp', '/images/products/tong-do/tongdowahl1.webp', '/images/products/tong-do/tongdowahl2.webp', '/images/products/tong-do/tongdowahl3.webp', 1, 0, 1, NULL, NULL, 3, NULL, 1, 0),
-(2, 'Tông đơ Wahl 5 Star Legend Cordless Clipper', 3100000, NULL, '1. Giới thiệu về tông đơ Wahl Legend Cordless\r\nWahl hiện là nhà sản xuất tông đơ lớn nhất thế giới và cũng là nhà sáng chế ra tông đơ điện, tông đơ pin đang được sử dụng phổ biến trên toàn cầu. Tông đơ Wahl Legend Cordless là dòng tông đơ cắt chính chuyên nghiệp thuộc bộ sưu tập 5 sao cao cấp mang tên thương hiệu này. Thông tin chi tiết về tông dơ Wahl Legend Cordless:\r\n+ Phân loại: Tông đơ pin\r\n+ Động cơ: 6500 RPM\r\n+ Loại pin: Lithium-ion\r\n+ Thời gian sạc đầy: 60 phút\r\n+ Thời gian hoạt động liên tục: 100 phút\r\n+ Xuất xứ: Mỹ', 'tong-do', '/images/products/tong-do/tongdowahl4.webp', '/images/products/tong-do/tongdowahl4.webp', '/images/products/tong-do/tongdowahl5.webp', '/images/products/tong-do/tongdowahl6.webp', 1, 0, 1, NULL, NULL, 98, NULL, 2, NULL),
-(3, 'Tông đơ Wahl 5 Star Vanish Shaver', 3190000, 3880000, '1. Giới thiệu về tông đơ cạo khô Wahl Vanish\r\n- Wahl Vanish là sản phẩm cạo đầu, cắt sát da đầu, cắt trắng (zero) đến từ thương hiệu tông đơ Wahl - Mỹ.', 'tong-do', '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver1.webp', '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver1.webp', '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver2.webp', '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver3.webp', 1, 1, 1, NULL, NULL, 100, NULL, 3, NULL),
-(4, 'Tông đơ Wahl Align Cordless Trimmer', 3020156, NULL, '1. Giới thiệu về tông đơ chấn viền Wahl A-Lign\r\n+ A-Lign là dòng tông đơ chấn viền chuyên nghiệp cao cấp đến từ thương hiệu tông đơ Wahl', 'tong-do', '/images/products/tong-do/tongdoWahl Align Cordless Trimmer1.webp', '/images/products/tong-do/tongdoWahl Align Cordless Trimmer1.webp', '/images/products/tong-do/tongdoWahl Align Cordless Trimmer2.webp', '/images/products/tong-do/tongdoWahl Align Cordless Trimmer3.webp', 1, 0, 0, NULL, NULL, 100, NULL, 4, NULL),
-(5, 'Kéo cắt & tỉa JASON-JS02', 186000, 250000, 'Kéo cắt tóc Nhật Bản cao cấp JS02\r\n\r\n1. Kéo cắt tỉa tóc thép cao cấp Jason 6 inch chuyên dụng tạo mẫu tóc', 'keo-cat', '/images/products/keo-cat/keo JASON1.webp', '/images/products/keo-cat/keo JASON1.webp', '/images/products/keo-cat/keo JASON2.webp', '/images/products/keo-cat/keo JASON3.webp', 0, 1, 0, NULL, NULL, 99, NULL, 5, NULL),
+(1, 'Tông đơ WAHL VAPOR LIMITED', 4990000, NULL, '1. Thông tin sản phẩm tông đơ Wahl Vapor Limited\r\nMàu sắc: Galaxy\r\nTrọng lượng : 280g\r\nChiều dài sản phẩm: 17.1cm\r\nLoại pin : lithium\r\nThời gian sạc : 60 phút\r\nThời gian sử dụng : 150 phút\r\nNguồn điện : 100v - 220v\r\nLoại động cơ: Motor không chổi than\r\nXuất xứ: Mỹ\r\n\r\n2. Lưỡi tông đơ\r\nKiểu lưỡi : F32 FADEOUT\r\nF32 FADEOUT : đây là 1 thiết kế lưỡi kiểu mới, gồm có 32 răng thẳng được bo tròn tạo sự mịn màng khi đi trên da đầu, giảm thiểu các vết xước \r\nRăng được thiết kế nhiều hơn 50% và lưỡi nhẹ hơn 6g so với tiêu chuẩn mà vẫn nhanh hơn và mượt hơn khi cắt. \r\nLưỡi điều chỉnh được đến mức số 0\r\nĐộ dài của lưỡi : 0.5mm - 1.2mm\r\nLưỡi cắt được làm từ thép cacbon công nghệ cao với lớp phủ mạ crom PVD và DLC màu đen, có độ bền bỉ chắc chắn, chống gỉ và duy trì độ sắc bén lâu hơn gấp 4 lần.\r\n\r\n3. Thiết kế\r\nThiết kế màu Galaxy Nhám, không mẫu nào giống nhau về họa tiết\r\nCần gạt và vỏ bọc được thiết kế kiểu mới, giúp phù hợp hơn với vị trí đặt tay, mang lại sự thoải mái khi dùng.\r\nTay cầm được bọc 1 lớp cao su chống trơn trượt tăng thêm khả năng kiểm soát và dễ dàng xử lý.\r\n\r\n4. Động cơ\r\nĐộng cơ : 8000 RPM/ 1phút\r\nCông suất ổn định: Động cơ không chổi than tốc độ cao với tính năng kiểm soát tốc độ cung cấp công suất ổn định của 8000 vòng xoay/1 phút cho mọi kiểu tóc và cấu trúc của tóc', 'tong-do', '/images/products/tong-do/tongdowahl1.webp', '/images/products/tong-do/tongdowahl1.webp', '/images/products/tong-do/tongdowahl2.webp', '/images/products/tong-do/tongdowahl3.webp', 1, 0, 1, NULL, NULL, 5, NULL, 0, 0),
+(2, 'Tông đơ Wahl 5 Star Legend Cordless Clipper', 3100000, NULL, '1. Giới thiệu về tông đơ Wahl Legend Cordless\r\nWahl hiện là nhà sản xuất tông đơ lớn nhất thế giới và cũng là nhà sáng chế ra tông đơ điện, tông đơ pin đang được sử dụng phổ biến trên toàn cầu. Tông đơ Wahl Legend Cordless là dòng tông đơ cắt chính chuyên nghiệp thuộc bộ sưu tập 5 sao cao cấp mang tên thương hiệu này. Thông tin chi tiết về tông dơ Wahl Legend Cordless:\r\n+ Phân loại: Tông đơ pin\r\n+ Động cơ: 6500 RPM\r\n+ Loại pin: Lithium-ion\r\n+ Thời gian sạc đầy: 60 phút\r\n+ Thời gian hoạt động liên tục: 100 phút\r\n+ Xuất xứ: Mỹ', 'tong-do', '/images/products/tong-do/tongdowahl4.webp', '/images/products/tong-do/tongdowahl4.webp', '/images/products/tong-do/tongdowahl5.webp', '/images/products/tong-do/tongdowahl6.webp', 1, 0, 1, NULL, NULL, 95, NULL, 2, NULL),
+(3, 'Tông đơ Wahl 5 Star Vanish Shaver', 3190000, 3880000, '1. Giới thiệu về tông đơ cạo khô Wahl Vanish\r\n- Wahl Vanish là sản phẩm cạo đầu, cắt sát da đầu, cắt trắng (zero) đến từ thương hiệu tông đơ Wahl - Mỹ.', 'tong-do', '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver1.webp', '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver1.webp', '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver2.webp', '/images/products/tong-do/tongdoWahl 5 Star Vanish Shaver3.webp', 1, 1, 1, NULL, NULL, 44, NULL, 3, 5),
+(4, 'Tông đơ Wahl Align Cordless Trimmer', 3020156, NULL, '1. Giới thiệu về tông đơ chấn viền Wahl A-Lign\r\n+ A-Lign là dòng tông đơ chấn viền chuyên nghiệp cao cấp đến từ thương hiệu tông đơ Wahl', 'tong-do', '/images/products/tong-do/tongdoWahl Align Cordless Trimmer1.webp', '/images/products/tong-do/tongdoWahl Align Cordless Trimmer1.webp', '/images/products/tong-do/tongdoWahl Align Cordless Trimmer2.webp', '/images/products/tong-do/tongdoWahl Align Cordless Trimmer3.webp', 1, 0, 0, NULL, NULL, 95, NULL, 4, NULL),
+(5, 'Kéo cắt & tỉa JASON-JS02', 186000, 250000, 'Kéo cắt tóc Nhật Bản cao cấp JS02\r\n\r\n1. Kéo cắt tỉa tóc thép cao cấp Jason 6 inch chuyên dụng tạo mẫu tóc', 'keo-cat', '/images/products/keo-cat/keo JASON1.webp', '/images/products/keo-cat/keo JASON1.webp', '/images/products/keo-cat/keo JASON2.webp', '/images/products/keo-cat/keo JASON3.webp', 0, 1, 0, NULL, NULL, 85, NULL, 5, 5),
 (6, 'Kéo cắt & tỉa TORA', 3685000, NULL, '1. Tổng quan\r\n-Tên sản phẩm: Kéo cắt tóc TORA NB-360S\r\n-Sản xuất: Việt Nam\r\n-Chất liệu: Thép Nhật Nguyên Khối', 'keo-cat', '/images/products/keo-cat/keo TORA1.webp', '/images/products/keo-cat/keo TORA1.webp', '/images/products/keo-cat/keo TORA2.webp', '/images/products/keo-cat/keo TORA3.webp', 1, 0, 1, NULL, NULL, 100, NULL, 6, NULL),
 (7, 'Kéo cắt & tỉa AKAFUJI TA 323', 1260000, NULL, '1. Tổng quan\r\n- Tên sản phẩm: AKAFUJI – TA 323\r\nKích thước sản phẩm: 6.0 inches', 'keo-cat', '/images/products/keo-cat/keo TAKAFUJI TA1.webp', '/images/products/keo-cat/keo TAKAFUJI TA1.webp', '/images/products/keo-cat/keo TAKAFUJI TA2.webp', '/images/products/keo-cat/keo TAKAFUJI TA3.webp', 1, 0, 1, NULL, NULL, 100, NULL, 7, NULL),
 (8, 'Kéo cắt & tỉa Titan PC-55N', 1490000, 1980000, '1. Thông tin sản phẩm kéo cắt tóc PC-55n', 'keo-cat', '/images/products/keo-cat/keo Titan1.webp', '/images/products/keo-cat/keo Titan1.webp', '/images/products/keo-cat/keo Titan2.webp', '/images/products/keo-cat/keo Titan3.webp', 0, 1, 1, NULL, NULL, 100, NULL, 8, NULL),
@@ -1039,7 +1094,9 @@ CREATE TABLE `reviews` (
 INSERT INTO `reviews` (`id`, `booking_id`, `comment`, `created_at`, `order_id`, `rating`, `replied_at`, `replied_by_name`, `replied_by_role`, `reply`, `updated_at`, `barber_id`, `product_id`, `user_id`) VALUES
 (1, 46, 'rất oke nè', '2026-06-28 16:39:45.000000', NULL, 5, '2026-06-28 16:40:15.000000', 'Trần Ngọc Hải', 'ADMIN', 'cảm ơn ạ', '2026-06-28 16:40:15.000000', 1, NULL, 25),
 (2, NULL, 'rất oke la', '2026-06-28 16:41:17.000000', 19, 5, '2026-06-28 16:41:40.000000', 'Trần Ngọc Hải', 'ADMIN', 'thanks', '2026-06-28 16:41:40.000000', NULL, 1, 25),
-(3, 47, 'nét', '2026-06-30 20:26:29.000000', NULL, 5, NULL, NULL, NULL, NULL, NULL, 1, NULL, 25);
+(3, 47, 'nét', '2026-06-30 20:26:29.000000', NULL, 5, NULL, NULL, NULL, NULL, NULL, 1, NULL, 25),
+(4, NULL, 'good', '2026-07-11 19:10:53.000000', 31, 5, '2026-07-11 19:12:24.000000', 'Trần Ngọc Hải', 'ADMIN', 'thank', '2026-07-11 19:12:24.000000', NULL, 5, 25),
+(5, NULL, 'good', '2026-07-11 19:29:41.000000', 30, 5, '2026-07-11 19:30:29.000000', 'Trần Ngọc Hải', 'ADMIN', 'ok', '2026-07-11 19:30:29.000000', NULL, 3, 25);
 
 -- --------------------------------------------------------
 
@@ -1207,7 +1264,7 @@ INSERT INTO `staff` (`id`, `avatar`, `branch`, `email`, `experience_years`, `is_
 (3, '/uploads/staff/3984aef5-03f1-4029-9d8e-b4b75180380e.png', 'Quận 1', 'sang1@gmail.com', 5, b'1', 'Văn Sang', 0, '0123456713', 0, 'Cắt tạo kiểu hiện đại ', NULL),
 (4, '/uploads/staff/ce1dae1e-ea17-4d9a-9d1d-3f7420f907b2.png', 'Quận 1', 'vinh1@gmail.com', 3, b'1', 'Vinh Trần', 0, '0123456714', 0, 'Cắt tạo kiểu hiện đại', NULL),
 (5, '/uploads/staff/415508b0-2f6b-4127-a036-ee54868418b3.png', 'Quận 1', 'huy1@gmail.com', 5, b'1', 'Vũ Huy', 0, '0123456715', 0, 'Nhuộm màu thời trang ', NULL),
-(6, '/uploads/staff/ee2a34a3-ae96-4d2d-b3ab-c89a846774a8.png', 'Quận 2', 'hoang2@gmail.com', 5, b'1', 'Đình Hoàng', 0, '0123456721', 0, 'Điêu khắc tóc', 'UNPLANNED_LEAVE'),
+(6, '/uploads/staff/ee2a34a3-ae96-4d2d-b3ab-c89a846774a8.png', 'Quận 2', 'hoang2@gmail.com', 5, b'1', 'Đình Hoàng', 0, '0123456721', 0, 'Điêu khắc tóc', 'WORKING'),
 (7, '/uploads/staff/40ef24bc-faf5-4246-8346-faa1dedb2d53.png', 'Quận 2', 'vuong2@gmail.comvuong', 4, b'1', 'Khang Vương', 0, '0123456721', 0, 'Nhuộm màu thời trang', 'WORKING'),
 (8, '/uploads/staff/710448d7-fd73-4869-98f5-057068ac0171.png', 'Quận 2', 'trong2@gmail.com', 4, b'1', 'Minh Trọng', 0, '0123456723', 0, 'Cắt tạo kiểu hiện đại', NULL),
 (9, '/uploads/staff/d4c165f8-c1f8-4c59-9bbc-37a353e277e6.png', 'Quận 2', 'vu2@gmail.com', 3, b'1', 'Minh Vũ', 0, '0123456724', 0, 'Nhuộm màu thời trang', NULL),
@@ -1261,7 +1318,7 @@ CREATE TABLE `staff_leave` (
 INSERT INTO `staff_leave` (`id`, `created_at`, `created_by`, `end_date`, `ip_created`, `leave_status`, `leave_type`, `reason`, `salary_type`, `start_date`, `updated_at`, `staff_id`) VALUES
 (1, '2026-07-06 20:06:26.000000', 'adminql', '2026-07-08', '0:0:0:0:0:0:0:1', 'FINISHED', 'PERSONAL', 'test', 'UNPAID', '2026-07-06', '2026-07-10 17:02:38.000000', 11),
 (2, '2026-07-06 20:17:21.000000', 'adminql', '2026-07-07', '0:0:0:0:0:0:0:1', 'FINISHED', 'SICK_LEAVE', 'đau đầu', 'UNPAID', '2026-07-06', '2026-07-10 17:02:38.000000', 12),
-(3, '2026-07-06 20:59:57.000000', 'adminql', '2026-07-10', '0:0:0:0:0:0:0:1', 'ACTIVE', 'SICK_LEAVE', 'okkkkkk', 'UNPAID', '2026-07-06', '2026-07-06 20:59:57.000000', 6),
+(3, '2026-07-06 20:59:57.000000', 'adminql', '2026-07-10', '0:0:0:0:0:0:0:1', 'FINISHED', 'SICK_LEAVE', 'okkkkkk', 'UNPAID', '2026-07-06', '2026-07-11 18:11:37.000000', 6),
 (4, '2026-07-06 21:29:13.000000', 'EDITOR (ed2)', '2026-07-07', '0:0:0:0:0:0:0:1', 'FINISHED', 'SICK_LEAVE', 'okkk', 'UNPAID', '2026-07-06', '2026-07-10 17:02:38.000000', 7);
 
 -- --------------------------------------------------------
@@ -1338,7 +1395,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `full_name`, `phone`, `role`,
 (11, 'ed9', '$2a$10$zoeyt.EloWNiO71QnvL6W.kwRKvgQzeT8nLQYQp2WR.DvU8yy00Vi', 'CN 9', '0909999999', 'EDITOR', '2026-06-09 14:00:18', 'cn9@gmail.com', NULL, NULL, NULL, NULL, b'0', b'0', 'Quận 9', NULL, NULL),
 (12, 'edbt', '$2a$10$S7/8MA33mq4Qu.kRemYO4.veZjP89AL63hvYuvVaN4p8JVTBmx1oW', 'CN BT', '0900000000', 'EDITOR', '2026-06-09 14:01:53', 'cnbt@gmail.com', NULL, NULL, NULL, NULL, b'0', b'0', 'Bình Thạnh', NULL, NULL),
 (14, 'LETRI', '$2a$10$pEa0QCFp4biudCJlDv1Kb.fUM2irEu0ms.GCqCgLHcFu3xD/4ntHq', 'LE TRI', NULL, 'EMPLOYEE', '2026-06-21 11:36:10', NULL, NULL, NULL, NULL, NULL, b'0', b'0', 'Quận 1', NULL, 1),
-(25, 'btrhai', '$2a$10$hjuuaDCrzXzhx9Gj2gwX5uPoaF57TkK2DFbzwLfDpZBeeJMsW2Oje', 'btrhai', NULL, 'USER', '2026-06-27 08:33:58', 'btrhai111@gmail.com', '/uploads/users/0c6afa2c-0300-4a6f-851f-dddde3d872ff.png', NULL, NULL, NULL, b'0', b'0', NULL, '2026-06-27', NULL);
+(25, 'btrhai', '$2a$10$hjuuaDCrzXzhx9Gj2gwX5uPoaF57TkK2DFbzwLfDpZBeeJMsW2Oje', 'btrhai', NULL, 'USER', '2026-06-27 08:33:58', 'btrhai111@gmail.com', '/uploads/users/9856ef76-d84e-4ade-ab80-4718ac85a51f.png', NULL, NULL, NULL, b'0', b'0', NULL, '2026-06-27', NULL),
+(26, 'DINHHOANG', '$2a$10$SDwkSY2G3LzhoqLejwQzkOgQI2zwgOCOlgLYo3DRoW9N1PUmRsOru', 'DINH HOANG', NULL, 'EMPLOYEE', '2026-07-11 11:25:49', NULL, NULL, NULL, NULL, NULL, b'0', b'0', 'Quận 2', NULL, 6);
 
 -- --------------------------------------------------------
 
@@ -1646,7 +1704,7 @@ ALTER TABLE `advance_salaries`
 -- AUTO_INCREMENT cho bảng `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -1694,19 +1752,19 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT cho bảng `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT cho bảng `otp_codes`
@@ -1742,7 +1800,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `salary_settings`
@@ -1790,7 +1848,7 @@ ALTER TABLE `system_transaction_logs`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `vouchers`

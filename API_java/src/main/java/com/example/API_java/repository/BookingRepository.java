@@ -39,10 +39,10 @@ public interface BookingRepository extends JpaRepository<Booking, Integer> {
     // Lấy danh sách booking theo trạng thái, sắp xếp mới nhất trước (dùng cho admin)
     List<Booking> findByStatusInOrderByIdDesc(List<String> statuses);
 
-    @Query("SELECT COALESCE(SUM(b.service.price), 0) FROM Booking b WHERE b.user.id = :userId AND b.status IN ('COMPLETED', 'PAID')")
+    @Query("SELECT COALESCE(SUM(b.service.price), 0) FROM Booking b WHERE b.user.id = :userId AND b.status = 'COMPLETED'")
     BigDecimal getServiceSpentByUserId(@Param("userId") Integer userId);
 
-    @Query("SELECT COUNT(b) FROM Booking b WHERE b.user.id = :userId AND b.status IN ('COMPLETED', 'PAID')")
+    @Query("SELECT COUNT(b) FROM Booking b WHERE b.user.id = :userId AND b.status = 'COMPLETED'")
     long getCompletedBookingCount(@Param("userId") Integer userId);
 
     @Query("SELECT b FROM Booking b WHERE b.service.id = :serviceId OR :serviceId IN (SELECT s.id FROM b.services s)")

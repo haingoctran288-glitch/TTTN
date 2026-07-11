@@ -132,7 +132,8 @@ public class PaymentController {
                 return ResponseEntity.badRequest().body("Order not found");
             }
 
-            Map<String, Object> responseFromMoMo = moMoService.createPayment(order);
+            String returnUrl = (String) data.get("returnUrl");
+            Map<String, Object> responseFromMoMo = moMoService.createPayment(order, returnUrl);
             if (responseFromMoMo != null && responseFromMoMo.containsKey("payUrl")) {
                 Map<String, String> response = new HashMap<>();
                 response.put("paymentUrl", (String) responseFromMoMo.get("payUrl"));

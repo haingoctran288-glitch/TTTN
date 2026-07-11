@@ -11,6 +11,12 @@ const RATING_EMOJIS = {
   5: { emoji: '😍', text: 'Tuyệt vời' }
 };
 
+const getAvatarUrl = (avatar) => {
+  if (!avatar) return null;
+  if (avatar.startsWith('http') || avatar.startsWith('data:')) return avatar;
+  return `http://localhost:8080${avatar}`;
+};
+
 const ReviewSection = ({ type, itemId, transactionId, status, isCompleted, itemName, itemImage }) => {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
@@ -102,7 +108,11 @@ const ReviewSection = ({ type, itemId, transactionId, status, isCompleted, itemN
         <div className="bg-[#1a1a1a] rounded-xl p-5 border border-gray-700 relative">
           <div className="flex items-start gap-4">
             <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
-              <UserIcon className="w-6 h-6 text-gray-500" />
+              {existingReview.user?.avatar ? (
+                <img src={getAvatarUrl(existingReview.user.avatar)} alt="" className="w-full h-full object-cover" />
+              ) : (
+                <UserIcon className="w-6 h-6 text-gray-500" />
+              )}
             </div>
             <div className="flex-1">
               <div className="flex items-center justify-between mb-1">

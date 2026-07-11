@@ -79,7 +79,7 @@ public class DashboardService {
         String serviceRevSql = "SELECT COALESCE(SUM(total_price), 0) FROM bookings WHERE status = 'COMPLETED' AND " + branchConditionBooking + " AND " + timeCondition;
         Double serviceRev = jdbcTemplate.queryForObject(serviceRevSql, Double.class, bookingParams.toArray());
 
-        String productRevSql = "SELECT COALESCE(SUM(total_price), 0) FROM orders WHERE status = 'completed' AND " + branchConditionOrder + " AND " + timeCondition;
+        String productRevSql = "SELECT COALESCE(SUM(total_price), 0) FROM orders WHERE status = 'delivered' AND " + branchConditionOrder + " AND " + timeCondition;
         Double productRev = jdbcTemplate.queryForObject(productRevSql, Double.class, orderParams.toArray());
         
         Double totalRev = serviceRev + productRev;
@@ -93,7 +93,7 @@ public class DashboardService {
         orderParamsPrev.addAll(timeParamsPrev);
 
         Double prevServiceRev = jdbcTemplate.queryForObject("SELECT COALESCE(SUM(total_price), 0) FROM bookings WHERE status = 'COMPLETED' AND " + branchConditionBooking + " AND " + timeConditionPrev, Double.class, bookingParamsPrev.toArray());
-        Double prevProductRev = jdbcTemplate.queryForObject("SELECT COALESCE(SUM(total_price), 0) FROM orders WHERE status = 'completed' AND " + branchConditionOrder + " AND " + timeConditionPrev, Double.class, orderParamsPrev.toArray());
+        Double prevProductRev = jdbcTemplate.queryForObject("SELECT COALESCE(SUM(total_price), 0) FROM orders WHERE status = 'delivered' AND " + branchConditionOrder + " AND " + timeConditionPrev, Double.class, orderParamsPrev.toArray());
         Double prevTotalRev = prevServiceRev + prevProductRev;
 
         double revenueTrend = prevTotalRev == 0 ? (totalRev > 0 ? 100.0 : 0.0) : ((totalRev - prevTotalRev) / prevTotalRev * 100);
@@ -107,11 +107,11 @@ public class DashboardService {
 
         // 4. Completed Orders
         Integer serviceOrders = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM bookings WHERE status = 'COMPLETED' AND " + branchConditionBooking + " AND " + timeCondition, Integer.class, bookingParams.toArray());
-        Integer productOrders = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM orders WHERE status = 'completed' AND " + branchConditionOrder + " AND " + timeCondition, Integer.class, orderParams.toArray());
+        Integer productOrders = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM orders WHERE status = 'delivered' AND " + branchConditionOrder + " AND " + timeCondition, Integer.class, orderParams.toArray());
         Integer totalCompletedOrders = serviceOrders + productOrders;
 
         Integer prevServiceOrders = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM bookings WHERE status = 'COMPLETED' AND " + branchConditionBooking + " AND " + timeConditionPrev, Integer.class, bookingParamsPrev.toArray());
-        Integer prevProductOrders = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM orders WHERE status = 'completed' AND " + branchConditionOrder + " AND " + timeConditionPrev, Integer.class, orderParamsPrev.toArray());
+        Integer prevProductOrders = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM orders WHERE status = 'delivered' AND " + branchConditionOrder + " AND " + timeConditionPrev, Integer.class, orderParamsPrev.toArray());
         Integer prevTotalOrders = prevServiceOrders + prevProductOrders;
         double ordersTrend = prevTotalOrders == 0 ? (totalCompletedOrders > 0 ? 100.0 : 0.0) : ((double)(totalCompletedOrders - prevTotalOrders) / prevTotalOrders * 100);
         
@@ -146,7 +146,7 @@ public class DashboardService {
         else if ("this_year".equals(timeRange)) groupByStr = "MONTH(created_at)";
 
         String chartServiceSql = "SELECT " + groupByStr + " as label, SUM(total_price) as val FROM bookings WHERE status = 'COMPLETED' AND " + branchConditionBooking + " AND " + timeCondition + " GROUP BY " + groupByStr;
-        String chartProductSql = "SELECT " + groupByStr + " as label, SUM(total_price) as val FROM orders WHERE status = 'completed' AND " + branchConditionOrder + " AND " + timeCondition + " GROUP BY " + groupByStr;
+        String chartProductSql = "SELECT " + groupByStr + " as label, SUM(total_price) as val FROM orders WHERE status = 'delivered' AND " + branchConditionOrder + " AND " + timeCondition + " GROUP BY " + groupByStr;
         
         List<Map<String, Object>> serviceList = jdbcTemplate.queryForList(chartServiceSql, bookingParams.toArray());
         List<Map<String, Object>> productList = jdbcTemplate.queryForList(chartProductSql, orderParams.toArray());
@@ -177,7 +177,7 @@ public class DashboardService {
         // 9. Best-Selling Products
         String oBranchCondition = branchConditionOrder.replace("order_branch", "o.order_branch");
         String oTimeCondition = timeCondition.replace("created_at", "o.created_at");
-        String bestProductsSql = "SELECT p.name, SUM(oi.quantity) as count, SUM(oi.price * oi.quantity) as revenue FROM orders o JOIN order_items oi ON o.id = oi.order_id JOIN products p ON oi.product_id = p.id WHERE o.status = 'completed' AND " + oBranchCondition + " AND " + oTimeCondition + " GROUP BY p.id, p.name ORDER BY count DESC LIMIT 10";
+        String bestProductsSql = "SELECT p.name, SUM(oi.quantity) as count, SUM(oi.price * oi.quantity) as revenue FROM orders o JOIN order_items oi ON o.id = oi.order_id JOIN products p ON oi.product_id = p.id WHERE o.status = 'delivered' AND " + oBranchCondition + " AND " + oTimeCondition + " GROUP BY p.id, p.name ORDER BY count DESC LIMIT 10";
         result.put("popularProducts", jdbcTemplate.queryForList(bestProductsSql, orderParams.toArray()));
 
         // 10. Top Staff
@@ -190,7 +190,7 @@ public class DashboardService {
 
         // 12. Payment Methods
         String paySvcSql = "SELECT payment_method as name, SUM(total_price) as val FROM bookings WHERE status = 'COMPLETED' AND " + branchConditionBooking + " AND " + timeCondition + " GROUP BY payment_method";
-        String payProdSql = "SELECT payment_method as name, SUM(total_price) as val FROM orders WHERE status = 'completed' AND " + branchConditionOrder + " AND " + timeCondition + " GROUP BY payment_method";
+        String payProdSql = "SELECT payment_method as name, SUM(total_price) as val FROM orders WHERE status = 'delivered' AND " + branchConditionOrder + " AND " + timeCondition + " GROUP BY payment_method";
         
         List<Map<String, Object>> paySvcList = jdbcTemplate.queryForList(paySvcSql, bookingParams.toArray());
         List<Map<String, Object>> payProdList = jdbcTemplate.queryForList(payProdSql, orderParams.toArray());

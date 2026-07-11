@@ -60,14 +60,19 @@ export default function StaffLeaveList() {
   const [pendingFormValues, setPendingFormValues] = useState(null);
   const [previewLoading, setPreviewLoading] = useState(false);
 
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
+  const isEmployee = user.role === 'EMPLOYEE';
+
   const token = localStorage.getItem('token');
   const headers = { Authorization: `Bearer ${token}` };
 
   useEffect(() => {
     fetchLeaves();
     fetchStaff();
-    fetchStats();
-  }, []);
+    if (!isEmployee) {
+      fetchStats();
+    }
+  }, [isEmployee]);
 
   const fetchLeaves = async () => {
     setLoading(true);
@@ -250,7 +255,7 @@ export default function StaffLeaveList() {
         </div>
       ),
     },
-    {
+    ...(!isEmployee ? [{
       title: 'THAO TÁC',
       render: (_, r) => {
         const canModify = r.leaveStatus === 'ACTIVE' && dayjs(r.startDate).isAfter(dayjs());
@@ -275,7 +280,7 @@ export default function StaffLeaveList() {
           </Space>
         );
       },
-    },
+    }] : []),
   ];
 
   return (
@@ -292,16 +297,19 @@ export default function StaffLeaveList() {
           <p className="text-gray-400 mt-2 text-sm">Theo dõi và quản lý tập trung toàn bộ kỳ nghỉ của nhân sự HORNET ROYALE.</p>
         </div>
         
-        <button
-          onClick={() => { form.resetFields(); setIsUnplanned(false); setFormSelectedBranch(null); setFormOpen(true); }}
-          className="group relative px-6 py-3 border-none outline-none cursor-pointer bg-gradient-to-r from-accent to-yellow-600 rounded-xl font-bold text-primary uppercase tracking-wider text-sm transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] flex items-center gap-2 overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-          <PlusOutlined /> Đăng Ký Nghỉ Mới
-        </button>
+        {!isEmployee && (
+          <button
+            onClick={() => { form.resetFields(); setIsUnplanned(false); setFormSelectedBranch(null); setFormOpen(true); }}
+            className="group relative px-6 py-3 border-none outline-none cursor-pointer bg-gradient-to-r from-accent to-yellow-600 rounded-xl font-bold text-primary uppercase tracking-wider text-sm transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] flex items-center gap-2 overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+            <PlusOutlined /> Đăng Ký Nghỉ Mới
+          </button>
+        )}
       </div>
 
       {/* STATS DASHBOARD */}
+      {!isEmployee && (
       <Row gutter={[16, 16]} className="mb-8">
         {[
           { title: 'Nhân Viên Đang Nghỉ', value: stats.staffCurrentlyOnLeave || 0, color: '#ef4444', gradient: 'from-red-500/20 to-transparent', border: 'border-red-500/30', icon: <ClockCircleOutlined /> },
@@ -328,6 +336,7 @@ export default function StaffLeaveList() {
           </Col>
         ))}
       </Row>
+      )}
 
       {/* FILTER & TABLE AREA */}
       <div className="bg-[#111] border border-gray-800 rounded-2xl overflow-hidden shadow-2xl">

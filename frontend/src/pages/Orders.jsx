@@ -266,7 +266,7 @@ const Orders = () => {
 
                       {isDelivered && (
                         <button
-                          onClick={() => addToast({ title: 'Đánh giá', message: 'Tính năng đánh giá đang được phát triển' })}
+                          onClick={() => navigate(`/orders/${order.id}`)}
                           className="flex items-center gap-1.5 text-xs font-semibold text-yellow-400 hover:text-yellow-300 border border-yellow-500/30 px-3 py-1.5 rounded-lg hover:bg-yellow-500/10 transition-colors"
                         >
                           <Star className="w-3.5 h-3.5" /> Đánh giá

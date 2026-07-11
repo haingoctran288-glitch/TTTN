@@ -108,7 +108,7 @@ function App() {
               <Route path="orders" element={<Orders />} />
               <Route path="admin-accounts" element={<AdminAccounts />} />
               <Route path="vouchers" element={<Vouchers />} />
-              <Route path="news" element={<News />} />
+              <Route path="news" element={<AdminRoute><News /></AdminRoute>} />
               <Route path="knowledge" element={<AdminRoute><KnowledgeList /></AdminRoute>} />
               <Route path="knowledge/create" element={<AdminRoute><KnowledgeForm /></AdminRoute>} />
               <Route path="knowledge/edit/:id" element={<AdminRoute><KnowledgeForm /></AdminRoute>} />

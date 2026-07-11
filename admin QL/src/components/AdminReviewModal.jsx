@@ -7,6 +7,12 @@ import dayjs from 'dayjs';
 const { Text, Title } = Typography;
 const { TextArea } = Input;
 
+const getAvatarUrl = (avatar) => {
+  if (!avatar) return null;
+  if (avatar.startsWith('http') || avatar.startsWith('data:')) return avatar;
+  return `http://localhost:8080${avatar}`;
+};
+
 const AdminReviewModal = ({ isOpen, onClose, type, itemId, itemName }) => {
   const [reviews, setReviews] = useState([]);
   const [stats, setStats] = useState({ averageRating: 0, reviewCount: 0 });
@@ -129,7 +135,7 @@ const AdminReviewModal = ({ isOpen, onClose, type, itemId, itemName }) => {
                 <div className="review-header">
                   <div className="review-user-info">
                     <Avatar 
-                      src={review.user?.avatar} 
+                      src={getAvatarUrl(review.user?.avatar)} 
                       icon={!review.user?.avatar && <UserIcon />}
                       size={44}
                       style={{ border: '1px solid #444', backgroundColor: '#333' }}

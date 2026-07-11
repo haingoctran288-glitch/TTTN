@@ -30,6 +30,8 @@ import News from './pages/News';
 import NewsDetail from './pages/NewsDetail';
 import Knowledge from './pages/Knowledge';
 import KnowledgeDetail from './pages/KnowledgeDetail';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 import { CartProvider } from './context/CartContext';
 import { ToastProvider } from './context/ToastContext';
 import { useEffect } from 'react';
@@ -134,6 +136,7 @@ function App() {
             <Route path="/orders" element={<Orders />} />
             <Route path="/orders/:id" element={<OrderDetail />} />
             <Route path="/payment-return" element={<PaymentReturn />} />
+            <Route path="/payment- return" element={<PaymentReturn />} />
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/booking-success" element={<BookingSuccess />} />
@@ -143,6 +146,8 @@ function App() {
             <Route path="/news/:id" element={<NewsDetail />} />
             <Route path="/kienthuc" element={<Knowledge />} />
             <Route path="/kienthuc/:slug" element={<KnowledgeDetail />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
         </main>
         

@@ -50,7 +50,7 @@ public class StaffLeaveController {
 
         User caller = getCallerUser(authentication);
         if (caller == null) return ResponseEntity.status(401).body("Chưa đăng nhập");
-        if ("EMPLOYEE".equals(caller.getRole()) || "USER".equals(caller.getRole())) {
+        if ("USER".equals(caller.getRole())) {
             return ResponseEntity.status(403).body("Không có quyền truy cập");
         }
 
@@ -63,6 +63,15 @@ public class StaffLeaveController {
         }
 
         String branch = "EDITOR".equals(caller.getRole()) ? caller.getBranch() : null;
+        
+        if ("EMPLOYEE".equals(caller.getRole())) {
+            if (caller.getEmployeeId() != null) {
+                staffId = caller.getEmployeeId(); // Force filter to their own ID
+            } else {
+                return ResponseEntity.ok(Collections.emptyList());
+            }
+        }
+
         List<StaffLeave> leaves = staffLeaveRepository.findAllWithFilter(staffId, leaveStatus, branch);
         return ResponseEntity.ok(leaves);
     }

@@ -17,6 +17,12 @@ const formatTimeShort = (dateString) => {
 
 const { Text, Title } = Typography;
 
+const getAvatarUrl = (avatar) => {
+  if (!avatar) return null;
+  if (avatar.startsWith('http') || avatar.startsWith('data:')) return avatar;
+  return `http://localhost:8080${avatar}`;
+};
+
 const OwnerChat = () => {
   const [threads, setThreads] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -215,7 +221,7 @@ const OwnerChat = () => {
                     <List.Item.Meta
                       avatar={
                         <Badge dot={unread}>
-                          <Avatar src={item.user.avatar} icon={<UserOutlined />} />
+                          <Avatar src={getAvatarUrl(item.user.avatar)} icon={<UserOutlined />} />
                         </Badge>
                       }
                       title={<Text strong={unread}>{item.user.fullName || item.user.username}</Text>}
@@ -241,7 +247,7 @@ const OwnerChat = () => {
             <>
               {/* Chat Header */}
               <div style={{ padding: '16px 24px', borderBottom: '1px solid #333', backgroundColor: '#1a1a1a', display: 'flex', alignItems: 'center' }}>
-                <Avatar src={selectedUser.avatar} icon={<UserOutlined />} size="large" />
+                <Avatar src={getAvatarUrl(selectedUser.avatar)} icon={<UserOutlined />} size="large" />
                 <div style={{ marginLeft: 16 }}>
                   <Title level={5} style={{ margin: 0 }}>{selectedUser.fullName || selectedUser.username}</Title>
                   <Text type="secondary">{selectedUser.email || selectedUser.phone || 'Khách hàng'}</Text>
@@ -258,7 +264,7 @@ const OwnerChat = () => {
                       const isAdmin = msg.sender.role === 'ADMIN';
                       return (
                         <div key={index} style={{ display: 'flex', justifyContent: isAdmin ? 'flex-end' : 'flex-start' }}>
-                          {!isAdmin && <Avatar src={msg.sender.avatar} icon={<UserOutlined />} style={{ marginRight: 8, marginTop: 4 }} />}
+                          {!isAdmin && <Avatar src={getAvatarUrl(msg.sender.avatar)} icon={<UserOutlined />} style={{ marginRight: 8, marginTop: 4 }} />}
                           <div style={{ maxWidth: '80%' }}>
                             <div style={{ 
                               padding: '10px 14px', 
@@ -280,7 +286,7 @@ const OwnerChat = () => {
                               {formatDate(msg.createdAt)}
                             </div>
                           </div>
-                          {isAdmin && <Avatar src={msg.sender.avatar} icon={<UserOutlined />} style={{ marginLeft: 8, marginTop: 4 }} />}
+                          {isAdmin && <Avatar src={getAvatarUrl(msg.sender.avatar)} icon={<UserOutlined />} style={{ marginLeft: 8, marginTop: 4 }} />}
                         </div>
                       );
                     })}

@@ -154,7 +154,7 @@ const ProductGrid = ({ data, loading, onEdit, onDelete, onViewReview, onViewDeta
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32 }}>
-        <Pagination current={currentPage} total={data.length} pageSize={pageSize} onChange={setCurrentPage} />
+        <Pagination current={currentPage} total={data.length} pageSize={pageSize} onChange={setCurrentPage} showSizeChanger={false} />
       </div>
 
       <style>{`

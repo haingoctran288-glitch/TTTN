@@ -40,6 +40,9 @@ const AdminLayout = () => {
         if (u.role === 'EMPLOYEE' && location.pathname === '/') {
           navigate('/work-schedule');
         }
+        if (u.role === 'EDITOR' && location.pathname === '/') {
+          navigate('/bookings');
+        }
       }
     };
     
@@ -124,7 +127,6 @@ const AdminLayout = () => {
     ];
   } else if (currentUser.role === 'EDITOR') {
     menuItems = [
-      { key: '/', icon: <LayoutDashboard size={20} />, label: 'Dashboard' },
       { 
         key: 'grp-booking-editor', 
         icon: <CalendarClock size={20} />, 
@@ -153,21 +155,13 @@ const AdminLayout = () => {
           { key: '/customers', label: 'Danh sách Khách hàng' },
           { key: '/chats', label: 'Chat với khách' },
         ]
-      },
-      { 
-        key: 'grp-media-editor', 
-        icon: <Newspaper size={20} />, 
-        label: 'Truyền thông & Bài viết',
-        children: [
-          { key: '/news', label: 'Quản lý Tin tức' },
-          { key: '/knowledge', label: 'Kiến thức / Cẩm nang' },
-        ]
       }
     ];
   } else if (currentUser.role === 'EMPLOYEE') {
     menuItems = [
       { key: '/work-schedule', icon: <CalendarClock size={20} />, label: 'Lịch làm việc' },
       { key: '/staff-leave', icon: <UserSquare2 size={20} />, label: 'Lịch nghỉ' },
+      { key: '/chats', icon: <MessageSquare size={20} />, label: 'Chat với khách' },
     ];
   }
 

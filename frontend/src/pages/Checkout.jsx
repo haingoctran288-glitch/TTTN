@@ -239,7 +239,8 @@ const Checkout = () => {
           return;
         }
       } else if (paymentMethod === 'MOMO') {
-        const paymentResponse = await createMoMoPayment(orderResponse.id, orderResponse.totalPrice);
+        const returnUrl = window.location.origin + '/payment-return';
+        const paymentResponse = await createMoMoPayment(orderResponse.id, orderResponse.totalPrice, returnUrl);
         if (paymentResponse.paymentUrl) {
           const pendingData = {
             items: checkoutItems,

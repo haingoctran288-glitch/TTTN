@@ -7,7 +7,9 @@ import com.example.API_java.repository.ReviewRepository;
 import com.example.API_java.repository.UserRepository;
 import com.example.API_java.repository.ProductRepository;
 import com.example.API_java.repository.StaffRepository;
+import com.example.API_java.repository.NotificationRepository;
 import com.example.API_java.entity.Staff;
+import com.example.API_java.entity.Notification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +31,9 @@ public class ReviewService {
 
     @Autowired
     private StaffRepository staffRepository;
+
+    @Autowired
+    private NotificationRepository notificationRepository;
 
     public List<Review> getBarberReviews(Integer barberId) {
         return reviewRepository.findByBarberIdOrderByCreatedAtDesc(barberId);
@@ -93,6 +98,17 @@ public class ReviewService {
         product.setRating(newAvg != null ? newAvg : 0.0);
         productRepository.save(product);
         
+        // Gửi thông báo cho Admin
+        List<User> admins = userRepository.findByRole("ADMIN");
+        for (User admin : admins) {
+            Notification notif = new Notification();
+            notif.setUser(admin);
+            notif.setType("system");
+            notif.setTitle("Đánh giá sản phẩm mới ⭐");
+            notif.setMessage("Khách hàng " + user.getFullName() + " vừa đánh giá " + rating + " sao cho sản phẩm " + product.getName() + ".");
+            notificationRepository.save(notif);
+        }
+        
         return review;
     }
 
@@ -105,7 +121,20 @@ public class ReviewService {
         review.setRepliedByRole(admin.getRole());
         review.setRepliedByName(admin.getFullName());
         review.setRepliedAt(java.time.LocalDateTime.now());
-        return reviewRepository.save(review);
+        review = reviewRepository.save(review);
+        
+        // Gửi thông báo cho khách hàng
+        User customer = review.getUser();
+        if (customer != null) {
+            Notification notif = new Notification();
+            notif.setUser(customer);
+            notif.setType("system");
+            notif.setTitle("Phản hồi đánh giá 💬");
+            notif.setMessage("Quản trị viên " + admin.getFullName() + " đã trả lời đánh giá của bạn: " + reply);
+            notificationRepository.save(notif);
+        }
+        
+        return review;
     }
 
     @Transactional

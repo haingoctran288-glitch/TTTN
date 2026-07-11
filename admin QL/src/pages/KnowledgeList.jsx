@@ -316,7 +316,7 @@ const KnowledgeList = () => {
             pageSize: filters.size,
             total: total,
             onChange: (page, pageSize) => setFilters(prev => ({ ...prev, page: page - 1, size: pageSize })),
-            showSizeChanger: true
+            showSizeChanger: false
           }}
           scroll={{ x: 1000 }}
         />
