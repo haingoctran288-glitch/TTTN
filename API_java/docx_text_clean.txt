@@ -1,0 +1,928 @@
+BỘ CÔNG THƯƠNG
+TRƯỜNG CAO ĐẲNG CÔNG THƯƠNG TP.HCM
+KHOA CÔNG NGHỆ THÔNG TIN
+BÁO CÁO THỰC TẬP TỐT NGHIỆP
+XÂY DỰNG WEBSITE ĐẶT VÉ XEM PHIM
+SVTH: Phạm Văn Quỳnh Phúc
+MSSV: 2123110202
+Lớp: CCQ2311F
+Khoá: K47
+GVHD: Nguyễn Minh Tuấn
+TP. Hồ Chí Minh – Tháng 06/2026
+LỜI CẢM ƠN
+Trước tiên, em xin gửi lời tri ân sâu sắc đến Ban Giám hiệu Trường Cao đẳng Công Thương TPHCM đã tạo môi trường học tập chuyên nghiệp, cung cấp nền tảng kiến thức vững chắc và tạo điều kiện thuận lợi cho em trong suốt quá trình học tập cũng như thực hiện đề tài này.
+Em xin chân thành cảm ơn toàn thể quý Thầy, Cô trong Khoa Công nghệ Thông tin đã tận tình truyền đạt kiến thức, kỹ năng chuyên môn và những bài học quý giá về đạo đức nghề nghiệp trong suốt thời gian em theo học tại trường. Những kiến thức này đã trở thành hành trang quan trọng, giúp em tự tin thực hiện đề tài thực tập của mình.
+Đặc biệt, em xin bày tỏ lòng biết ơn sâu sắc đến Thầy Nguyễn Minh Tuấn – giảng viên hướng dẫn – người đã dành nhiều thời gian, công sức để chỉ dẫn, góp ý và định hướng cho em trong quá trình thực hiện đề tài "Xây dựng website đặt vé xem phim". Sự kiên nhẫn, tận tâm và những lời khuyên quý báu của Thầy đã giúp em vượt qua nhiều khó khăn, thách thức và hoàn thành tốt đề tài này.
+Em cũng xin gửi lời cảm ơn đến các cán bộ, nhân viên trong bộ phận Thực tập của Nhà trường đã tạo điều kiện, hướng dẫn và hỗ trợ em trong suốt quá trình thực tập.
+Em xin chân thành cảm ơn gia đình, bạn bè và đồng nghiệp đã luôn bên cạnh, động viên, khích lệ và giúp đỡ em trong suốt quá trình học tập và thực hiện đề tài.
+Trong quá trình thực hiện đề tài, mặc dù đã cố gắng hết sức, nhưng do thời gian và kiến thức còn hạn chế, em không tránh khỏi những thiếu sót. Em rất mong nhận được sự góp ý, nhận xét từ quý Thầy, Cô và bạn bè để em có thể hoàn thiện hơn trong các nghiên cứu sau này.
+Em mong rằng những kiến thức và kinh nghiệm tích lũy được trong suốt quá trình học tập và thực tập tại Trường Cao đẳng Công Thương TPHCM là nền tảng vững chắc giúp em phát triển thuận lợi trong công việc và sự nghiệp tương lai, đồng thời góp phần xây dựng ngành Công nghệ Thông tin Việt Nam ngày càng phát triển.
+Một lần nữa, em xin chân thành cảm ơn!
+Sinh viên thực hiện
+Phạm Văn Quỳnh Phúc
+NHẬN XÉT KẾT QUẢ THỰC TẬP
+(Dành cho Giảng viên hướng dẫn sinh viên thực tập)
+Họ tên sinh viên thực tập: Phạm Văn Quỳnh Phúc
+Ngày tháng năm sinh: 21/06/2004 
+Giảng viên hướng dẫn thực tập: Thầy Nguyễn Minh Tuấn 
+Sau thời gian sinh viên …………………………………. thực tập tốt nghiệp, tôi có nhận xét sau: 
+Về ý thức, thái độ của sinh viên: 
+Về đạo đức, tác phong: 
+Về năng lực chuyên môn: 
+Kết luận: 
+Nhận xét: 	
+Điểm: 	
+	 	 	 	 	 	 ……… ..., Ngày…… tháng…… năm……. 
+	 	 	 	 	 	 	 	 Giảng viên hướng dẫn 
+		MỤC LỤC
+LỜI CẢM ƠN	i
+MỤC LỤC	iii
+DANH MỤC CÁC HÌNH	vi
+MỞ ĐẦU	2
+Giới thiệu đề tài	2
+Lý do chọn đề tài	2
+Mục đích nghiên cứu	2
+Đối tượng và phạm vi nghiên cứu	3
+CHƯƠNG 1: TỔNG QUAN VỀ CÔNG NGHỆ WEB	5
+1.1 Tổng quan về các hướng nghiên cứu công nghệ web trong và ngoài nước	5
+1.2 Những vấn đề còn tồn tại	5
+1.3 Những vấn đề mà đề tài cần tập trung nghiên cứu giải quyết	6
+1.4 Xu hướng phát triển của thị trường đặt vé xem phim trực tuyến	6
+1.5 Các website đặt vé xem phim tiêu biểu	7
+CHƯƠNG 2: CƠ SỞ LÝ THUYẾT	8
+2.1 Cơ sở lý thuyết	8
+2.1.1 Kiến trúc hệ thống	8
+2.1.2 Mô hình MVC	8
+2.1.3 Công nghệ Frontend – ReactJS	8
+2.1.4 RESTful API	9
+2.1.5 Cơ sở dữ liệu MySQL	9
+2.2 Lý luận và giả thuyết khoa học	10
+2.2.1 Lý luận khoa học	10
+2.2.2 Giả thuyết khoa học	10
+2.3 Phương pháp nghiên cứu	10
+2.3.1 Phân tích yêu cầu	10
+2.3.2 Phân tích và thiết kế hệ thống	11
+2.3.3 Phát triển phần mềm	11
+2.4 Công cụ và phần mềm sử dụng	11
+2.5 Chi tiết về các công nghệ sử dụng	12
+2.5.1 ReactJS và các thư viện	12
+2.5.2 Spring Boot	15
+2.5.3 JWT (JSON Web Token)	16
+2.5.4 MySQL	17
+CHƯƠNG 3: PHÂN TÍCH VÀ THIẾT KẾ	19
+3.1 Phân tích yêu cầu hệ thống	19
+3.1.1. Mục tiêu của hệ thống	19
+3.1.2. Đối tượng sử dụng	19
+3.1.3. Yêu cầu chức năng	20
+3.1.4. Yêu cầu phi chức năng	20
+3.2 Phân tích và thiết kế cơ sở dữ liệu	20
+3.3 Thiết kế giao diện người dùng(UI)	21
+3.4 Thiết kế kiến trúc hệ thống	21
+3.5 Phân tích quy trình thực hiện	22
+3.6 Đánh giá kết quả thực nghiệm	23
+3.7 Mô hình phát triển phần mềm	23
+3.8 Các biểu đồ UML	23
+3.8.1 Use Case Diagram	23
+3.8.2 Class Diagram	26
+3.8.3 Sequence Diagram	30
+3.8.4 Activity Diagram	32
+3.9	Cách tổ chức dữ liệu và thiết kế chương trình cho website	33
+3.9.1. Bảng phim (movies):	33
+3.9.2. Bảng thể loại phim (categories):	34
+3.9.3. Bảng lịch chiếu (showtimes):	34
+3.9.4. Bảng ghế ngồi (seats):	34
+3.9.5. Bảng đơn đặt vé (bookings):	34
+3.9.6. Bảng chi tiết vé (tickets / booking_details) :	34
+3.9.7. Bảng đồ ăn vặt / Combo (snacks & booking_snacks) :	34
+3.9.8. Bảng tài khoản thành viên (users):	35
+3.9.9. Bảng rạp và phòng chiếu (cinemas & rooms) :	35
+CHƯƠNG 4: SẢN PHẨM VÀ KẾT QUẢ NGHIÊN CỨU	36
+4.1 Giới thiệu sản phẩm	36
+4.2 Các chức năng chính của hệ thống	36
+4.2.1 Trang người dùng (Khách hàng) :	36
+4.2.2 Trang quản trị (Admin) :	36
+4.2.3 Trang nhân viên (Staff) :	37
+4.3 Giao diện sản phẩm	37
+4.4 Kết quả đạt được	59
+4.5 Quá trình triển khai và kiếm thử	60
+4.5.1 Phương pháp triển khai	60
+4.5.2 Kiểm thử phần mềm	61
+KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN	64
+TÀI LIỆU THAM KHẢO	66
+DANH MỤC CÁC HÌNH
+Hình 1. Minh họa kiến trúc Component ReactJS của ứng dụng	15
+Hình 2. Sơ đồ luồng xử lý request trong Spring Boot	16
+Hình 3. Minh họa cấu trúc JWT	17
+Hình 4. Biểu đồ Use Case của hệ thống	24
+Hình 5. Biểu đồ Class Diagram của hệ thống	27
+Hình 6. Biểu đồ Sequence cho quy trình thanh toán	30
+Hình 7. Biểu đồ Activity cho quy trình	31
+Hình 8. Trang chủ người dùng	36
+Hình 9. Trang đăng ký	37
+Hình 10. Trang đăng nhập	37
+Hình 11. Trang đổi mật khẩu	38
+Hình 12. Trang hồ sơ cá nhân	39
+Hình 13. Trang danh mục phim	39
+Hình 14. Trang kết quả tìm kiếm phim	40
+Hình 15. Trang chi tiết phim	40
+Hình 16. Trang thanh toán	41
+Hình 17. Trang chỉnh thông tin đặt phim thành công và sẽ sinh ra mã qr mà bên nhân viên có thể scan ra được thông tin vé	42
+Hình 18 Bảng Điều Khiển (Dashboard)	43
+Hình 19 Trang danh sách sản phẩm (Admin)	44
+Hình 20 Trang thêm phim mới (Admin)	44
+Hình 21 Trang chỉnh sửa phim (Admin)	45
+Hình 22 Trang quản lý danh mục (Thêm, xóa)	45
+Hình 23 Trang sửa thể loại (Admin)	46
+Hình 24 Trang danh sách người dùng (Admin)	46
+Hình 25 Trang chi tiết và chỉnh sửa hồ sơ người dùng (Admin)	47
+Hình 26 Trang quản lý đặt vé và chi tiết vé  (Admin)	49
+Hình 27 Quản lý rạp chiếu	50
+Hình 28 Quản lý phòng chiếu	50
+Hình 29 Quản lý lịch chiếu	51
+Hình 30 Quản lý Báo cáo & Thống kê (Reports & Analytics)	52
+Hình 31 Bảng Điều Khiển Nhân Viên (Staff Dashboard)	53
+Hình 32 Bán Vé Tại Quầy (Ticket Sales / POS)	54
+Hình 33 Quản lý Ghế Ngồi & Bảo Trì (Seat Management)	55
+Hình 34 Quản lý Soát Vé tự động bằng Mã QR (Ticket Check-In)	56
+Hình 35 Lịch Sử Giao Dịch & Đối Soát (Transaction History)	57
+MỞ ĐẦU
+Giới thiệu đề tài
+Với sự phát triển mạnh mẽ của công nghệ thông tin và xu hướng số hóa trong lĩnh vực giải trí, việc đặt vé xem phim trực tuyến đã trở thành nhu cầu phổ biến của người dùng. Các hệ thống đặt vé trực tuyến giúp khách hàng dễ dàng tra cứu thông tin phim, lựa chọn suất chiếu, đặt ghế và thanh toán mà không cần đến trực tiếp rạp chiếu phim. Vì vậy, việc xây dựng một website đặt vé xem phim hiện đại, thân thiện với người dùng và đảm bảo hiệu suất hoạt động là rất cần thiết.
+Đề tài “Xây dựng website đặt vé xem phim trực tuyến” nhằm phát triển một hệ thống hỗ trợ người dùng tìm kiếm phim, xem lịch chiếu, chọn ghế, đặt vé và quản lý lịch sử giao dịch. Hệ thống sử dụng Java Spring Boot để phát triển backend, JavaScript (ReactJS) để xây dựng giao diện frontend và MySQL để quản lý cơ sở dữ liệu. Mục tiêu là xây dựng một nền tảng đặt vé trực tuyến tiện lợi, hiệu quả và có tính bảo mật cao.
+Lý do chọn đề tài
+Trong những năm gần đây, nhu cầu giải trí bằng hình thức xem phim tại rạp ngày càng tăng. Tuy nhiên, việc mua vé trực tiếp thường gây mất thời gian, đặc biệt vào các dịp cuối tuần hoặc khi có các bộ phim nổi bật được công chiếu. Các hệ thống đặt vé trực tuyến giúp khách hàng chủ động hơn trong việc lựa chọn phim, suất chiếu và vị trí ghế ngồi.
+Việc xây dựng một website đặt vé xem phim không chỉ mang tính thực tiễn cao mà còn giúp người thực hiện tiếp cận và ứng dụng các công nghệ phát triển web hiện đại. Do đó, đề tài “Xây dựng website đặt vé xem phim trực tuyến” là một lựa chọn phù hợp, tạo cơ hội nghiên cứu và phát triển một hệ thống có khả năng ứng dụng trong thực tế.
+Mục đích nghiên cứu
+Mục tiêu của đề tài là thiết kế và xây dựng một website đặt vé xem phim trực tuyến sử dụng Java Spring Boot cho backend và ReactJS (JavaScript) cho frontend. Hệ thống cung cấp các chức năng cơ bản của một website đặt vé xem phim như:
+Đăng ký và đăng nhập tài khoản. 
+Xem danh sách phim đang chiếu và sắp chiếu. 
+Tìm kiếm phim theo tên hoặc thể loại. 
+Xem thông tin chi tiết phim và lịch chiếu. 
+Chọn ghế ngồi và đặt vé trực tuyến. 
+Quản lý lịch sử đặt vé. 
+Quản lý phim, suất chiếu và người dùng dành cho quản trị viên. 
+Đề tài hướng tới việc xây dựng một hệ thống thân thiện với người dùng, tối ưu trải nghiệm đặt vé trực tuyến, đồng thời nghiên cứu các giải pháp kỹ thuật nhằm nâng cao hiệu suất và tính bảo mật của hệ thống.
+Đối tượng và phạm vi nghiên cứu
+Đối tượng nghiên cứu của đề tài là các giải pháp công nghệ phục vụ việc xây dựng và triển khai website đặt vé xem phim trực tuyến. Các công nghệ được áp dụng trong nghiên cứu bao gồm:
+Java Spring Boot: Xây dựng hệ thống backend và RESTful API. 
+ReactJS (JavaScript): Phát triển giao diện người dùng. 
+MySQL: Quản lý cơ sở dữ liệu. 
+JWT (JSON Web Token): Xác thực và phân quyền người dùng. 
+Phạm vi nghiên cứu tập trung vào việc phát triển các chức năng chính của hệ thống đặt vé xem phim như quản lý phim, suất chiếu, phòng chiếu, ghế ngồi, đặt vé, quản lý người dùng và lịch sử giao dịch. Hệ thống hướng đến việc đáp ứng nhu cầu đặt vé trực tuyến của khách hàng và hỗ trợ công tác quản lý cho rạp chiếu phim một cách hiệu quả.
+Nội dung trình bày trong đề tài: 
+Đề tài này được trình bày các nội dung chủ yếu như sau:
+Chương 1: Tổng quan về công nghệ Web.
+Chương 2: Cơ sở lý thuyết.
+Chương 3: Phân tích và thiết kế.
+Chương 4: Kết luận và phát triển.
+CHƯƠNG 1: TỔNG QUAN VỀ CÔNG NGHỆ WEB
+1.1 Tổng quan về các hướng nghiên cứu công nghệ web trong và ngoài nước
+Các nghiên cứu về công nghệ web, đặc biệt trong lĩnh vực phát triển các hệ thống đặt vé trực tuyến, đang ngày càng được quan tâm do nhu cầu số hóa các dịch vụ giải trí và thương mại. Trong bối cảnh công nghệ phát triển mạnh mẽ, các nghiên cứu tập trung vào việc nâng cao hiệu suất hệ thống, bảo mật dữ liệu và tối ưu trải nghiệm người dùng.
+Nghiên cứu trong nước:
+Tại Việt Nam, nhiều hệ thống đặt vé trực tuyến đã được triển khai trong các lĩnh vực như điện ảnh, vận tải và du lịch. Các nghiên cứu gần đây tập trung vào việc sử dụng các công nghệ hiện đại như ReactJS, Angular, Java Spring Boot và JWT để xây dựng các hệ thống có khả năng mở rộng, bảo mật và đáp ứng lượng truy cập lớn. Đặc biệt, việc tối ưu hóa trải nghiệm người dùng trong quá trình đặt vé và thanh toán trực tuyến được chú trọng.
+Nghiên cứu quốc tế:
+Trên thế giới, các hệ thống đặt vé trực tuyến được phát triển dựa trên các công nghệ hiện đại như ReactJS, VueJS cho frontend và Spring Boot, Node.js cho backend. Nhiều nghiên cứu tập trung vào việc cải thiện hiệu năng hệ thống, quản lý ghế ngồi theo thời gian thực, tích hợp thanh toán trực tuyến và áp dụng các cơ chế xác thực bảo mật như JWT, OAuth2 nhằm đảm bảo an toàn dữ liệu người dùng.
+1.2 Những vấn đề còn tồn tại
+Mặc dù công nghệ web đã có nhiều bước tiến vượt bậc, các hệ thống đặt vé xem phim trực tuyến vẫn còn tồn tại một số hạn chế cần được giải quyết.
+Bảo mật hệ thống:
+Các website đặt vé trực tuyến thường lưu trữ thông tin tài khoản, lịch sử giao dịch và dữ liệu thanh toán của người dùng. Vì vậy, hệ thống phải đối mặt với nhiều nguy cơ như SQL Injection, Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF) và đánh cắp phiên đăng nhập. Các giải pháp bảo mật như JWT và mã hóa dữ liệu cần được áp dụng hiệu quả hơn.
+Quản lý ghế ngồi và đặt vé đồng thời:
+Một trong những vấn đề quan trọng là xử lý nhiều người dùng cùng chọn một ghế tại cùng thời điểm. Nếu không có cơ chế khóa ghế hoặc cập nhật thời gian thực, có thể xảy ra tình trạng đặt trùng ghế gây ảnh hưởng đến trải nghiệm khách hàng.
+Tối ưu hiệu suất và trải nghiệm người dùng:
+Hệ thống phải xử lý lượng lớn dữ liệu phim, suất chiếu và người dùng truy cập cùng lúc. Việc tối ưu hóa tốc độ tải trang, hình ảnh phim và các thao tác đặt vé là yếu tố quan trọng nhằm nâng cao trải nghiệm người dùng.
+1.3 Những vấn đề mà đề tài cần tập trung nghiên cứu giải quyết
+Đề tài tập trung nghiên cứu và giải quyết các vấn đề sau:
+Tối ưu hóa trải nghiệm người dùng:
+Nghiên cứu và áp dụng các kỹ thuật như Lazy Loading, Code Splitting và tối ưu hình ảnh để giảm thời gian tải trang, giúp người dùng dễ dàng tra cứu phim, chọn suất chiếu và đặt vé.
+Bảo mật hệ thống:
+Triển khai cơ chế xác thực và phân quyền bằng JWT, mã hóa mật khẩu bằng BCrypt và bảo vệ các API quan trọng nhằm đảm bảo an toàn thông tin người dùng.
+Quản lý đặt vé và ghế ngồi:
+Xây dựng cơ chế quản lý ghế ngồi hiệu quả, hỗ trợ lựa chọn ghế trực quan, hạn chế tình trạng đặt trùng ghế và quản lý lịch sử giao dịch của khách hàng.
+Xây dựng hệ thống API hiệu quả:
+Phát triển các API RESTful phục vụ quản lý phim, suất chiếu, phòng chiếu, ghế ngồi và đặt vé, đảm bảo khả năng mở rộng, bảo mật và dễ dàng tích hợp với frontend.
+1.4 Xu hướng phát triển của thị trường đặt vé xem phim trực tuyến
+Thị trường giải trí trực tuyến đang phát triển mạnh mẽ cùng với nhu cầu xem phim tại rạp ngày càng tăng. Các hệ thống đặt vé trực tuyến giúp khách hàng chủ động lựa chọn suất chiếu, vị trí ghế ngồi và thanh toán nhanh chóng mà không cần đến trực tiếp rạp.
+Một số xu hướng nổi bật hiện nay gồm:
+Đặt vé trực tuyến trên thiết bị di động ngày càng phổ biến.
+Tích hợp thanh toán điện tử như MoMo, VNPay, ZaloPay và thẻ ngân hàng.
+Cá nhân hóa trải nghiệm người dùng dựa trên lịch sử xem phim.
+Áp dụng mã QR để kiểm tra vé điện tử tại rạp.
+Đồng bộ dữ liệu theo thời gian thực giữa hệ thống quản lý rạp và người dùng.
+1.5 Các website đặt vé xem phim tiêu biểu
+Để có cái nhìn tổng quan về thị trường và học hỏi từ các hệ thống hiện có, nhóm đã tham khảo một số website đặt vé xem phim nổi bật:
+1. CGV Cinemas
+Là một trong những hệ thống rạp chiếu phim lớn nhất Việt Nam. Website CGV cung cấp giao diện hiện đại, hỗ trợ đặt vé trực tuyến, lựa chọn ghế ngồi trực quan và tích hợp nhiều phương thức thanh toán.
+2. Galaxy Cinema
+Galaxy Cinema sở hữu giao diện thân thiện với người dùng, cung cấp đầy đủ thông tin phim, lịch chiếu và các chương trình khuyến mãi. Hệ thống đặt vé được tối ưu cho cả máy tính và thiết bị di động.
+3. BHD Star Cineplex
+BHD Star là chuỗi rạp chiếu phim lớn tại Việt Nam với hệ thống đặt vé trực tuyến hiện đại, hỗ trợ lựa chọn ghế, thanh toán trực tuyến và quản lý lịch sử giao dịch của khách hàng.
+4. Lotte Cinema
+Lotte Cinema cung cấp nền tảng đặt vé trực tuyến với giao diện trực quan, tích hợp nhiều chương trình ưu đãi và hệ thống thành viên giúp nâng cao trải nghiệm khách hàng.
+CHƯƠNG 2: CƠ SỞ LÝ THUYẾT
+2.1 Cơ sở lý thuyết
+2.1.1 Kiến trúc hệ thống
+Hệ thống đặt vé xem phim trực tuyến được xây dựng theo mô hình Client-Server. Frontend được phát triển bằng ReactJS, đóng vai trò giao diện người dùng, gửi các yêu cầu đến Backend thông qua RESTful API. Backend sử dụng Java Spring Boot để xử lý nghiệp vụ, xác thực người dùng và tương tác với cơ sở dữ liệu MySQL.
+Kiến trúc này giúp tách biệt rõ ràng giữa giao diện và xử lý dữ liệu, giúp hệ thống dễ bảo trì, mở rộng và nâng cấp trong tương lai.
+2.1.2 Mô hình MVC
+Spring Boot áp dụng mô hình MVC (Model - View - Controller) nhằm tổ chức mã nguồn khoa học và dễ quản lý:
+Model: Đại diện cho dữ liệu như Người dùng, Phim, Suất chiếu, Ghế ngồi, Vé,...
+View: Giao diện người dùng được xây dựng bằng ReactJS.
+Controller: Tiếp nhận yêu cầu từ người dùng, xử lý nghiệp vụ và trả về dữ liệu.
+Việc áp dụng mô hình MVC giúp giảm sự phụ thuộc giữa các thành phần và nâng cao khả năng bảo trì hệ thống.
+2.1.3 Công nghệ Frontend – ReactJS
+ReactJS là thư viện JavaScript mã nguồn mở được phát triển bởi Facebook. ReactJS hỗ trợ xây dựng giao diện người dùng theo mô hình component giúp tái sử dụng mã nguồn hiệu quả.
+Các ưu điểm nổi bật:
+Virtual DOM giúp tăng tốc độ hiển thị.
+Component-based Architecture dễ quản lý.
+Hỗ trợ SPA (Single Page Application).
+Tương thích tốt với RESTful API.
+Trong hệ thống này, ReactJS được sử dụng để xây dựng các trang:
+Trang chủ
+Trang chi tiết phim
+Trang đặt vé
+Trang đăng nhập, đăng ký
+Trang lịch sử đặt vé
+2.1.4 RESTful API
+RESTful API là phương thức giao tiếp giữa Frontend và Backend thông qua giao thức HTTP.
+Các phương thức chính:
+GET: Lấy dữ liệu phim, lịch chiếu.
+POST: Đăng ký, đăng nhập, đặt vé.
+PUT: Cập nhật thông tin người dùng.
+DELETE: Hủy vé hoặc xóa dữ liệu.
+Spring Boot cung cấp các API phục vụ việc quản lý:
+Người dùng
+Phim
+Suất chiếu
+Đặt vé
+Thanh toán
+2.1.5 Cơ sở dữ liệu MySQL
+MySQL là hệ quản trị cơ sở dữ liệu quan hệ được sử dụng để lưu trữ toàn bộ dữ liệu hệ thống.
+Các bảng dữ liệu chính:
+Users
+Users Roles
+Movies
+Showtimes
+Seats
+Bookings
+Cinemas
+Categories
+Roles
+Snacks
+Tickets
+Bookings Details
+Bookings Snacks
+Bookings Seats
+Rooms
+MySQL hỗ trợ khả năng truy vấn nhanh, tính toàn vẹn dữ liệu cao và dễ dàng tích hợp với Spring Data JPA.
+2.2 Lý luận và giả thuyết khoa học
+2.2.1 Lý luận khoa học
+Việc sử dụng ReactJS và Spring Boot giúp tách biệt Frontend và Backend, tăng hiệu suất và khả năng mở rộng.
+JWT được sử dụng để xác thực và phân quyền người dùng một cách bảo mật.
+RESTful API giúp giao tiếp dữ liệu nhanh chóng và dễ dàng tích hợp với các hệ thống khác.
+Hệ thống đặt vé trực tuyến giúp giảm thời gian chờ đợi và nâng cao trải nghiệm khách hàng.
+2.2.2 Giả thuyết khoa học
+Hệ thống đặt vé xem phim được xây dựng với các giả thiết:
+Giao diện thân thiện giúp người dùng dễ dàng tìm kiếm và đặt vé.
+Hệ thống quản lý ghế ngồi trực tuyến giúp hạn chế tình trạng trùng vé.
+Việc sử dụng Spring Boot và ReactJS giúp nâng cao hiệu suất và tính ổn định.
+Thanh toán trực tuyến giúp rút ngắn quy trình mua vé.
+2.3 Phương pháp nghiên cứu
+2.3.1 Phân tích yêu cầu
+Khảo sát nhu cầu của:
+Khách hàng đặt vé
+Nhân viên rạp
+Quản trị viên
+Từ đó xác định các chức năng:
+Đăng ký, đăng nhập
+Xem phim
+Xem lịch chiếu
+Chọn ghế
+Đặt vé
+Thanh toán
+Quản lý phim và suất chiếu
+2.3.2 Phân tích và thiết kế hệ thống
+Sử dụng UML để thiết kế:
+Use Case Diagram
+Class Diagram
+Sequence Diagram
+Activity Diagram
+Thiết kế cơ sở dữ liệu và luồng xử lý nghiệp vụ.
+2.3.3 Phát triển phần mềm
+Frontend: ReactJS
+Backend: Java Spring Boot
+Database: MySQL
+Authentication: JWT
+API Testing: Postman
+2.4 Công cụ và phần mềm sử dụng
+STT
+Công cụ / Phần mềm
+Mục đích sử dụng
+1
+Visual Studio Code
+Lập trình Frontend ReactJS
+2
+IntelliJ IDEA
+Lập trình Backend Spring Boot
+3
+ReactJS
+Xây dựng giao diện người dùng
+4
+Java Spring Boot
+Xây dựng REST API
+5
+MySQL
+Quản lý cơ sở dữ liệu
+6
+JWT
+Xác thực người dùng
+7
+Postman
+Kiểm thử API
+8
+Git & GitHub
+Quản lý mã nguồn
+9
+Bootstrap
+Thiết kế giao diện
+10
+Maven
+Quản lý thư viện Java
+2.5 Chi tiết về các công nghệ sử dụng
+2.5.1 ReactJS và các thư viện
+ReactJS được sử dụng để xây dựng giao diện website đặt vé xem phim.
+Các tính năng nổi bật:
+Virtual DOM
+React Hooks
+Component-based Architecture
+React Router
+Các thư viện hỗ trợ:
+Axios: Gọi API từ Backend
+React Router DOM: Điều hướng trang
+Bootstrap: Thiết kế giao diện
+React Toastify: Hiển thị thông báo
+Hệ thống sử dụng ReactJS để xây dựng các trang như trang chủ, chi tiết phim, đặt vé, thanh toán và lịch sử đặt vé.
+Hình 1. Minh họa kiến trúc Component ReactJS của ứng dụng
+2.5.2 Spring Boot
+Spring Boot là framework Java được sử dụng để phát triển Backend.
+Các tính năng được áp dụng:
+Spring Web
+Spring Security
+Spring Data JPA
+Spring Validation
+Spring Boot DevTools
+Spring Boot đảm nhận các chức năng:
+Quản lý người dùng
+Quản lý phim
+Quản lý lịch chiếu
+Quản lý đặt vé
+Thanh toán trực tuyến
+Hình 2. Sơ đồ luồng xử lý request trong Spring Boot
+2.5.3 JWT (JSON Web Token)
+JWT được sử dụng để xác thực người dùng.
+JWT gồm 3 phần:
+Header
+Payload
+Signature
+Sau khi đăng nhập thành công, hệ thống sẽ cấp JWT Token để người dùng truy cập các chức năng được bảo vệ.
+Ưu điểm:
+Bảo mật cao
+Không lưu session trên server
+Dễ dàng mở rộng
+Hình 3. Minh họa cấu trúc JWT
+2.5.4 MySQL
+MySQL là hệ quản trị cơ sở dữ liệu chính của hệ thống.
+Ưu điểm:
+Hiệu suất cao
+Hỗ trợ Transaction
+Dễ tích hợp với Spring Boot
+Bảo mật tốt
+MySQL được sử dụng để lưu trữ:
+Tài khoản người dùng
+Danh sách phim
+Suất chiếu
+Ghế ngồi
+Vé đã đặt
+Thông tin thanh toán
+Nhờ đó hệ thống có thể quản lý dữ liệu một cách hiệu quả và đảm bảo tính toàn vẹn trong quá trình vận hành.
+CHƯƠNG 3: PHÂN TÍCH VÀ THIẾT KẾ
+3.1 Phân tích yêu cầu hệ thống
+3.1.1. Mục tiêu của hệ thống
+Đề tài hướng tới xây dựng hệ thống quản lý rạp chiếu phim kết hợp đặt vé trực tuyến nhằm hỗ trợ khách hàng thực hiện toàn bộ quy trình đặt vé trên môi trường trực tuyến, đồng thời cung cấp các chức năng quản lý và vận hành dành cho nhân viên và quản trị viên.
+Hệ thống đáp ứng các nhu cầu chính như: quản lý thông tin phim, rạp chiếu, phòng chiếu, lịch chiếu, đặt vé, lựa chọn ghế ngồi, mua combo bắp nước, thanh toán trực tuyến, quản lý người dùng, thống kê doanh thu và kiểm soát vé bằng mã QR.
+3.1.2. Đối tượng sử dụng
+Hệ thống được xây dựng theo mô hình phân quyền dựa trên vai trò (Role-Based Access Control – RBAC), gồm ba nhóm người dùng:
+Khách hàng (Customer)
+Đăng ký, đăng nhập tài khoản.
+Xem thông tin phim và lịch chiếu.
+Chọn ghế ngồi.
+Đặt vé và mua combo.
+Thanh toán trực tuyến qua VNPAY.
+Xem lịch sử giao dịch và vé điện tử.
+Nhân viên (Staff)
+Bán vé trực tiếp tại quầy thông qua giao diện POS.
+Quản lý giao dịch trong ca làm việc.
+Quét mã QR để kiểm tra vé của khách.
+Hỗ trợ khách hàng trong quá trình sử dụng dịch vụ.
+Quản trị viên (Admin)
+Quản lý người dùng.
+Quản lý phim, rạp, phòng chiếu và ghế.
+Quản lý lịch chiếu.
+Quản lý đơn đặt vé.
+Theo dõi và thống kê doanh thu của hệ thống.
+3.1.3. Yêu cầu chức năng
+Hệ thống cần đáp ứng các chức năng chính sau:
+Quản lý tài khoản và phân quyền người dùng.
+Quản lý phim, thể loại, rạp chiếu, phòng chiếu và lịch chiếu.
+Hiển thị sơ đồ ghế và cho phép khách hàng lựa chọn ghế.
+Đồng bộ trạng thái ghế theo thời gian thực thông qua WebSocket nhằm hạn chế tình trạng nhiều người cùng đặt một ghế.
+Hỗ trợ đặt vé, mua combo và thanh toán trực tuyến qua VNPAY.
+Sinh mã QR cho vé điện tử sau khi thanh toán thành công.
+Hỗ trợ nhân viên bán vé tại quầy và kiểm tra vé bằng mã QR.
+Cung cấp chức năng thống kê và báo cáo doanh thu cho quản trị viên.
+3.1.4. Yêu cầu phi chức năng
+Hệ thống phản hồi nhanh đối với các thao tác thông thường.
+Dữ liệu được lưu trữ tập trung trên MySQL.
+Mật khẩu người dùng được mã hóa bằng BCrypt.
+API được bảo vệ bằng Spring Security kết hợp JWT.
+Dữ liệu trao đổi giữa Frontend và Backend sử dụng định dạng JSON thông qua RESTful API.
+Các giao dịch đặt vé được thực hiện trong Transaction nhằm đảm bảo tính toàn vẹn dữ liệu.
+Hệ thống có khả năng mở rộng và bảo trì nhờ kiến trúc phân tầng.
+3.2 Phân tích và thiết kế cơ sở dữ liệu
+Hệ thống sử dụng MySQL kết hợp với Spring Data JPA để quản lý dữ liệu. Cơ sở dữ liệu được thiết kế theo hướng chuẩn hóa nhằm giảm dư thừa dữ liệu và đảm bảo tính toàn vẹn.
+Các bảng chính bao gồm:
+Users: Quản lý tài khoản và phân quyền.
+Movies: Quản lý thông tin phim.
+Cinemas: Quản lý rạp chiếu.
+Rooms: Quản lý phòng chiếu.
+Seats: Quản lý sơ đồ ghế.
+Showtimes: Quản lý lịch chiếu.
+Bookings: Quản lý đơn đặt vé.
+Tickets: Lưu thông tin từng vé.
+Combos: Quản lý các sản phẩm bắp nước.
+Payments: Quản lý thông tin thanh toán.
+Quan hệ giữa các bảng được xây dựng thông qua khóa chính và khóa ngoại nhằm đảm bảo tính nhất quán của dữ liệu.	
+3.3 Thiết kế giao diện người dùng(UI)
+Giao diện được phát triển bằng ReactJS theo mô hình Single Page Application (SPA), giúp cải thiện tốc độ phản hồi và trải nghiệm người dùng.
+Giao diện khách hàng
+Trang chủ hiển thị danh sách phim đang chiếu và sắp chiếu.
+Trang chi tiết phim.
+Trang lựa chọn lịch chiếu.
+Trang chọn ghế.
+Trang chọn combo.
+Trang thanh toán.
+Trang lịch sử đặt vé.
+Giao diện nhân viên
+Giao diện POS bán vé tại quầy.
+Quản lý giao dịch.
+Quét mã QR để kiểm tra vé.
+Giao diện quản trị
+Dashboard thống kê doanh thu.
+Quản lý phim.
+Quản lý rạp.
+Quản lý phòng chiếu.
+Quản lý lịch chiếu.
+Quản lý người dùng.
+Quản lý đơn đặt vé.
+3.4 Thiết kế kiến trúc hệ thống
+Hệ thống được xây dựng theo kiến trúc Client–Server và mô hình ba lớp (Three-tier Architecture).
+Frontend
+Sử dụng ReactJS để xây dựng giao diện người dùng. Frontend giao tiếp với Backend thông qua RESTful API bằng Axios và cập nhật dữ liệu thời gian thực bằng WebSocket.
+Backend
+Được xây dựng bằng Spring Boot theo kiến trúc Controller – Service – Repository.
+Controller tiếp nhận và xử lý các yêu cầu HTTP.
+Service xử lý nghiệp vụ của hệ thống.
+Repository thực hiện thao tác với cơ sở dữ liệu thông qua Spring Data JPA.
+Spring Security kết hợp JWT được sử dụng để xác thực và phân quyền người dùng.
+WebSocket được tích hợp để đồng bộ trạng thái ghế và gửi thông báo thời gian thực.
+Database
+MySQL chịu trách nhiệm lưu trữ toàn bộ dữ liệu của hệ thống.
+3.5 Phân tích quy trình thực hiện
+Quá trình phát triển được chia thành các giai đoạn sau:
+Giai đoạn 1
+Phân tích yêu cầu, thiết kế cơ sở dữ liệu và giao diện.
+Giai đoạn 2
+Xây dựng Backend với Spring Boot, thiết kế cơ sở dữ liệu và xây dựng các API.
+Giai đoạn 3
+Phát triển giao diện ReactJS và kết nối với Backend.
+Giai đoạn 4
+Tích hợp VNPAY, WebSocket, QR Code và hoàn thiện các chức năng nghiệp vụ.
+Giai đoạn 5
+Kiểm thử hệ thống, sửa lỗi, tối ưu giao diện và hoàn thiện báo cáo.
+3.6 Đánh giá kết quả thực nghiệm
+Kết quả kiểm thử cho thấy hệ thống hoạt động ổn định và đáp ứng các chức năng đã đề ra.
+Chức năng đăng ký, đăng nhập và phân quyền hoạt động đúng theo thiết kế.
+Chức năng đặt vé và lựa chọn ghế hoạt động chính xác.
+WebSocket đồng bộ trạng thái ghế theo thời gian thực, góp phần hạn chế tình trạng đặt trùng ghế.
+Thanh toán VNPAY hoạt động đúng quy trình, trạng thái đơn hàng được cập nhật sau khi thanh toán thành công.
+Chức năng tạo và kiểm tra vé bằng mã QR hoạt động đúng yêu cầu.
+Dashboard thống kê và các chức năng quản trị vận hành ổn định trong quá trình kiểm thử.
+3.7 Mô hình phát triển phần mềm
+Dự án được triển khai theo mô hình Agile kết hợp Scrum nhằm tăng tính linh hoạt trong quá trình phát triển.
+Quy trình bao gồm:
+Xây dựng Product Backlog.
+Lập kế hoạch Sprint.
+Thực hiện Daily Scrum để theo dõi tiến độ.
+Demo sản phẩm sau mỗi Sprint.
+Đánh giá và cải tiến sau mỗi Sprint thông qua Sprint Retrospective.
+Việc áp dụng Agile/Scrum giúp nhóm dễ dàng quản lý tiến độ, phát hiện và xử lý lỗi sớm, đồng thời nâng cao chất lượng sản phẩm trước khi hoàn thiện.
+3.8 Các biểu đồ UML
+3.8.1 Use Case Diagram
+Use Case Diagram là biểu đồ dùng để mô tả sự tương tác giữa các tác nhân (Actors) bên ngoài với hệ thống. Biểu đồ giúp xác định các chức năng mà hệ thống cung cấp cho từng nhóm người dùng, đồng thời thể hiện phạm vi hoạt động của hệ thống và mối quan hệ giữa các chức năng.
+Trong hệ thống Web Đặt Vé Xem Phim, có ba tác nhân chính gồm Khách hàng (Customer), Nhân viên (Staff) và Quản trị viên (Admin).
+Khách hàng (Customer) là người sử dụng website để tìm kiếm thông tin phim, lựa chọn suất chiếu, đặt vé và thanh toán trực tuyến.
+Nhân viên (Staff) là người làm việc tại rạp, chịu trách nhiệm bán vé trực tiếp tại quầy, hỗ trợ khách hàng, thực hiện check-in và quản lý tình trạng ghế ngồi.
+Quản trị viên (Admin) là người quản lý toàn bộ hệ thống, có quyền thực hiện tất cả các chức năng của Nhân viên, đồng thời quản lý dữ liệu, tài khoản và theo dõi hoạt động của hệ thống.
+Chức năng của Khách hàng
+Khách hàng có thể thực hiện các chức năng sau:
+Đăng ký tài khoản.
+Đăng nhập hệ thống.
+Xem danh sách phim đang chiếu và sắp chiếu.
+Xem thông tin chi tiết của từng bộ phim.
+Tra cứu lịch chiếu theo rạp và thời gian.
+Lựa chọn rạp chiếu, suất chiếu và ghế ngồi.
+Lựa chọn các sản phẩm đồ ăn, nước uống (Snacks) đi kèm.
+Đặt vé xem phim.
+Thanh toán trực tuyến thông qua cổng thanh toán VNPAY.
+Xem lịch sử và thông tin các vé đã đặt.
+Trong quá trình đặt vé, người dùng phải thực hiện lần lượt các bước chọn rạp, chọn suất chiếu, chọn ghế và thanh toán trước khi hệ thống xác nhận đặt vé thành công.
+Chức năng của Nhân viên
+Nhân viên là người trực tiếp phục vụ khách hàng tại rạp, với các chức năng chính bao gồm:
+Đăng nhập vào hệ thống quản lý.
+Bán vé trực tiếp tại quầy và thu tiền mặt.
+Hỗ trợ khách hàng lựa chọn suất chiếu và ghế ngồi.
+Check-in (soát vé) khi khách đến xem phim.
+Khóa hoặc mở khóa ghế ngồi trong trường hợp ghế bảo trì hoặc không thể sử dụng.
+Các chức năng này giúp quá trình bán vé tại rạp được thực hiện nhanh chóng và hỗ trợ kiểm soát tình trạng ghế trong từng phòng chiếu.
+Chức năng của Quản trị viên
+Quản trị viên có toàn quyền quản lý hệ thống và kế thừa toàn bộ các chức năng của Nhân viên. Ngoài các chức năng bán vé và check-in, Quản trị viên còn có thể:
+Quản lý thông tin phim (thêm, sửa, xóa).
+Quản lý danh mục (thể loại) phim.
+Quản lý rạp chiếu.
+Quản lý phòng chiếu.
+Quản lý ghế ngồi.
+Quản lý lịch chiếu phim.
+Quản lý sản phẩm đồ ăn, nước uống (Snacks).
+Quản lý tài khoản khách hàng.
+Quản lý tài khoản nhân viên.
+Quản lý đơn đặt vé.
+Theo dõi doanh thu và thống kê hoạt động của hệ thống.
+Những chức năng này giúp Quản trị viên kiểm soát toàn bộ dữ liệu và hoạt động của hệ thống, đảm bảo việc vận hành rạp chiếu phim diễn ra hiệu quả.
+Mối quan hệ giữa các Actors và Use Case:
+Trong biểu đồ Use Case, Quản trị viên (Admin) kế thừa toàn bộ quyền hạn của Nhân viên (Staff) thông qua quan hệ Generalization, do đó Admin có thể thực hiện tất cả các chức năng của Staff và được bổ sung thêm các chức năng quản trị hệ thống.
+Bên cạnh đó, một số chức năng trong hệ thống có mối quan hệ <<include>>, thể hiện rằng một chức năng lớn sẽ bao gồm nhiều chức năng nhỏ bắt buộc phải thực hiện. Ví dụ, chức năng Đặt vé bao gồm các bước Chọn rạp, Chọn suất chiếu, Chọn ghế, Chọn đồ ăn (nếu có) và Thanh toán trực tuyến. Trong khi đó, chức năng Thanh toán trực tuyến sẽ bao gồm việc kết nối và xử lý giao dịch thông qua VNPAY. Đối với chức năng Bán vé tại quầy, hệ thống cũng bao gồm việc lựa chọn ghế ngồi và xác nhận thanh toán bằng tiền mặt.
+Nhờ việc sử dụng Use Case Diagram, hệ thống thể hiện rõ phạm vi chức năng của từng nhóm người dùng, đồng thời mô tả trực quan mối quan hệ giữa các tác nhân và các chức năng nghiệp vụ. Đây là cơ sở quan trọng để xây dựng các biểu đồ phân tích khác như Sequence Diagram, Activity Diagram và Class Diagram trong quá trình phân tích và thiết kế hệ thống.
+Hình 4. Biểu đồ Use Case của hệ thống
+3.8.2 Class Diagram
+Class Diagram là biểu đồ dùng để mô tả cấu trúc tĩnh của hệ thống thông qua các lớp (Class), bao gồm các thuộc tính (Attributes), phương thức (Methods) và mối quan hệ giữa các lớp. Đây là một trong những biểu đồ quan trọng của UML, giúp mô hình hóa dữ liệu và xác định cách các đối tượng trong hệ thống tương tác với nhau.
+Trong hệ thống Web Đặt Vé Xem Phim, Class Diagram được xây dựng dựa trên các thực thể trong cơ sở dữ liệu và các đối tượng nghiệp vụ của hệ thống. Mỗi lớp đại diện cho một đối tượng cụ thể, đồng thời có mối liên kết với các lớp khác nhằm đáp ứng quy trình quản lý và đặt vé xem phim.
+Lớp User:
+Lớp User lưu trữ thông tin tài khoản của tất cả người dùng trong hệ thống, bao gồm khách hàng, nhân viên và quản trị viên. Mỗi tài khoản chứa các thông tin như họ tên, email, số điện thoại, mật khẩu, địa chỉ và trạng thái hoạt động. Ngoài ra, mỗi người dùng sẽ được gán một vai trò (Role) để xác định quyền truy cập và các chức năng được phép sử dụng trong hệ thống.
+Lớp Role:
+Lớp Role dùng để quản lý phân quyền của hệ thống. Mỗi vai trò sẽ quy định quyền hạn của người dùng, chẳng hạn như Admin, Staff hoặc Customer. Một Role có thể được gán cho nhiều User, trong khi mỗi User chỉ thuộc về một Role.
+Lớp Movie :
+Lớp Movie lưu trữ toàn bộ thông tin của bộ phim như tên phim, mô tả, thời lượng, ngày khởi chiếu, ngôn ngữ, quốc gia sản xuất, đạo diễn, diễn viên, trailer, poster và trạng thái hiển thị. Đây là lớp trung tâm phục vụ cho việc xây dựng lịch chiếu và đặt vé.
+Lớp Category:
+Lớp Category dùng để lưu thông tin thể loại hoặc danh mục của phim như Hành động, Kinh dị, Hoạt hình, Tình cảm, Viễn tưởng,… Một danh mục có thể chứa nhiều bộ phim, trong khi mỗi bộ phim thuộc về một danh mục chính.
+Lớp Cinema:
+Lớp Cinema lưu thông tin về các cụm rạp chiếu phim, bao gồm tên rạp, địa chỉ, số điện thoại liên hệ và các thông tin cần thiết khác. Mỗi rạp sẽ quản lý nhiều phòng chiếu khác nhau.
+Lớp Room:
+Lớp Room lưu thông tin của từng phòng chiếu thuộc một rạp. Mỗi phòng có tên phòng, sức chứa, loại phòng và trạng thái hoạt động. Một phòng chiếu sẽ bao gồm nhiều ghế ngồi và được sử dụng để tổ chức nhiều suất chiếu khác nhau.
+Lớp Seat:
+Lớp Seat lưu trữ thông tin về các ghế ngồi trong từng phòng chiếu. Mỗi ghế có mã ghế, hàng ghế, loại ghế (thường hoặc VIP) và trạng thái sử dụng. Ghế sẽ được sử dụng khi khách hàng lựa chọn vị trí ngồi trong quá trình đặt vé.
+Lớp Showtime:
+Lớp Showtime lưu thông tin lịch chiếu của từng bộ phim tại từng phòng chiếu. Mỗi lịch chiếu bao gồm thời gian bắt đầu, thời gian kết thúc, giá vé và phòng chiếu tương ứng. Một bộ phim có thể có nhiều lịch chiếu khác nhau tại nhiều rạp.
+Lớp Booking:
+Lớp Booking lưu thông tin tổng quan của đơn đặt vé. Thông tin bao gồm mã đơn hàng, thời gian đặt, tổng tiền, phương thức thanh toán, trạng thái thanh toán và khách hàng thực hiện đặt vé. Một đơn đặt vé có thể bao gồm nhiều vé xem phim và nhiều sản phẩm đồ ăn đi kèm.
+Lớp Ticket:
+Lớp Ticket lưu thông tin chi tiết của từng vé xem phim trong một đơn đặt vé. Mỗi vé bao gồm mã QR để check-in, vị trí ghế ngồi, giá vé và suất chiếu tương ứng. Một đơn đặt vé có thể chứa nhiều Ticket, mỗi Ticket đại diện cho một ghế được đặt.
+Lớp Snack:
+Lớp Snack quản lý các sản phẩm đồ ăn và nước uống được bán tại rạp. Thông tin bao gồm tên sản phẩm, mô tả, đơn giá, hình ảnh minh họa và trạng thái kinh doanh. Khách hàng có thể lựa chọn nhiều loại Snack khi thực hiện đặt vé.
+Lớp BookingSnack:
+Lớp BookingSnack là lớp trung gian dùng để quản lý mối quan hệ nhiều – nhiều giữa Booking và Snack. Lớp này lưu thông tin về số lượng, đơn giá tại thời điểm đặt và thành tiền của từng sản phẩm đồ ăn trong một đơn hàng. Nhờ đó hệ thống có thể quản lý chi tiết các sản phẩm đi kèm của từng đơn đặt vé.
+Mối quan hệ giữa các lớp
+Trong Class Diagram, các lớp được liên kết với nhau thông qua các mối quan hệ Association, One-to-One, One-to-Many và Many-to-Many nhằm phản ánh đúng nghiệp vụ của hệ thống.
+Một Role có thể được gán cho nhiều User, trong khi mỗi User chỉ thuộc một Role.
+Một Category có thể quản lý nhiều Movie, nhưng mỗi Movie chỉ thuộc một Category.
+Một Cinema có nhiều Room, và mỗi Room chỉ thuộc một Cinema.
+Một Room có nhiều Seat, mỗi Seat chỉ thuộc một phòng chiếu.
+Một Movie có nhiều Showtime, đồng thời một Room cũng có nhiều Showtime.
+Một User có thể tạo nhiều Booking, nhưng mỗi Booking chỉ thuộc về một người dùng.
+Một Booking có nhiều Ticket, trong khi mỗi Ticket chỉ thuộc về một đơn đặt vé.
+Một Showtime có nhiều Ticket, tương ứng với các ghế được đặt trong suất chiếu đó.
+Quan hệ giữa Booking và Snack là quan hệ nhiều – nhiều và được cài đặt thông qua lớp BookingSnack để lưu số lượng và giá của từng sản phẩm.
+Class Diagram đóng vai trò là nền tảng trong quá trình thiết kế hệ thống, giúp mô tả đầy đủ các thực thể, mối quan hệ giữa các đối tượng và là cơ sở để xây dựng cơ sở dữ liệu cũng như triển khai các chức năng trong hệ thống Web Đặt Vé Xem Phim.
+Hình 5. Biểu đồ Class Diagram của hệ thống
+3.8.3 Sequence Diagram
+Sequence Diagram là biểu đồ dùng để mô tả trình tự trao đổi thông điệp giữa các đối tượng trong hệ thống theo thời gian nhằm thực hiện một chức năng cụ thể. Biểu đồ giúp thể hiện rõ quá trình xử lý của hệ thống, thứ tự thực hiện các thao tác giữa người dùng và các thành phần bên trong, từ đó hỗ trợ việc phân tích và thiết kế phần mềm một cách trực quan và chính xác.
+Trong hệ thống Web Đặt Vé Xem Phim, Sequence Diagram được xây dựng cho các quy trình nghiệp vụ quan trọng như đăng ký và đăng nhập, tra cứu thông tin phim, đặt vé và thanh toán trực tuyến.
+Sequence Diagram cho quy trình đăng ký và đăng nhập hệ thống:
+Quy trình đăng ký và đăng nhập mô tả quá trình người dùng tương tác với hệ thống để tạo tài khoản mới hoặc xác thực tài khoản đã có. Khi người dùng thực hiện đăng ký, hệ thống sẽ tiếp nhận thông tin, kiểm tra tính hợp lệ của dữ liệu và xác minh xem email hoặc số điện thoại đã tồn tại hay chưa. Nếu thông tin hợp lệ và chưa tồn tại trong hệ thống, dữ liệu sẽ được lưu vào cơ sở dữ liệu và tài khoản được tạo thành công.
+Đối với chức năng đăng nhập, người dùng nhập email và mật khẩu, hệ thống tiến hành xác thực thông tin với dữ liệu đã lưu. Nếu thông tin chính xác, hệ thống tạo phiên đăng nhập (Session hoặc JWT Token), phân quyền theo vai trò của người dùng và chuyển đến giao diện tương ứng. Ngược lại, nếu thông tin không hợp lệ, hệ thống sẽ thông báo lỗi và yêu cầu người dùng đăng nhập lại.
+Sequence Diagram cho quy trình tìm kiếm, tra cứu lịch chiếu và xem chi tiết bộ phim:
+Quy trình này mô tả quá trình khách hàng tìm kiếm thông tin phim trước khi thực hiện đặt vé. Người dùng có thể nhập từ khóa tìm kiếm hoặc lựa chọn danh mục phim, sau đó hệ thống truy vấn cơ sở dữ liệu để trả về danh sách các bộ phim phù hợp.
+Khi người dùng chọn một bộ phim cụ thể, hệ thống sẽ hiển thị đầy đủ thông tin như tên phim, thời lượng, nội dung, diễn viên, đạo diễn, trailer, hình ảnh và các lịch chiếu tương ứng tại từng rạp. Từ thông tin này, khách hàng có thể lựa chọn rạp và suất chiếu phù hợp để tiếp tục quá trình đặt vé.
+Sequence Diagram cho quy trình chọn rạp, phòng chiếu, ghế ngồi và thêm đồ ăn vặt:
+Sau khi lựa chọn bộ phim và suất chiếu, người dùng tiến hành chọn rạp, phòng chiếu và vị trí ghế ngồi. Hệ thống sẽ kiểm tra trạng thái của từng ghế để đảm bảo ghế chưa được đặt hoặc chưa bị khóa. Khi khách hàng chọn ghế thành công, hệ thống tạm giữ ghế trong một khoảng thời gian nhằm tránh trường hợp nhiều người cùng đặt một vị trí.
+Tiếp theo, khách hàng có thể lựa chọn các sản phẩm đồ ăn và nước uống đi kèm như bắp rang, nước ngọt hoặc các combo. Hệ thống sẽ cập nhật số lượng sản phẩm, tính toán tổng giá trị đơn hàng và hiển thị thông tin chi tiết để người dùng kiểm tra trước khi xác nhận thanh toán.
+Sequence Diagram cho quy trình khởi tạo đơn hàng đặt vé và thanh toán trực tuyến (VNPAY):
+Sau khi khách hàng xác nhận các thông tin đặt vé, hệ thống tiến hành tạo đơn hàng mới, bao gồm thông tin khách hàng, suất chiếu, danh sách ghế đã chọn, các sản phẩm đồ ăn đi kèm và tổng số tiền cần thanh toán.
+Đối với hình thức thanh toán trực tuyến, hệ thống sẽ gửi yêu cầu thanh toán đến cổng thanh toán VNPAY cùng với các thông tin giao dịch. Người dùng được chuyển đến giao diện thanh toán của VNPAY để thực hiện giao dịch. Sau khi thanh toán hoàn tất, VNPAY sẽ gửi kết quả giao dịch về hệ thống.
+Nếu giao dịch thành công, hệ thống cập nhật trạng thái thanh toán của đơn hàng, xác nhận việc đặt vé, phát hành vé điện tử kèm mã QR và gửi thông báo thành công đến khách hàng. Ngược lại, nếu giao dịch thất bại hoặc bị hủy, hệ thống sẽ cập nhật trạng thái đơn hàng, giải phóng các ghế đã tạm giữ và thông báo để người dùng có thể thực hiện thanh toán lại hoặc lựa chọn phương thức thanh toán khác.
+Ý nghĩa của Sequence Diagram:
+Các Sequence Diagram trong hệ thống giúp mô tả chi tiết trình tự xử lý của từng chức năng nghiệp vụ, thể hiện rõ sự tương tác giữa người dùng, giao diện, bộ điều khiển (Controller), lớp nghiệp vụ (Service), cơ sở dữ liệu (Database) và các hệ thống bên ngoài như VNPAY. Đây là cơ sở quan trọng để kiểm tra tính đúng đắn của luồng xử lý, hỗ trợ lập trình viên triển khai chức năng theo đúng thiết kế và đảm bảo các quy trình nghiệp vụ của hệ thống Web Đặt Vé Xem Phim được thực hiện chính xác, đầy đủ và nhất quán.
+Hình 6. Biểu đồ Sequence cho quy trình thanh toán
+3.8.4 Activity Diagram
+Activity Diagram mô tả luồng công việc từ điểm bắt đầu đến điểm kết thúc, thể hiện các quyết định, lặp lại và song song có thể xảy ra trong quy trình.
+Hình 7. Biểu đồ Activity cho quy trình
+ Cách tổ chức dữ liệu và thiết kế chương trình cho website
+3.9.1. Bảng phim (movies):
+ Bảng này mục đích lưu các thông tin của các bộ phim đang và sắp công chiếu trong hệ thống. Bảng gồm một số trường quan trọng: ID, Tên phim (title), Hình ảnh Poster (image_url), Thời lượng phim (duration), Đạo diễn, Diễn viên, Mô tả nội dung phim, Trạng thái (đang chiếu, sắp chiếu) và ngày phát hành. 
+3.9.2. Bảng thể loại phim (categories):
+ Bảng này nhằm mục đích phân loại các bộ phim khác nhau theo thể loại như: Hành động, Hài hước, Kinh dị, Tình cảm, Khoa học viễn tưởng… Bảng gồm: ID, Tên thể loại (name)… Bảng này có mối quan hệ n-n (hoặc 1-n tùy thiết kế) với bảng phim, vì một bộ phim có thể thuộc nhiều thể loại và một thể loại có nhiều phim. 
+3.9.3. Bảng lịch chiếu (showtimes):
+ Bảng này lưu trữ thông tin về lịch chiếu cụ thể của từng bộ phim. Bảng gồm các trường: ID, movie_id (liên kết với bảng phim), room_id (liên kết với bảng phòng chiếu), thời gian bắt đầu chiếu (start_time), thời gian kết thúc, và giá vé cơ bản của suất chiếu đó. 
+3.9.4. Bảng ghế ngồi (seats):
+ Bảng này lưu trữ thông tin về sơ đồ ghế ngồi của từng phòng chiếu. Bảng gồm các trường: ID, room_id (thuộc phòng nào), tên/số ghế (ví dụ: A1, B2), loại ghế (ghế thường, ghế VIP, ghế đôi) và trạng thái (ghế hỏng, ghế khả dụng). 
+3.9.5. Bảng đơn đặt vé (bookings):
+ Bảng lưu giữ các thông tin về giao dịch đặt vé của khách hàng (tương tự như bảng đơn hàng trong hệ thống bán lẻ). Bảng bao gồm: ID, user_id (người đặt), showtime_id (suất chiếu), tổng tiền (total_price), phương thức thanh toán, thời gian đặt và trạng thái đơn hàng (PENDING - chờ thanh toán, PAID - đã thanh toán, CANCELED - đã hủy). 
+3.9.6. Bảng chi tiết vé (tickets / booking_details) :
+Bảng lưu trữ thông tin chi tiết về từng chiếc vé (từng vị trí ghế) mà khách hàng đã đặt trong một đơn đặt vé (Booking). Bảng gồm các trường: ID, booking_id, seat_id, giá tiền của ghế đó, và mã QR Code (nếu có) để quét khi vào rạp. 
+3.9.7. Bảng đồ ăn vặt / Combo (snacks & booking_snacks) :
+Bảng snacks: Lưu thông tin các combo bắp nước bán kèm (ID, tên combo, hình ảnh, giá tiền, mô tả). 
+Bảng booking_snacks: Bảng trung gian lưu chi tiết số lượng combo bắp nước mà khách hàng đã mua kèm trong đơn đặt vé (Booking). Gồm: booking_id, snack_id, số lượng (quantity) và đơn giá lúc mua. 
+3.9.8. Bảng tài khoản thành viên (users):
+ Bảng lưu trữ các thông tin tài khoản của quản trị viên (Admin) và khách hàng đã đăng ký trên hệ thống. Bảng gồm một số thông tin: ID, Tên đăng nhập / Email, Mật khẩu (đã mã hóa), Họ tên, Số điện thoại và Mã OTP (dùng cho tính năng quên mật khẩu). 
+3.9.9. Bảng rạp và phòng chiếu (cinemas & rooms) :
+Bảng cinemas: Lưu thông tin các cụm rạp (Tên rạp, địa chỉ). 
+Bảng rooms: Lưu thông tin các phòng chiếu thuộc một rạp cụ thể (ID, cinema_id, tên phòng, tổng số ghế).
+CHƯƠNG 4: SẢN PHẨM VÀ KẾT QUẢ NGHIÊN CỨU
+4.1 Giới thiệu sản phẩm
+Sản phẩm của đề tài là một website đặt vé xem phim trực tuyến (CineStar) được phát triển với kiến trúc tách biệt frontend và backend (Frontend dùng ReactJS, Backend dùng Spring Boot). Website hỗ trợ đầy đủ các chức năng cơ bản giúp người dùng trải nghiệm việc tra cứu lịch chiếu, chọn ghế, mua bắp nước và thanh toán vé online một cách thuận tiện, nhanh chóng và dễ dàng.
+4.2 Các chức năng chính của hệ thống
+4.2.1 Trang người dùng (Khách hàng) :
+Trang chủ: Hiển thị danh sách các bộ phim đang chiếu, phim sắp chiếu, các banner quảng cáo nổi bật. 
+Đăng ký / Đăng nhập: Người dùng có thể tạo tài khoản, đăng nhập bằng hệ thống xác thực bảo mật và hỗ trợ chức năng quên mật khẩu (nhận mã OTP qua Email). 
+Danh sách phim / Lịch chiếu: Xem danh sách phim và tra cứu lịch chiếu chi tiết theo ngày, giờ. 
+Chi tiết phim: Hiển thị thông tin cụ thể của từng bộ phim như Trailer, mô tả nội dung, đạo diễn, diễn viên, thời lượng, thể loại… 
+Đặt vé (Booking): Cho phép người dùng chọn suất chiếu, chọn vị trí ghế trống trực tiếp trên sơ đồ phòng chiếu và mua thêm các Combo bắp nước. 
+Thanh toán: Chức năng xác nhận đơn đặt vé và tiến hành thanh toán trực tuyến tiện lợi qua cổng thanh toán (VD: VNPAY). 
+Hồ sơ cá nhân (Profile): Nơi người dùng cập nhật thông tin cá nhân (Họ tên, SĐT) và thay đổi mật khẩu tài khoản. 
+4.2.2 Trang quản trị (Admin) :
+Quản lý phim: Thêm mới, chỉnh sửa, xóa phim; cập nhật hình ảnh Poster, link Trailer và thông tin chi tiết của phim. 
+Quản lý danh mục (Thể loại): Thêm, xóa, sửa các thể loại phim (Hành động, Hài hước, Kinh dị…). 
+Quản lý lịch chiếu: Lên lịch suất chiếu cho các bộ phim tương ứng với từng phòng chiếu và khung giờ cụ thể. 
+Quản lý đơn đặt vé (Booking): Theo dõi toàn bộ danh sách các đơn đặt vé của khách hàng, kiểm tra doanh thu và trạng thái thanh toán. 
+Quản lý người dùng & nhân viên: Xem danh sách tài khoản thành viên trong hệ thống, cấp quyền (Admin/Staff/User) hoặc khóa tài khoản khi cần thiết. 
+4.2.3 Trang nhân viên (Staff) :
+Soát vé / Kiểm tra đơn hàng: Kiểm tra thông tin đơn đặt vé của khách hàng (thông qua mã vé hoặc QR Code) để xác nhận cho khách vào rạp. 
+Theo dõi trạng thái vé: Xem danh sách vé đã đặt trong ca làm việc, hỗ trợ khách hàng kiểm tra vị trí ghế ngồi và xuất vé/đồ ăn vặt tại quầy.
+4.3 Giao diện sản phẩm
+Giao diện của website được thiết kế vô cùng hiện đại, thân thiện với người dùng và dễ thao tác. Các thành phần bố cục được sắp xếp khoa học, giúp người dùng dễ dàng tra cứu lịch chiếu và đặt vé nhanh chóng. Màu sắc chủ đạo được lựa chọn theo phong cách Dark Mode (nền tối kết hợp ánh sáng gradient) sang trọng, hoàn toàn phù hợp với lĩnh vực điện ảnh và rạp phim, mang lại cảm giác đẳng cấp và trải nghiệm thị giác đầy ấn tượng cho khách hàng. 
+Các trang chức năng chính bao gồm: 
+ Trang chủ: Hiển thị danh sách các bộ phim đang chiếu, phim sắp chiếu nổi bật và các banner giới thiệu sự kiện hấp dẫn.
+Hình 8. Trang chủ người dùng
+Đăng ký/Đăng nhập: Người dùng có thể tạo tài khoản, đăng nhập bằng hệ thống.
+Hình 9. Trang đăng ký
+Hình 10. Trang đăng nhập
+Khôi phục mật khẩu (Quên mật khẩu): Trong trường hợp không nhớ mật khẩu đăng nhập, người dùng có thể sử dụng chức năng "Quên mật khẩu". Hệ thống sẽ tự động gửi một Mã xác thực (OTP) có thời hạn về địa chỉ Email đã đăng ký. Người dùng cần nhập đúng mã OTP này mới có quyền thiết lập lại mật khẩu mới, đảm bảo tính bảo mật và định danh chính xác chủ sở hữu tài khoản. Toàn bộ mật khẩu lưu trong cơ sở dữ liệu đều được mã hóa một chiều (Bcrypt) đảm bảo an toàn tuyệt đối.
+Hình 11. Trang đổi mật khẩu
+Thông tin người dùng (Tài khoản của tôi): Cho phép người dùng xem thông tin cá nhân, chỉnh sửa họ tên, email, số điện thoại.
+Hình 12. Trang hồ sơ cá nhân
+Trang danh sách phim: Phân loại phim theo danh mục
+Hình 13. Trang danh mục phim
+Tìm kiếm: Cho phép tìm kiếm nhanh theo tên phim.
+Hình 14. Trang kết quả tìm kiếm phim
+Trang chi tiết phim: Hiển thị đầy đủ thông tin về phim và tùy chọn vé có thể đặt ở rạp mà mình mong muốn.
+Hình 15. Trang chi tiết phim
+Trang Bắp nước & Thanh toán (Snack Selection & Checkout): Được thiết kế "All-in-one" (tất cả trong một) giúp tối ưu trải nghiệm người dùng. Trang này được chia làm hai phần chính: 
+Khu vực chọn Combo: Hiển thị danh sách các món ăn vặt (bắp, nước) kèm hình ảnh sinh động. Người dùng có thể dễ dàng thêm, bớt số lượng tùy thích. 
+Khu vực Thanh toán (Checkout): Cố định ở bên phải màn hình (hoặc dạng nổi trên Mobile). Khu vực này sẽ tự động tính toán tổng hóa đơn (gồm tiền vé và tiền combo). Tại đây, người dùng cũng sẽ chọn trực tiếp phương thức thanh toán trực tuyến (Cổng VNPAY hoặc Ví MoMo) và bấm nút xác nhận để tiến hành thanh toán mà không cần phải chuyển sang trang phụ nào khác.
+Hình 16. Trang thanh toán
+Hình 17. Trang chỉnh thông tin đặt phim thành công và sẽ sinh ra mã qr mà bên nhân viên có thể scan ra được thông tin vé 
+Bảng Điều Khiển (Dashboard): Là trung tâm giám sát tổng quan toàn bộ hoạt động kinh doanh của hệ thống rạp chiếu phim, cung cấp cho Quản trị viên cái nhìn trực quan và số liệu theo thời gian thực (Real-time). Bao gồm các tính năng nổi bật: 
+Thống kê Doanh thu & Lượng vé bán ra: Hệ thống tự động quét và tổng hợp các giao dịch đặt vé thành công, từ đó tính toán tổng doanh thu và tổng số lượng vé đã được tiêu thụ. Dữ liệu được tính toán động và cập nhật ngay lập tức khi có khách hàng đặt vé mới. 
+Giám sát Quy mô Hoạt động: Hiển thị trực tiếp tổng số lượng Bộ phim và số lượng Cụm rạp đang hoạt động trên hệ thống, giúp Admin dễ dàng nắm bắt được quy mô hiện tại. 
+Biểu đồ Trực quan hóa (Visual Charts): Tích hợp các biểu đồ dạng vùng (Area Chart) và dạng cột (Bar Chart) sinh động, mang lại trải nghiệm giao diện hiện đại và chuyên nghiệp cho hệ thống quản trị. 
+Theo dõi Giao dịch gần đây (Recent Bookings): Tự động trích xuất và hiển thị danh sách 8 giao dịch đặt vé mới nhất theo thời gian thực. Cung cấp đầy đủ thông tin về Khách hàng, Phim, Rạp, Thời gian đặt và Trạng thái thanh toán (được đánh dấu bằng các huy hiệu màu sắc trực quan: Thành công, Đã hủy, Chờ xử lý).
+Hình 18 Bảng Điều Khiển (Dashboard)
+Quản lý Phim (Movies Management): 
+Đây là một trong những phân hệ quan trọng nhất dành cho Quản trị viên (Admin). Chức năng này cho phép Admin toàn quyền kiểm soát danh mục các bộ phim trong hệ thống: 
+Xem danh sách: Hiển thị trực quan danh sách toàn bộ các bộ phim đang có trên hệ thống kèm theo hình ảnh Poster thu nhỏ và trạng thái (Đang chiếu, Sắp chiếu). 
+Thêm phim mới: Cho phép Admin cập nhật các bộ phim chuẩn bị ra rạp. Khi thêm phim, Admin cần nhập đầy đủ các thông tin: Tên phim, Đạo diễn, Diễn viên, Thể loại, Thời lượng, Mô tả nội dung, Hình ảnh Poster và Link Trailer (thường lấy từ YouTube). 
+Chỉnh sửa / Cập nhật: Cho phép sửa đổi thông tin của phim (ví dụ: thay đổi trạng thái từ "Sắp chiếu" sang "Đang chiếu" khi đến ngày phát hành). 
+Xóa phim: Gỡ bỏ các bộ phim đã ngừng chiếu quá lâu hoặc nhập sai thông tin ra khỏi danh sách hiển thị của khách hàng..
+Hình 19 Trang danh sách sản phẩm (Admin)
+Hình 20 Trang thêm phim mới (Admin)
+Hình 21 Trang chỉnh sửa phim (Admin)
+Quản lý thể loại : Hỗ trợ tạo mới, chỉnh sửa và xóa thể loại phim.
+Hình 22 Trang quản lý danh mục (Thêm, xóa)
+Hình 23 Trang sửa thể loại (Admin)
+Quản lý người dùng (Admin): Tài khoản quản trị có quyền xem danh sách tất cả người dùng, sửa thông tin người dùng hoặc xóa tài khoản khi cần thiết.
+Hình 24 Trang danh sách người dùng (Admin)
+Hình 25 Trang chi tiết và chỉnh sửa hồ sơ người dùng (Admin)
+Quản lý đặt vé: Giúp Quản trị viên theo dõi toàn bộ các giao dịch mua vé của khách hàng trên hệ thống. Bao gồm các chức năng tìm kiếm mã đặt vé, lọc theo trạng thái thanh toán (Thành công, Chờ thanh toán, Đã hủy), xem chi tiết thông tin vé (phim, suất chiếu, ghế ngồi, combo bắp nước) và có thể can thiệp xử lý linh hoạt khi cần thiết.
+Hình 26 Trang quản lý đặt vé và chi tiết vé  (Admin)
+Quản lý rạp chiếu: 
+Cung cấp cho Quản trị viên (Admin) công cụ để kiểm soát danh sách các cụm rạp trong hệ thống. Bao gồm các tính năng: 
+Thêm / Sửa / Xóa rạp chiếu: Quản trị viên có thể dễ dàng khởi tạo rạp chiếu mới hoặc cập nhật các thông tin cơ bản (Tên rạp, Địa chỉ, Mô tả chi tiết). 
+Xem chi tiết hồ sơ rạp: Hiển thị trực quan trạng thái hoạt động của rạp (Đang hoạt động), địa chỉ cụ thể và các mô tả tiện ích đi kèm thông qua giao diện Thẻ chi tiết (Profile Card) chuyên nghiệp. 
+Tìm kiếm thông minh: Hỗ trợ tìm kiếm rạp chiếu nhanh chóng theo Tên rạp hoặc khu vực Địa chỉ. 
+Hình 27 Quản lý rạp chiếu
+Quản lý phòng chiếu: Cho phép Quản trị viên (Admin) cấu hình và quản lý danh sách các phòng chiếu thuộc từng cụm rạp trong hệ thống. Bao gồm các tính năng: 
+Thêm / Sửa / Xóa phòng chiếu: Quản trị viên có thể linh hoạt thiết lập các thông tin chi tiết cho từng phòng như: Thuộc rạp nào, Tên phòng, Loại phòng chiếu (Tiêu chuẩn 2D, 3D, màn hình IMAX, Sweetbox) và Sức chứa tối đa (số lượng ghế). 
+Trực quan hóa dữ liệu: Thông tin loại phòng chiếu được phân loại màu sắc rõ ràng (Badges), giúp Admin dễ dàng nhận diện và phân biệt các định dạng phòng khác nhau. 
+Tìm kiếm & Phân bổ: Hỗ trợ tìm kiếm nhanh tên phòng chiếu và cho phép liên kết chặt chẽ dữ liệu phòng với dữ liệu của các cụm Rạp chiếu tương ứng.
+Hình 28 Quản lý phòng chiếu
+Quản lý Lịch chiếu: Là tính năng cốt lõi giúp Quản trị viên (Admin) điều phối và lên lịch chiếu phim cho toàn bộ hệ thống rạp. Bao gồm các chức năng chính: 
+Khởi tạo và Điều chỉnh Lịch chiếu: Admin có thể tạo mới, cập nhật hoặc xóa lịch chiếu một cách linh hoạt. Mỗi lịch chiếu được liên kết chặt chẽ với một Bộ phim cụ thể và một Phòng chiếu tương ứng. 
+Quản lý Khung giờ & Giá vé linh động: Cho phép thiết lập chi tiết thời gian bắt đầu và kết thúc của suất chiếu. Điểm nổi bật là tính năng cấu hình Giá vé động (Dynamic Pricing): Admin có thể thiết lập giá vé cơ bản khác nhau cho từng khung giờ, từng loại phòng chiếu (ví dụ suất chiếu sớm, hoặc phòng chiếu IMAX). 
+Đồng bộ Thời gian thực: Giá vé và thông tin suất chiếu ngay lập tức được đồng bộ với giao diện Đặt vé của Khách hàng, tự động tính toán giá vé VIP dựa trên giá vé cơ bản, đảm bảo tính nhất quán và chính xác tuyệt đối trong khâu thanh toán. 
+Tìm kiếm thông minh: Tích hợp bộ lọc tìm kiếm nhanh theo tên Phim hoặc tên Phòng chiếu, giúp Admin dễ dàng tra cứu lịch chiếu trong danh sách dữ liệu lớn.
+Hình 29 Quản lý lịch chiếu
+Quản lý Báo cáo & Thống kê (Reports & Analytics): Đây là phân hệ phân tích dữ liệu nâng cao dành riêng cho cấp Quản lý, cung cấp bức tranh toàn cảnh về tình hình kinh doanh của toàn bộ hệ thống rạp thông qua các biểu đồ trực quan và số liệu chi tiết: 
+Chỉ số Hiệu quả cốt lõi (KPIs): Hệ thống tự động trích xuất và tính toán các chỉ số quan trọng nhất bao gồm: Tổng doanh thu, Tổng số lượng vé đã bán và Giá vé trung bình, giúp quản lý nắm bắt hiệu suất kinh doanh chỉ trong nháy mắt. 
+Trực quan hóa dữ liệu đa chiều (Data Visualization): Tích hợp đa dạng các loại biểu đồ tương tác: 
+Biểu đồ vùng (Area Chart): Phân tích xu hướng Doanh thu và Số lượng vé bán ra biến động theo từng ngày, giúp nhận diện các thời điểm vàng trong tuần/tháng. 
+Biểu đồ thanh ngang (Bar Chart): Xếp hạng "Top Phim Doanh thu cao nhất", hỗ trợ Admin đưa ra quyết định phân bổ số lượng suất chiếu hợp lý cho các phim "hot". 
+Biểu đồ tròn (Donut Chart): Phân tích tỷ trọng đóng góp doanh thu của từng Cụm rạp trong hệ thống, từ đó đánh giá được rạp nào đang hoạt động hiệu quả nhất. 
+Bộ lọc dữ liệu linh hoạt: Hỗ trợ lọc báo cáo theo mốc thời gian (Tuần/Tháng/Năm) và lọc cục bộ theo từng Rạp chiếu cụ thể, đáp ứng nhu cầu phân tích chi tiết. 
+Hình 30 Quản lý Báo cáo & Thống kê (Reports & Analytics)
+Bảng Điều Khiển Nhân Viên (Staff Dashboard): Là giao diện giám sát vận hành thực tế tại quầy, được thiết kế tối ưu hóa tốc độ và cập nhật dữ liệu liên tục giúp Nhân viên trực quầy nắm bắt nhịp độ giao dịch ngay tại thời điểm hiện tại: 
+Chỉ báo Vận hành Thời gian thực (Daily Metrics): Tự động tính toán các số liệu của riêng ngày hôm nay (Today) bao gồm: Số vé bán ra trong ngày, Doanh thu trong ngày, Số lượng khách đã Check-in và Số phim đang hoạt động. Số liệu được làm mới (polling) liên tục mỗi phút, giúp ca trực dễ dàng bàn giao chốt sổ. 
+Hoạt động Khách hàng trực tiếp (Live Customer Activity): Tích hợp công nghệ WebSocket (STOMP) để theo dõi luồng đặt vé trực tuyến. Khi có bất kỳ khách hàng nào vừa đặt vé thành công (từ web hoặc app), hệ thống sẽ lập tức bắn thông báo "ping" nhấp nháy (Live Event) lên màn hình của nhân viên kèm chi tiết: Tên phim, Số ghế, Rạp và Số tiền thu được mà không cần tải lại trang. 
+Giao diện Giám sát Hiện đại: Sử dụng ngôn ngữ thiết kế "Glassmorphism" với tông màu tối chuyên nghiệp (Dark Mode), kết hợp với hiệu ứng chuyển động mượt mà (Slide-in animations) giúp nhân viên không bị mỏi mắt khi phải quan sát màn hình liên tục trong thời gian dài.
+Hình 31 Bảng Điều Khiển Nhân Viên (Staff Dashboard)
+Bán Vé Tại Quầy (Ticket Sales / POS): Đây là phân hệ lõi hỗ trợ nghiệp vụ bán hàng trực tiếp của nhân viên tại rạp, được thiết kế tối ưu hóa luồng thao tác (One-page Checkout) giúp bán vé nhanh chóng trong các khung giờ cao điểm: 
+Quy trình Đặt vé Tích hợp (All-in-one Flow): Giao diện chia bố cục thông minh theo dạng cột, cho phép nhân viên thực hiện liên tiếp các bước: Tìm kiếm phim ➔ Chọn khung giờ ➔ Chọn ghế ngồi chỉ trên cùng một màn hình duy nhất, giảm thiểu tối đa độ trễ chuyển trang. 
+Sơ đồ Ghế Thời gian thực (Real-time Seat Map): Tự động đồng bộ và hiển thị trực quan trạng thái của từng ghế (Trống, Đang chọn, Đã bán, hoặc Bảo trì) với màu sắc dễ nhận biết. Ngăn chặn tuyệt đối tình trạng bán trùng ghế (Double-booking) giữa quầy và khách đặt online. 
+Bán chéo Dịch vụ (Cross-selling): Tích hợp phân hệ bán Combo Bắp/Nước ngay bên dưới sơ đồ ghế, hỗ trợ bộ lọc nhanh theo danh mục (Combo, Đồ ăn, Đồ uống) giúp nhân viên dễ dàng tư vấn và up-sale (bán thêm) cho khách hàng. 
+Xử lý Thanh toán Linh hoạt: Hiển thị Hóa đơn tạm tính (Order Summary) chi tiết theo từng hạng mục. Hỗ trợ đa dạng phương thức thanh toán: Thu tiền mặt (Cash) hoặc Khởi tạo mã QR thanh toán qua Ví điện tử/Ngân hàng (như VNPAY/MoMo), đáp ứng nhu cầu thanh toán không tiền mặt của khách hàng hiện đại.
+Hình 32 Bán Vé Tại Quầy (Ticket Sales / POS)
+Quản lý Ghế Ngồi & Bảo Trì (Seat Management): Đây là phân hệ hỗ trợ đắc lực cho công tác vận hành vật lý tại rạp, giúp nhân viên chủ động kiểm soát và xử lý các sự cố liên quan đến cơ sở vật chất (cụ thể là ghế ngồi) một cách kịp thời: 
+Quản trị Phân cấp (Hierarchical Filtering): Hệ thống lọc dữ liệu theo cấu trúc hình cây Cụm Rạp ➔ Phòng Chiếu. Nhân viên chỉ cần click chọn Cụm rạp, hệ thống sẽ tự động tải danh sách các phòng chiếu tương ứng, giúp thao tác tìm kiếm cực kỳ nhanh gọn. 
+Sơ đồ Ghế Động (Dynamic Seat Map): Hiển thị sơ đồ vật lý của phòng chiếu theo đúng hình dáng thực tế (phân chia theo từng hàng A, B, C...). Giao diện sơ đồ sử dụng quy tắc mã hóa màu sắc (Color-coding) trực quan để phân biệt rõ ràng giữa "Ghế đang hoạt động tốt" và "Ghế đang bị khóa/bảo trì". 
+Bảo trì Khẩn cấp (One-click Maintenance): Khi phát hiện một ghế bị hỏng (rách da, gãy tựa lưng, đổ nước...), nhân viên chỉ cần click trực tiếp vào ghế đó trên sơ đồ để chuyển trạng thái sang Khóa/Bảo trì. Ngay lập tức, ghế này sẽ bị ẩn hoặc đánh dấu đỏ trên hệ thống Đặt vé Online và hệ thống Bán vé tại quầy (POS), đảm bảo không có khách hàng nào đặt nhầm vào ghế đang hỏng, từ đó nâng cao chất lượng dịch vụ và tránh khiếu nại.
+Hình 33 Quản lý Ghế Ngồi & Bảo Trì (Seat Management)
+Quản lý Soát Vé tự động bằng Mã QR (Ticket Check-In): Đây là phân hệ số hóa quy trình kiểm soát vé vào cổng, thay thế hoàn toàn việc xé vé giấy thủ công truyền thống, mang lại trải nghiệm chuyên nghiệp cho khách hàng và giảm thiểu sai sót cho nhân viên: 
+Tích hợp Camera Scanner: Hệ thống sử dụng thư viện html5-qrcode để biến trình duyệt web trên máy tính bảng hoặc máy tính tại quầy thành một máy quét mã vạch chuyên dụng. Nó tự động nhận diện và quét mã QR từ màn hình điện thoại của khách hàng với độ phản hồi tính bằng mili-giây. 
+Xác thực Vé Theo Thời Gian Thực (Real-time Validation): Ngay khi quét thành công, hệ thống lập tức gọi API kiểm tra trạng thái vé trên cơ sở dữ liệu. Nó sẽ tự động phân loại và hiển thị bằng các huy hiệu màu sắc trực quan: 
+Hợp lệ (Màu xanh): Khách đã thanh toán, vé chưa được sử dụng. 
+Đã soát (Màu xanh dương): Vé đã được check-in trước đó (cảnh báo gian lận hoặc dùng lại vé). 
+Không hợp lệ (Màu đỏ): Mã QR giả mạo hoặc vé đã bị hủy. 
+Hiển thị Chi Tiết Dịch Vụ Đi Kèm: Màn hình Check-in không chỉ hiển thị Tên phim, Phòng chiếu và Số ghế, mà còn được tích hợp hiển thị chi tiết các gói Combo Bắp / Nước mà khách hàng đã thanh toán. Nhờ đó, nhân viên soát vé có thể đồng thời kiểm tra và phát đúng combo thức ăn cho khách ngay tại cửa vào rạp. 
+Bảo mật và Đồng bộ: Thao tác nhấn "Xác Nhận Khách Vào" sẽ lập tức cập nhật trạng thái vé thành CHECKED_IN vào hệ thống Database, đồng bộ tới cả Bảng điều khiển (Dashboard) của Quản lý và Nhân viên khác để đảm bảo tính minh bạch.
+Hình 34 Quản lý Soát Vé tự động bằng Mã QR (Ticket Check-In)
+Lịch Sử Giao Dịch & Đối Soát (Transaction History): Đây là phân hệ sổ cái lưu trữ toàn bộ các giao dịch phát sinh từ hoạt động bán vé (cả Online lẫn Offline tại quầy), giúp nhân viên và quản lý có thể đối soát và kiểm toán doanh thu một cách minh bạch: 
+Tích Hợp Xử Lý Callback Cổng Thanh Toán (Payment Gateway Return): Một tính năng kỹ thuật nổi bật của trang này là khả năng tự động bắt (catch) và xử lý các tham số trả về từ cổng thanh toán VNPAY (VNPAY Return URL). Khi nhân viên hoàn tất quét mã QR thanh toán, hệ thống sẽ tự động đọc mã phản hồi (vnp_ResponseCode), giả lập cơ chế IPN (Instant Payment Notification) ngay trên local để đồng bộ trạng thái đơn hàng (PAID / CANCELED) vào Database. Điều này giải quyết triệt để bài toán VNPAY không thể gọi API IPN trực tiếp về môi trường Localhost khi đang phát triển. 
+Trình Quản Lý Dữ Liệu Chuyên Nghiệp: Hệ thống hiển thị danh sách giao dịch dưới dạng bảng dữ liệu chi tiết, bao gồm: Mã vé, Khách hàng, Phim, Rạp, Thời gian và Tổng tiền. Đi kèm với đó là các bộ lọc trạng thái thông minh (Thành công, Chờ xử lý, Đã hủy) giúp thu hẹp phạm vi tìm kiếm nhanh chóng. 
+Công Cụ Tìm Kiếm Linh Hoạt: Cho phép nhân viên tra cứu nhanh một giao dịch bất kỳ dựa trên Mã vé hoặc Tên khách hàng (chức năng Search), cực kỳ hữu ích trong các trường hợp cần hỗ trợ khách hàng giải quyết khiếu nại hoặc kiểm tra lại thông tin vé bị lỗi.
+Hình 35 Lịch Sử Giao Dịch & Đối Soát (Transaction History)
+4.4 Kết quả đạt được
+Triển khai thành công và hoạt động ổn định: Website đã được triển khai, tích hợp và kiểm thử toàn diện trên môi trường localhost. Hệ thống vận hành ổn định, đáp ứng đầy đủ các luồng nghiệp vụ từ khách hàng đặt vé trực tuyến, quản trị viên quản lý rạp và phim, đến nhân viên thực hiện bán vé tại quầy (POS) và kiểm soát vé (Check-in). 
+Giao diện người dùng (Frontend) hiện đại: Ứng dụng được phát triển bằng ReactJS theo kiến trúc Component-based, giúp mã nguồn dễ bảo trì và mở rộng. Mô hình Single Page Application (SPA) mang lại trải nghiệm người dùng mượt mà, cho phép cập nhật giao diện tức thời khi chọn ghế, tính tiền hoặc thanh toán mà không cần tải lại trang. 
+Hệ thống xử lý lõi (Backend) mạnh mẽ: Backend được xây dựng trên nền tảng Java Spring Boot với kiến trúc phân tầng rõ ràng, cung cấp các RESTful API chuẩn hóa phục vụ giao tiếp giữa Frontend và Backend. Hệ thống đảm bảo tính bảo mật, hiệu năng và khả năng mở rộng cho các chức năng trong tương lai. 
+Tích hợp công nghệ thời gian thực (Real-time): Hệ thống triển khai WebSocket kết hợp giao thức STOMP để đồng bộ dữ liệu theo thời gian thực. Nhờ đó, các thông báo và trạng thái hoạt động được cập nhật ngay lập tức, chẳng hạn Dashboard của nhân viên tự động hiển thị khi có khách hàng vừa hoàn tất đặt vé. 
+Lưu trữ và quản lý dữ liệu tối ưu: Cơ sở dữ liệu MySQL được kết hợp với Hibernate/JPA để quản lý dữ liệu theo mô hình đối tượng. Cấu trúc các thực thể và mối quan hệ được thiết kế chặt chẽ, đảm bảo tính toàn vẹn dữ liệu, đồng thời hỗ trợ truy vấn nhanh cho các chức năng thống kê, báo cáo và quản lý nghiệp vụ. 
+Giải pháp thanh toán thực tiễn: Hệ thống đã tích hợp thành công cổng thanh toán VNPAY trên môi trường phát triển, bao gồm luồng xử lý thanh toán và cơ chế giả lập IPN (Instant Payment Notification). Giải pháp này mô phỏng sát quy trình thanh toán thực tế, đáp ứng yêu cầu nghiệp vụ của hệ thống đặt vé xem phim trực tuyến. 
+4.5 Quá trình triển khai và kiếm thử
+4.5.1 Phương pháp triển khai
+Quá trình triển khai website đặt vé xem phim được thực hiện theo các bước:
+1. Cài đặt và thiết lập môi trường phát triển 
+Cài đặt Node.js và npm/yarn để phục vụ việc phát triển Frontend (ReactJS). 
+Cài đặt Java Development Kit (JDK), công cụ quản lý dự án Maven, và Framework Spring Boot. 
+Cài đặt hệ quản trị cơ sở dữ liệu MySQL và công cụ thao tác dữ liệu (như MySQL Workbench / phpMyAdmin). 
+Khởi tạo dự án, thiết lập Git và liên kết với GitHub repository để quản lý mã nguồn và tiến độ công việc. 
+2. Phát triển Backend (Spring Boot) 
+Phân tích, thiết kế cấu trúc Cơ sở dữ liệu và cấu hình kết nối Hibernate/JPA. 
+Xây dựng các lớp Thực thể (Entities) trong Spring Boot (User, Cinema, Room, Movie, Showtime, Booking,...). 
+Thiết kế và phát triển các RESTful API endpoints phục vụ cho toàn bộ các luồng nghiệp vụ của hệ thống. 
+Triển khai hệ thống bảo mật, phân quyền và xác thực người dùng bằng JWT (JSON Web Token). 
+Thiết lập và cấu hình giao thức WebSocket (STOMP) để xử lý truyền tải dữ liệu thời gian thực (Real-time). 
+3. Phát triển Frontend (ReactJS) 
+Thiết kế và chia nhỏ giao diện thành các Component ReactJS có tính tái sử dụng cao. 
+Tích hợp thư viện Axios để gọi và xử lý dữ liệu từ Backend API. 
+Xây dựng giao diện người dùng (UI) bắt mắt, Responsive, tương thích đa nền tảng kết hợp các hiệu ứng động (Animations). 
+Triển khai các luồng nghiệp vụ cốt lõi: Module Khách hàng (Tìm phim, chọn sơ đồ ghế, đặt bắp nước, tích hợp thanh toán VNPAY), Module Nhân viên (POS bán tại quầy, Check-in vé bằng QR Code) và Module Admin (Bảng điều khiển, Báo cáo doanh thu). 
+4. Tích hợp và Kiểm thử hệ thống 
+Tích hợp toàn diện luồng dữ liệu hai chiều giữa Frontend (ReactJS) và Backend (Spring Boot). 
+Kiểm thử (Testing) tính toàn vẹn của các luồng chức năng quan trọng (chặn đặt trùng ghế, kiểm duyệt trạng thái thanh toán, tính toán giá vé động). 
+Bắt lỗi (Debug), sửa lỗi và tiến hành tối ưu hóa hiệu năng truy vấn dữ liệu cũng như tốc độ phản hồi của giao diện.
+4.5.2 Kiểm thử phần mềm
+Để đảm bảo chất lượng của website, các phương pháp kiểm thử sau đã được áp dụng:
+1. Integration Testing (Kiểm thử tích hợp)
+Công cụ sử dụng: Postman. 
+Mục tiêu kiểm thử: Kiểm tra khả năng giao tiếp và trao đổi dữ liệu giữa Frontend (ReactJS) và Backend (Spring Boot) thông qua các RESTful API, đảm bảo dữ liệu được truyền nhận chính xác và ổn định. 
+Nội dung kiểm thử: 
+Gửi các yêu cầu (Request) mô phỏng từ phía Frontend đến các API của hệ thống. 
+Kiểm tra phản hồi (Response) trả về, bao gồm mã trạng thái HTTP (HTTP Status Code), định dạng dữ liệu JSON và tính chính xác, đầy đủ của dữ liệu. 
+Kiểm thử các API quan trọng của hệ thống như: 
+Quản lý phim. 
+Quản lý rạp và phòng chiếu. 
+Quản lý lịch chiếu. 
+Lấy sơ đồ ghế. 
+Khởi tạo đặt vé. 
+Xử lý thanh toán VNPAY. 
+Quản lý hóa đơn, vé và các API nghiệp vụ liên quan. 
+Kết quả: Các API đều hoạt động đúng chức năng, dữ liệu được trao đổi chính xác giữa Frontend và Backend, không phát sinh lỗi trong quá trình tích hợp. 
+2. System Testing (Kiểm thử hệ thống)
+Phạm vi kiểm thử: Kiểm tra toàn bộ quy trình nghiệp vụ của hệ thống thông qua việc kết hợp và thực thi liên tiếp nhiều API. 
+Mục tiêu kiểm thử: Đánh giá khả năng vận hành của hệ thống trong các tình huống sử dụng thực tế, đảm bảo các chức năng liên kết với nhau hoạt động chính xác và tuân thủ đúng quy trình nghiệp vụ. 
+Nội dung kiểm thử: 
+Kiểm tra quy trình quản trị từ tạo phim, rạp, phòng chiếu và lịch chiếu. 
+Kiểm tra quy trình khách hàng tìm kiếm phim, chọn suất chiếu, chọn ghế và đặt vé. 
+Kiểm tra luồng thanh toán VNPAY và cập nhật trạng thái giao dịch sau khi thanh toán thành công. 
+Kiểm tra quy trình nhân viên quét mã QR để Check-in vé tại rạp. 
+Kiểm tra các nghiệp vụ đặc biệt như: 
+Không cho phép nhiều người đặt cùng một ghế trong cùng một suất chiếu. 
+Tự động tính giá vé theo loại ghế (VIP hoặc Thường). 
+Đồng bộ trạng thái ghế và vé sau khi thanh toán thành công. 
+Cập nhật dữ liệu thời gian thực thông qua WebSocket trên Dashboard của nhân viên. 
+Quy trình kiểm thử: 
+Quản trị viên tạo phim, rạp, phòng chiếu và lịch chiếu. 
+Khách hàng xem danh sách phim và lựa chọn suất chiếu. 
+Khách hàng chọn ghế, nhập thông tin và tiến hành thanh toán. 
+Hệ thống tạo Booking, cập nhật trạng thái ghế và phát hành vé điện tử. 
+Nhân viên sử dụng chức năng quét mã QR để xác nhận vé và thực hiện Check-in.
+Bảng kết quả kiểm thử bằng Postman
+STT
+Chức năng kiểm thử
+Phương thức (HTTP Method)
+API Endpoint
+Kết quả mong đợi
+Kết quả thực tế
+Đánh giá
+1
+Lấy danh sách phim đang chiếu
+GET
+/api/movies
+Trả về 200 OK cùng danh sách các phim đang chiếu
+200 OK, dữ liệu phim trả về đầy đủ
+Đạt
+2
+Tạo lịch chiếu mới
+POST
+/api/showtimes
+Trả về 201 Created cùng thông tin lịch chiếu vừa tạo
+201 Created, lịch chiếu được lưu thành công
+Đạt
+3
+Lấy sơ đồ ghế theo phòng chiếu
+GET
+/api/seats/room/{id}
+Trả về 200 OK cùng danh sách sơ đồ ghế của phòng
+200 OK, sơ đồ ghế hiển thị chính xác
+Đạt
+4
+Xóa phim
+DELETE
+/api/movies/{id}
+Trả về 200 OK hoặc 204 No Content, phim được xóa khỏi hệ thống
+200 OK, dữ liệu phim đã được xóa
+Đạt
+5
+Khởi tạo đơn đặt vé
+POST
+/api/bookings
+Trả về 201 Created cùng thông tin đơn đặt vé
+201 Created, đơn đặt vé được tạo và ghế chuyển sang trạng thái đã giữ chỗ
+Đạt
+6
+Cập nhật trạng thái Check-in
+PUT
+/api/bookings/{id}/checkin
+Trả về 200 OK, trạng thái vé chuyển thành CHECKED_IN
+200 OK, trạng thái vé được cập nhật thành công
+Đạt
+Bảng 1. Bảng kiểm thử bằng Postman
+KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN
+Kết luận
+Qua quá trình nghiên cứu và thực hiện đề tài "Phát triển hệ thống đặt vé xem phim trực tuyến", nhóm đã xây dựng thành công một hệ thống quản lý và đặt vé xem phim trực tuyến với đầy đủ các chức năng nghiệp vụ cơ bản. Hệ thống đáp ứng nhu cầu của ba nhóm người dùng chính gồm Khách hàng, Nhân viên và Quản trị viên, hỗ trợ các quy trình từ quản lý phim, rạp chiếu, lịch chiếu, đặt vé trực tuyến, thanh toán đến kiểm soát vé tại rạp.
+Về mặt công nghệ, hệ thống được xây dựng với ReactJS ở phía Frontend, Java Spring Boot ở phía Backend và MySQL làm hệ quản trị cơ sở dữ liệu. Ngoài ra, hệ thống còn tích hợp WebSocket (STOMP) để cập nhật dữ liệu theo thời gian thực và cổng thanh toán VNPAY nhằm mô phỏng quy trình thanh toán trực tuyến trong thực tế.
+Kết quả kiểm thử cho thấy các chức năng chính của hệ thống hoạt động ổn định, các RESTful API giao tiếp chính xác giữa Frontend và Backend, dữ liệu được lưu trữ nhất quán và các quy trình nghiệp vụ như đặt vé, thanh toán, cập nhật trạng thái ghế và kiểm soát vé đều đáp ứng yêu cầu đề ra.
+Bên cạnh những kết quả đạt được, hệ thống vẫn còn một số hạn chế. Chức năng gửi email tự động kèm mã QR sau khi thanh toán chưa được triển khai. Hệ thống thành viên, tích điểm và quản lý khuyến mãi còn ở mức cơ bản. Ngoài ra, hệ thống mới được triển khai và kiểm thử trên môi trường localhost, chưa được triển khai trên máy chủ thực tế để đánh giá hiệu năng và khả năng chịu tải.
+Hướng phát triển trong tương lai
+Trong thời gian tới, hệ thống có thể tiếp tục được phát triển theo các hướng sau:
+Hoàn thiện chức năng gửi email tự động kèm vé điện tử và mã QR sau khi khách hàng thanh toán thành công. 
+Bổ sung hệ thống thành viên, tích điểm, mã giảm giá và quản lý chương trình khuyến mãi nhằm nâng cao trải nghiệm khách hàng. 
+Mở rộng tích hợp thêm các cổng thanh toán điện tử như MoMo, ZaloPay hoặc các phương thức thanh toán trực tuyến khác. 
+Phát triển ứng dụng di động trên nền tảng Android và iOS bằng React Native hoặc Flutter để tăng tính tiện lợi cho người sử dụng. 
+Triển khai hệ thống trên môi trường Cloud hoặc VPS nhằm đánh giá khả năng vận hành thực tế, tối ưu hiệu năng và nâng cao tính sẵn sàng của hệ thống. 
+Nghiên cứu ứng dụng trí tuệ nhân tạo để gợi ý phim dựa trên lịch sử đặt vé và sở thích của khách hàng, góp phần cá nhân hóa trải nghiệm người dùng.
+Kiến nghị
+Để hệ thống có thể phát triển ổn định và đáp ứng tốt hơn nhu cầu thực tế, nhóm đề xuất một số kiến nghị sau:
+Tiếp tục hoàn thiện các chức năng còn thiếu và thường xuyên cập nhật hệ thống nhằm nâng cao tính ổn định cũng như khả năng mở rộng. 
+Tăng cường kiểm thử trên nhiều môi trường và nhiều thiết bị khác nhau nhằm đảm bảo tính tương thích và chất lượng phần mềm trước khi triển khai chính thức. 
+Thực hiện sao lưu dữ liệu định kỳ, tăng cường các giải pháp bảo mật như phân quyền truy cập, mã hóa dữ liệu và bảo vệ API nhằm đảm bảo an toàn thông tin. 
+Triển khai hệ thống trên máy chủ thực tế để đánh giá hiệu năng, khả năng chịu tải và tối ưu trải nghiệm người dùng. 
+Đào tạo nhân viên sử dụng thành thạo các chức năng quản trị, bán vé và kiểm soát vé nhằm nâng cao hiệu quả vận hành của hệ thống.
+TÀI LIỆU THAM KHẢO
+Duckett, J. (2011). HTML and CSS: Design and Build Websites. Indianapolis, IN: John Wiley & Sons.
+Freeman, A. (2022). Pro React 18: Build End-to-End Web Apps with Modern JavaScript. Apress.
+Bloch, J. (2018). Effective Java (3rd ed.). Addison-Wesley Professional.
+Walls, C. (2022). Spring in Action (6th ed.). Manning Publications.
+DuBois, P. (2014). MySQL Cookbook: Solutions for Database Developers and Administrators (3rd ed.). O'Reilly Media.
+Simpson, K. (2015). You Don't Know JS: ES6 & Beyond. O'Reilly Media.
+Sriparasa, S. S. (2017). JavaScript and JSON Essentials. Packt Publishing.
+Richardson, L., & Amundsen, M. (2013). RESTful Web APIs. O'Reilly Media.
+Nielsen Norman Group. (2021). E-Commerce & Online Booking User Experience. Retrieved from https://www.nngroup.com/
+Grand View Research. (2022). Online Movie Ticketing Services Market Size, Share & Trends Analysis Report. Retrieved from https://www.grandviewresearch.com/
