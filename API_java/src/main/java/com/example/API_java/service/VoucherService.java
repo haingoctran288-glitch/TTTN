@@ -717,72 +717,73 @@ public class VoucherService {
             : (customTitle != null ? customTitle : "🎁 Bạn Nhận Được Voucher Mới!");
         notification.setTitle(finalTitle);
 
-        // Determine message
-        String finalMessage;
-        if (voucher.getNotificationMessage() != null && !voucher.getNotificationMessage().trim().isEmpty()) {
-            finalMessage = voucher.getNotificationMessage();
+        // Format discount value
+        String discountStr = "";
+        if ("FREE_SERVICE".equalsIgnoreCase(voucher.getVoucherType())) {
+            discountStr = "Miễn phí dịch vụ";
+        } else if ("PERCENTAGE".equalsIgnoreCase(voucher.getVoucherType())) {
+            discountStr = voucher.getValue() + "%";
+            if (voucher.getMaxDiscount() != null && voucher.getMaxDiscount() > 0) {
+                discountStr += " (Giảm tối đa " + String.format("%,.0f", voucher.getMaxDiscount()) + "đ)";
+            }
         } else {
-            // Format discount value
-            String discountStr = "";
-            if ("FREE_SERVICE".equalsIgnoreCase(voucher.getVoucherType())) {
-                discountStr = "Miễn phí dịch vụ";
-            } else if ("PERCENTAGE".equalsIgnoreCase(voucher.getVoucherType())) {
-                discountStr = voucher.getValue() + "%";
-                if (voucher.getMaxDiscount() != null && voucher.getMaxDiscount() > 0) {
-                    discountStr += " (Giảm tối đa " + String.format("%,.0f", voucher.getMaxDiscount()) + "đ)";
-                }
-            } else {
-                discountStr = String.format("%,.0f", voucher.getValue()) + "đ";
-            }
-
-            // Format applyTo
-            String applyToStr = "Dịch Vụ + Sản Phẩm";
-            if ("SERVICE".equalsIgnoreCase(voucher.getApplyTo())) {
-                applyToStr = "Dịch Vụ";
-            } else if ("PRODUCT".equalsIgnoreCase(voucher.getApplyTo())) {
-                applyToStr = "Sản Phẩm";
-            }
-
-            // Format expiry date
-            String expiryStr = "Vô thời hạn";
-            if (voucher.getEndDate() != null) {
-                expiryStr = voucher.getEndDate().format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
-            }
-
-            // Format event/issue type
-            String eventStr = "Ưu đãi đặc biệt";
-            if ("NEW_CUSTOMER".equalsIgnoreCase(issueType)) {
-                eventStr = "Khách Hàng Mới";
-            } else if ("BIRTHDAY".equalsIgnoreCase(issueType)) {
-                eventStr = "Sinh Nhật";
-            } else if ("MEMBERSHIP".equalsIgnoreCase(issueType)) {
-                eventStr = "Hội Viên";
-            } else if ("MANUAL".equalsIgnoreCase(issueType)) {
-                eventStr = "Tặng Riêng";
-            } else if ("ALL_CUSTOMERS".equalsIgnoreCase(issueType)) {
-                eventStr = "Toàn Bộ Khách Hàng";
-            }
-
-            // Build structured message
-            StringBuilder sb = new StringBuilder();
-            if (customPrefix != null && !customPrefix.isEmpty()) {
-                sb.append(customPrefix).append("\n\n");
-            }
-            sb.append("--- THÔNG TIN VOUCHER ---\n");
-            sb.append("🎫 Tên voucher: ").append(voucher.getName()).append("\n");
-            sb.append("🎟️ Mã voucher: ").append(voucher.getCode()).append("\n");
-            sb.append("📅 Sự kiện: ").append(eventStr).append("\n");
-            sb.append("🎯 Áp dụng: ").append(applyToStr).append("\n");
-            sb.append("💰 Giảm giá: ").append(discountStr).append("\n");
-            if (voucher.getMinOrderValue() != null && voucher.getMinOrderValue() > 0) {
-                sb.append("⚡ Đơn tối thiểu: ").append(String.format("%,.0f", voucher.getMinOrderValue())).append("đ\n");
-            }
-            sb.append("⏰ Hạn dùng: ").append(expiryStr).append("\n");
-            if (details != null && !details.isEmpty()) {
-                sb.append("\nℹ️ Chi tiết: ").append(details);
-            }
-            finalMessage = sb.toString();
+            discountStr = String.format("%,.0f", voucher.getValue()) + "đ";
         }
+
+        // Format applyTo
+        String applyToStr = "Dịch Vụ + Sản Phẩm";
+        if ("SERVICE".equalsIgnoreCase(voucher.getApplyTo())) {
+            applyToStr = "Dịch Vụ";
+        } else if ("PRODUCT".equalsIgnoreCase(voucher.getApplyTo())) {
+            applyToStr = "Sản Phẩm";
+        }
+
+        // Format expiry date
+        String expiryStr = "Vô thời hạn";
+        if (voucher.getEndDate() != null) {
+            expiryStr = voucher.getEndDate().format(java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+        }
+
+        // Format event/issue type
+        String eventStr = "Ưu đãi đặc biệt";
+        if ("NEW_CUSTOMER".equalsIgnoreCase(issueType)) {
+            eventStr = "Khách Hàng Mới";
+        } else if ("BIRTHDAY".equalsIgnoreCase(issueType)) {
+            eventStr = "Sinh Nhật";
+        } else if ("MEMBERSHIP".equalsIgnoreCase(issueType)) {
+            eventStr = "Hội Viên";
+        } else if ("MANUAL".equalsIgnoreCase(issueType)) {
+            eventStr = "Tặng Riêng";
+        } else if ("ALL_CUSTOMERS".equalsIgnoreCase(issueType)) {
+            eventStr = "Toàn Bộ Khách Hàng";
+        }
+
+        // Build structured message
+        StringBuilder sb = new StringBuilder();
+        
+        // 1. Custom message from admin (if any)
+        if (voucher.getNotificationMessage() != null && !voucher.getNotificationMessage().trim().isEmpty()) {
+            sb.append(voucher.getNotificationMessage()).append("\n\n");
+        } 
+        // 2. Or default prefix (if any)
+        else if (customPrefix != null && !customPrefix.isEmpty()) {
+            sb.append(customPrefix).append("\n\n");
+        }
+
+        sb.append("--- THÔNG TIN VOUCHER ---\n");
+        sb.append("🎫 Tên voucher: ").append(voucher.getName()).append("\n");
+        sb.append("🎟️ Mã voucher: ").append(voucher.getCode()).append("\n");
+        sb.append("📅 Sự kiện: ").append(eventStr).append("\n");
+        sb.append("🎯 Áp dụng: ").append(applyToStr).append("\n");
+        sb.append("💰 Giảm giá: ").append(discountStr).append("\n");
+        if (voucher.getMinOrderValue() != null && voucher.getMinOrderValue() > 0) {
+            sb.append("⚡ Đơn tối thiểu: ").append(String.format("%,.0f", voucher.getMinOrderValue())).append("đ\n");
+        }
+        sb.append("⏰ Hạn dùng: ").append(expiryStr).append("\n");
+        if (details != null && !details.isEmpty()) {
+            sb.append("\nℹ️ Chi tiết: ").append(details);
+        }
+        String finalMessage = sb.toString();
 
         notification.setMessage(finalMessage);
         notification.setType("system");
